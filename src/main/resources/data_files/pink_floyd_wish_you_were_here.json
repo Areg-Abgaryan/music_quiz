@@ -1,0 +1,30 @@
+{
+  "albumName": "Wish You Were Here",
+  "artist": "Pink Floyd",
+  "releaseYear": 1975,
+  "numberOfSongs": 5,
+  "totalLength": "44:11",
+
+  "songs": [
+    {
+      "name": "Shine On You Crazy Diamond (Parts I–V)",
+      "duration": "13:32"
+    },
+    {
+      "name": "Welcome to the Machine",
+      "duration": "7:28"
+    },
+    {
+      "name": "Have a Cigar",
+      "duration": "5:08"
+    },
+    {
+      "name": "Wish You Were Here",
+      "duration": "5:35"
+    },
+    {
+      "name": "Shine On You Crazy Diamond (Parts VI–IX)",
+      "duration": "12:28"
+    }
+  ]
+}

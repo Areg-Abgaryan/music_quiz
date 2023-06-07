@@ -1,0 +1,50 @@
+{
+  "albumName": "The Dark Side of the Moon",
+  "artist": "Pink Floyd",
+  "releaseYear": 1973,
+  "numberOfSongs": 10,
+  "totalLength": "42:50",
+
+  "songs": [
+    {
+      "name": "Speak to Me",
+      "duration": "1:05"
+    },
+    {
+      "name": "Breathe (In the Air)",
+      "duration": "2:49"
+    },
+    {
+      "name": "On the Run",
+      "duration": "3:45"
+    },
+    {
+      "name": "Time",
+      "duration": "6:53"
+    },
+    {
+      "name": "The Great Gig in the Sky",
+      "duration": "4:43"
+    },
+    {
+      "name": "Money",
+      "duration": "6:22"
+    },
+    {
+      "name": "Us and Them",
+      "duration": "7:49"
+    },
+    {
+      "name": "Any Colour You Like",
+      "duration": "3:26"
+    },
+    {
+      "name": "Brain Damage",
+      "duration": "3:46"
+    },
+    {
+      "name": "Eclipse",
+      "duration": "2:12"
+    }
+  ]
+}

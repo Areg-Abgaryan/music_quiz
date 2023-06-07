@@ -1,0 +1,58 @@
+{
+  "albumName": "Appetite For Destruction I",
+  "artist": "Guns N' Roses",
+  "releaseYear": 1987,
+  "numberOfSongs": 12,
+  "totalLength": "53:52",
+
+  "songs": [
+    {
+      "name": "Welcome to the Jungle",
+      "duration": "4:31"
+    },
+    {
+      "name": "It's So Easy",
+      "duration": "4:26"
+    },
+    {
+      "name": "Nightrain",
+      "duration": "4:26"
+    },
+    {
+      "name": "Out ta Get Me",
+      "duration": "4:20"
+    },
+    {
+      "name": "Mr. Brownstone",
+      "duration": "3:46"
+    },
+    {
+      "name": "Paradise City",
+      "duration": "6:46"
+    },
+    {
+      "name": "My Michelle",
+      "duration": "3:39"
+    },
+    {
+      "name": "Think About You",
+      "duration": "3:50"
+    },
+    {
+      "name": "Sweet Child o' Mine",
+      "duration": "5:55"
+    },
+    {
+      "name": "You're Crazy",
+      "duration": "3:16"
+    },
+    {
+      "name": "Anything Goes",
+      "duration": "3:25"
+    },
+    {
+      "name": "Rocket Queen",
+      "duration": "6:13"
+    }
+  ]
+}
