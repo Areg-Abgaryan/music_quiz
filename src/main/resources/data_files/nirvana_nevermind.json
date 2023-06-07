@@ -1,0 +1,62 @@
+{
+  "albumName": "Nevermind",
+  "artist": "Nirvana",
+  "releaseYear": 1991,
+  "numberOfSongs": 13,
+  "totalLength": "49:07",
+
+  "songs": [
+    {
+      "name": "Smells Like Teen Spirit",
+      "duration": "5:01"
+    },
+    {
+      "name": "In Bloom",
+      "duration": "4:14"
+    },
+    {
+      "name": "Come as You Are",
+      "duration": "3:39"
+    },
+    {
+      "name": "Breed",
+      "duration": "3:03"
+    },
+    {
+      "name": "Lithium",
+      "duration": "4:17"
+    },
+    {
+      "name": "Polly",
+      "duration": "2:57"
+    },
+    {
+      "name": "Territorial Pissings",
+      "duration": "2:22"
+    },
+    {
+      "name": "Drain You",
+      "duration": "3:43"
+    },
+    {
+      "name": "Lounge Act",
+      "duration": "2:36"
+    },
+    {
+      "name": "Stay Away",
+      "duration": "3:32"
+    },
+    {
+      "name": "On a Plain",
+      "duration": "3:16"
+    },
+    {
+      "name": "Something in the Way",
+      "duration": "3:52"
+    },
+    {
+      "name": "Endless, Nameless",
+      "duration": "6:43"
+    }
+  ]
+}

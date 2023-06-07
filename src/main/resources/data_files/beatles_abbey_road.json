@@ -1,0 +1,78 @@
+{
+  "albumName": "Abbey Road",
+  "artist": "The Beatles",
+  "releaseYear": 1969,
+  "numberOfSongs": 17,
+  "totalLength": "47:03",
+
+  "songs": [
+    {
+      "name": "Come Together",
+      "duration": "4:19"
+    },
+    {
+      "name": "Something",
+      "duration": "3:02"
+    },
+    {
+      "name": "Maxwell's Silver Hammer",
+      "duration": "3:27"
+    },
+    {
+      "name": "Oh! Darling",
+      "duration": "3:27"
+    },
+    {
+      "name": "Octopus's Garden",
+      "duration": "2:51"
+    },
+    {
+      "name": "I Want You (She's So Heavy)",
+      "duration": "7:47"
+    },
+    {
+      "name": "Here Comes the Sun",
+      "duration": "3:05"
+    },
+    {
+      "name": "Because",
+      "duration": "2:45"
+    },
+    {
+      "name": "You Never Give Me Your Money",
+      "duration": "4:03"
+    },
+    {
+      "name": "Sun King",
+      "duration": "2:26"
+    },
+    {
+      "name": "Mean Mr. Mustard",
+      "duration": "1:06"
+    },
+    {
+      "name": "Polythene Pam",
+      "duration": "1:13"
+    },
+    {
+      "name": "She Came In Through the Bathroom Window",
+      "duration": "1:58"
+    },
+    {
+      "name": "Golden Slumbers",
+      "duration": "1:31"
+    },
+    {
+      "name": "Carry That Weight",
+      "duration": "1:36"
+    },
+    {
+      "name": "The End",
+      "duration": "2:05"
+    },
+    {
+      "name": "Her Majesty",
+      "duration": "0:23"
+    }
+  ]
+}

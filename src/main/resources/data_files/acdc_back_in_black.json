@@ -1,0 +1,50 @@
+{
+  "albumName": "Back in Black",
+  "artist": "AC/DC",
+  "releaseYear": 1980,
+  "numberOfSongs": 10,
+  "totalLength": "42:11",
+
+  "songs": [
+    {
+      "name": "Hells Bells",
+      "duration": "5:10"
+    },
+    {
+      "name": "Shoot to Thrill",
+      "duration": "5:17"
+    },
+    {
+      "name": "What Do You Do for Money Honey",
+      "duration": "3:33"
+    },
+    {
+      "name": "Given the Dog a Bone",
+      "duration": "3:30"
+    },
+    {
+      "name": "Let Me Put My Love into You",
+      "duration": "4:16"
+    },
+    {
+      "name": "Back in Black",
+      "duration": "4:15"
+    },
+    {
+      "name": "You Shook Me All Night Long",
+      "duration": "3:30"
+    },
+    {
+      "name": "Have a Drink on Me",
+      "duration": "3:57"
+    },
+    {
+      "name": "Shake a Leg",
+      "duration": "4:06"
+    },
+    {
+      "name": "Rock and Roll Ain't Noise Pollution",
+      "duration": "4:15"
+    }
+  ]
+}
