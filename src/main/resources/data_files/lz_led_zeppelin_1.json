@@ -1,0 +1,46 @@
+{
+  "name": "Led Zeppelin",
+  "artist": "Led Zeppelin",
+  "releaseYear": 1969,
+  "numberOfSongs": 9,
+  "totalLength": "44:45",
+
+  "songs": [
+    {
+      "name": "Good Times Bad Times",
+      "duration": "2:43"
+    },
+    {
+      "name": "Babe I'm Gonna Leave You",
+      "duration": "6:40"
+    },
+    {
+      "name": "You Shook Me",
+      "duration": "6:30"
+    },
+    {
+      "name": "Dazed and Confused",
+      "duration": "6:27"
+    },
+    {
+      "name": "Your Time Is Gonna Come",
+      "duration": "4:41"
+    },
+    {
+      "name": "Black Mountain Side",
+      "duration": "2:06"
+    },
+    {
+      "name": "Communication Breakdown",
+      "duration": "2:26"
+    },
+    {
+      "name": "I Can't Quit You Baby",
+      "duration": "4:42"
+    },
+    {
+      "name": "How Many More Times",
+      "duration": "8:28"
+    }
+  ]
+}

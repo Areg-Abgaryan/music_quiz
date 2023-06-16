@@ -1,0 +1,54 @@
+{
+  "name": "ABBA",
+  "artist": "ABBA",
+  "releaseYear": 1975,
+  "numberOfSongs": 11,
+  "totalLength": "36:09",
+
+  "songs": [
+    {
+      "name": "Mamma Mia",
+      "duration": "3:32"
+    },
+    {
+      "name": "Hey, Hey Helen",
+      "duration": "3:16"
+    },
+    {
+      "name": "Tropical Loveland",
+      "duration": "3:05"
+    },
+    {
+      "name": "SOS",
+      "duration": "3:22"
+    },
+    {
+      "name": "Man in the Middle",
+      "duration": "3:04"
+    },
+    {
+      "name": "Bang-A-Boomerang",
+      "duration": "3:05"
+    },
+    {
+      "name": "I Do, I Do, I Do, I Do, I Do",
+      "duration": "3:15"
+    },
+    {
+      "name": "Rock Me",
+      "duration": "3:03"
+    },
+    {
+      "name": "Intermezzo No. 1",
+      "duration": "3:48"
+    },
+    {
+      "name": "I've Been Waiting for You",
+      "duration": "3:39"
+    },
+    {
+      "name": "So Long",
+      "duration": "3:06"
+    }
+  ]
+}

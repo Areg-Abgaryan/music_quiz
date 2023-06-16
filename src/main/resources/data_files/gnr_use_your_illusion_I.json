@@ -1,0 +1,74 @@
+{
+  "name": "Use Your Illusion I",
+  "artist": "Guns N' Roses",
+  "releaseYear": 1991,
+  "numberOfSongs": 16,
+  "totalLength": "76:09",
+
+  "songs": [
+    {
+      "name": "Right Next Door to Hell",
+      "duration": "3:02"
+    },
+    {
+      "name": "Dust N' Bones",
+      "duration": "4:58"
+    },
+    {
+      "name": "Live and Let Die",
+      "duration": "3:04"
+    },
+    {
+      "name": "Don't Cry",
+      "duration": "4:44"
+    },
+    {
+      "name": "Perfect Crime",
+      "duration": "2:23"
+    },
+    {
+      "name": "You Ain't the First",
+      "duration": "2:36"
+    },
+    {
+      "name": "Bad Obsession",
+      "duration": "5:28"
+    },
+    {
+      "name": "Back Off Bitch",
+      "duration": "5:03"
+    },
+    {
+      "name": "Double Talkin' Jive",
+      "duration": "3:23"
+    },
+    {
+      "name": "November Rain",
+      "duration": "8:57"
+    },
+    {
+      "name": "The Garden",
+      "duration": "5:22"
+    },
+    {
+      "name": "Garden of Eden",
+      "duration": "2:41"
+    },
+    {
+      "name": "Don't Damn Me",
+      "duration": "5:18"
+    },
+    {
+      "name": "Bad Apples",
+      "duration": "4:28"
+    },
+    {
+      "name": "Dead Horse",
+      "duration": "4:17"
+    },
+    {
+      "name": "Coma",
+      "duration": "10:13"
+    }
+  ]
+}

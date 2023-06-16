@@ -1,0 +1,42 @@
+{
+  "name": "Master of Puppets",
+  "artist": "Metallica",
+  "releaseYear": 1986,
+  "numberOfSongs": 8,
+  "totalLength": "54:47",
+
+  "songs": [
+    {
+      "name": "Battery",
+      "duration": "5:13"
+    },
+    {
+      "name": "Master of Puppets",
+      "duration": "8:36"
+    },
+    {
+      "name": "The Thing That Should Not Be",
+      "duration": "6:36"
+    },
+    {
+      "name": "Welcome Home (Sanitarium)",
+      "duration": "6:27"
+    },
+    {
+      "name": "Disposable Heroes",
+      "duration": "8:17"
+    },
+    {
+      "name": "Leper Messiah",
+      "duration": "5:40"
+    },
+    {
+      "name": "Orion",
+      "duration": "8:27"
+    },
+    {
+      "name": "Damage, Inc.",
+      "duration": "5:32"
+    }
+  ]
+}

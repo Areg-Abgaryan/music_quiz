@@ -1,0 +1,58 @@
+{
+  "name": "Auberge",
+  "artist": "Chris Rea",
+  "releaseYear": 1991,
+  "numberOfSongs": 12,
+  "totalLength": "59:15",
+
+  "songs": [
+    {
+      "name": "Auberge",
+      "duration": "7:18"
+    },
+    {
+      "name": "Gone Fishing",
+      "duration": "4:41"
+    },
+    {
+      "name": "You're Not a Number",
+      "duration": "5:00"
+    },
+    {
+      "name": "Heaven",
+      "duration": "4:13"
+    },
+    {
+      "name": "Set Me Free",
+      "duration": "6:53"
+    },
+    {
+      "name": "Winter Song",
+      "duration": "4:35"
+    },
+    {
+      "name": "Red Shoes",
+      "duration": "3:54"
+    },
+    {
+      "name": "Sing a Song of Love to Me",
+      "duration": "3:34"
+    },
+    {
+      "name": "Every Second Counts",
+      "duration": "5:08"
+    },
+    {
+      "name": "Looking for the Summer",
+      "duration": "5:03"
+    },
+    {
+      "name": "And You My Love",
+      "duration": "5:28"
+    },
+    {
+      "name": "The Mention of Your Name",
+      "duration": "3:17"
+    }
+  ]
+}

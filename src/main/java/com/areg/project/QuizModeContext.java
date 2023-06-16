@@ -11,4 +11,5 @@ import lombok.Getter;
 @AllArgsConstructor
 public class QuizModeContext {
     private int numberOfRounds;
+    private QuizDifficulty difficulty;
 }

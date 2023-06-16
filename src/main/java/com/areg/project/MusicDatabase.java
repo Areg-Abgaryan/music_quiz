@@ -22,14 +22,15 @@ public class MusicDatabase {
     private static final Logger logger = LoggerFactory.getLogger(MusicDatabase.class);
     private static MusicDatabase instance;
 
+    //  FIXME !! Close access to these fields
     private final Map<MusicAlbum, MusicArtist> albumToArtistMap;
     private final Map<MusicSong, MusicArtist> songToArtistMap;
-    private final Set<MusicArtist> artists;
+    private final Map<MusicArtist, Set<MusicAlbum>> artistToAlbumsMap;
 
     private MusicDatabase() {
         albumToArtistMap = new HashMap<>();
         songToArtistMap = new HashMap<>();
-        artists = new HashSet<>();
+        artistToAlbumsMap = new HashMap<>();
     }
 
     public static MusicDatabase getMusicDBInstance() {
@@ -46,8 +47,27 @@ public class MusicDatabase {
     public Set<MusicAlbum> getAlbums() {
         return albumToArtistMap.keySet();
     }
-
     public Set<MusicSong> getSongs() {
         return songToArtistMap.keySet();
+    }
+    public Set<MusicArtist> getArtists() {
+        return artistToAlbumsMap.keySet();
+    }
+
+    public void addAlbumToArtist(MusicAlbum album, MusicArtist artist) {
+        if (!album.getArtist().equals(artist.getName())) {
+            logger.debug("The album {} is not written by the {}", album, artist);
+            return;
+        }
+
+        if (! artistToAlbumsMap.containsKey(artist)) {
+            Set<MusicAlbum> set = artistToAlbumsMap.computeIfAbsent(artist, k -> new HashSet<>());
+            set.add(album);
+            return;
+        }
+
+        Set<MusicAlbum> albums = artistToAlbumsMap.get(artist);
+        albums.add(album);
+        artistToAlbumsMap.put(artist, albums);
     }
 }

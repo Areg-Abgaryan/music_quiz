@@ -1,0 +1,42 @@
+{
+  "name": "Led Zeppelin IV",
+  "artist": "Led Zeppelin",
+  "releaseYear": 1971,
+  "numberOfSongs": 8,
+  "totalLength": "42:20",
+
+  "songs": [
+    {
+      "name": "Black Dog",
+      "duration": "4:55"
+    },
+    {
+      "name": "Rock and Roll",
+      "duration": "3:40"
+    },
+    {
+      "name": "The Battle of Evermore",
+      "duration": "5:38"
+    },
+    {
+      "name": "Stairway to Heaven",
+      "duration": "3:27"
+    },
+    {
+      "name": "Misty Mountain Hop",
+      "duration": "4:39"
+    },
+    {
+      "name": "Four Sticks",
+      "duration": "4:49"
+    },
+    {
+      "name": "Going to California",
+      "duration": "3:36"
+    },
+    {
+      "name": "When the Levee Breaks",
+      "duration": "7:08"
+    }
+  ]
+}

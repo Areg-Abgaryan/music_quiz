@@ -1,0 +1,38 @@
+{
+  "name": "Machine Head",
+  "artist": "Deep Purple",
+  "releaseYear": 1972,
+  "numberOfSongs": 7,
+  "totalLength": "37:46",
+
+  "songs": [
+    {
+      "name": "Highway Star",
+      "duration": "6:05"
+    },
+    {
+      "name": "Maybe I'm a Leo",
+      "duration": "4:51"
+    },
+    {
+      "name": "Pictures of Home",
+      "duration": "5:03"
+    },
+    {
+      "name": "Never Before",
+      "duration": "3:56"
+    },
+    {
+      "name": "Smoke on the Water",
+      "duration": "5:40"
+    },
+    {
+      "name": "Lazy",
+      "duration": "7:19"
+    },
+    {
+      "name": "Space Truckin'",
+      "duration": "4:31"
+    }
+  ]
+}

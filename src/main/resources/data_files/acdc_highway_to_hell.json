@@ -1,0 +1,50 @@
+{
+  "name": "Highway to Hell",
+  "artist": "AC/DC",
+  "releaseYear": 1979,
+  "numberOfSongs": 10,
+  "totalLength": "41:38",
+
+  "songs": [
+    {
+      "name": "Highway to Hell",
+      "duration": "3:29"
+    },
+    {
+      "name": "Girls Got Rhythm",
+      "duration": "3:24"
+    },
+    {
+      "name": "Walk All Over You",
+      "duration": "5:10"
+    },
+    {
+      "name": "Touch Too Much",
+      "duration": "4:28"
+    },
+    {
+      "name": "Beating Around the Bush",
+      "duration": "3:55"
+    },
+    {
+      "name": "Shot Down in Flames",
+      "duration": "3:23"
+    },
+    {
+      "name": "Get It Hot",
+      "duration": "2:35"
+    },
+    {
+      "name": "If You Want Blood (You've Got It)",
+      "duration": "4:38"
+    },
+    {
+      "name": "Love Hungry Man",
+      "duration": "4:18"
+    },
+    {
+      "name": "Night Prowler",
+      "duration": "6:13"
+    }
+  ]
+}

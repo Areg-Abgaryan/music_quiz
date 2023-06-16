@@ -4,6 +4,7 @@
 
 package com.areg.project.managers;
 
+import com.areg.project.QuizDifficulty;
 import com.areg.project.QuizModeContext;
 import com.areg.project.orchestrators.AlbumsOrchestrator;
 import com.areg.project.orchestrators.ArtistsOrchestrator;
@@ -25,13 +26,15 @@ public class QuizWorkflowManager {
 
     public void initQuiz() {
 
-        //  FIXME !! Can add survival mode support for each submode
-        //  FIXME !! Can ask for user's name to track records for each mode, here is when the need for the db comes
+        //  FIXME !! Add survival mode support for each submode
+        //  FIXME !! Ask for user's name to track records for each mode, here is when the need for the db comes
+        //  FIXME !! Add 3. Artists logic
+        //  FIXME !! Refactor everything
         System.out.print("""
                 Hey ! Welcome to Music Quiz !
                 
                 Modes that are currently supported :
-                1. Albums 2. Songs 3. Artists
+                1. Albums 2. Songs
                 
                 Enter quiz mode :\s""");
 
@@ -48,7 +51,7 @@ public class QuizWorkflowManager {
         }
 
         //  FIXME !! Add fields from user input
-        var quizModeContext = new QuizModeContext(5);
+        var quizModeContext = new QuizModeContext(5, QuizDifficulty.EASY);
 
         //  FIXME !! Add timeout wait logic
         switch (mode) {
