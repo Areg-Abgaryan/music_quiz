@@ -8,51 +8,63 @@
   "songs": [
     {
       "name": "Enter Sandman",
-      "duration": "5:31"
+      "duration": "5:31",
+      "difficulty": 1
     },
     {
       "name": "Sad But True",
-      "duration": "5:24"
+      "duration": "5:24",
+      "difficulty": 2
     },
     {
       "name": "Holier Than Thou",
-      "duration": "3:47"
+      "duration": "3:47",
+      "difficulty": 3
     },
     {
       "name": "The Unforgiven",
-      "duration": "6:27"
+      "duration": "6:27",
+      "difficulty": 1
     },
     {
       "name": "Wherever I May Roam",
-      "duration": "6:44"
+      "duration": "6:44",
+      "difficulty": 2
     },
     {
       "name": "Don't Tread on Me",
-      "duration": "4:00"
+      "duration": "4:00",
+      "difficulty": 3
     },
     {
       "name": "Through the Never",
-      "duration": "4:04"
+      "duration": "4:04",
+      "difficulty": 3
     },
     {
       "name": "Nothing Else Matters",
-      "duration": "6:28"
+      "duration": "6:28",
+      "difficulty": 1
     },
     {
       "name": "Of Wolf and Man",
-      "duration": "4:14"
+      "duration": "4:14",
+      "difficulty": 3
     },
     {
       "name": "The God That Failed",
-      "duration": "5:08"
+      "duration": "5:08",
+      "difficulty": 3
     },
     {
       "name": "My Friend of Misery",
-      "duration": "6:49"
+      "duration": "6:49",
+      "difficulty": 3
     },
     {
       "name": "The Struggle Within",
-      "duration": "3:53"
+      "duration": "3:53",
+      "difficulty": 3
     }
   ]
 }

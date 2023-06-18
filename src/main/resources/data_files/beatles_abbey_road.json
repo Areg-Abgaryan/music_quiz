@@ -8,71 +8,88 @@
   "songs": [
     {
       "name": "Come Together",
-      "duration": "4:19"
+      "duration": "4:19",
+      "difficulty": 1
     },
     {
       "name": "Something",
-      "duration": "3:02"
+      "duration": "3:02",
+      "difficulty": 3
     },
     {
       "name": "Maxwell's Silver Hammer",
-      "duration": "3:27"
+      "duration": "3:27",
+      "difficulty": 3
     },
     {
       "name": "Oh! Darling",
-      "duration": "3:27"
+      "duration": "3:27",
+      "difficulty": 2
     },
     {
       "name": "Octopus's Garden",
-      "duration": "2:51"
+      "duration": "2:51",
+      "difficulty": 3
     },
     {
       "name": "I Want You (She's So Heavy)",
-      "duration": "7:47"
+      "duration": "7:47",
+      "difficulty": 3
     },
     {
       "name": "Here Comes the Sun",
-      "duration": "3:05"
+      "duration": "3:05",
+      "difficulty": 1
     },
     {
       "name": "Because",
-      "duration": "2:45"
+      "duration": "2:45",
+      "difficulty": 3
     },
     {
       "name": "You Never Give Me Your Money",
-      "duration": "4:03"
+      "duration": "4:03",
+      "difficulty": 3
     },
     {
       "name": "Sun King",
-      "duration": "2:26"
+      "duration": "2:26",
+      "difficulty": 3
     },
     {
       "name": "Mean Mr. Mustard",
-      "duration": "1:06"
+      "duration": "1:06",
+      "difficulty": 3
     },
     {
       "name": "Polythene Pam",
-      "duration": "1:13"
+      "duration": "1:13",
+      "difficulty": 3
     },
     {
       "name": "She Came In Through the Bathroom Window",
-      "duration": "1:58"
+      "duration": "1:58",
+      "difficulty": 3
     },
     {
       "name": "Golden Slumbers",
-      "duration": "1:31"
+      "duration": "1:31",
+      "difficulty": 3
     },
     {
       "name": "Carry That Weight",
-      "duration": "1:36"
+      "duration": "1:36",
+      "difficulty": 3
     },
     {
       "name": "The End",
-      "duration": "2:05"
+      "duration": "2:05",
+      "difficulty": 3
     },
     {
       "name": "Her Majesty",
-      "duration": "0:23"
+      "duration": "0:23",
+      "difficulty": 3
     }
   ]
 }

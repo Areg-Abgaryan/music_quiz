@@ -8,47 +8,58 @@
   "songs": [
     {
       "name": "Radioactive",
-      "duration": "3:06"
+      "duration": "3:06",
+      "difficulty": 1
     },
     {
       "name": "Tiptoe",
-      "duration": "3:13"
+      "duration": "3:13",
+      "difficulty": 3
     },
     {
       "name": "It's Time",
-      "duration": "3:57"
+      "duration": "3:57",
+      "difficulty": 1
     },
     {
       "name": "Demons",
-      "duration": "2:55"
+      "duration": "2:55",
+      "difficulty": 1
     },
     {
       "name": "On Top of the World",
-      "duration": "3:09"
+      "duration": "3:09",
+      "difficulty": 1
     },
     {
       "name": "Amsterdam",
-      "duration": "4:01"
+      "duration": "4:01",
+      "difficulty": 3
     },
     {
       "name": "Hear Me",
-      "duration": "3:52"
+      "duration": "3:52",
+      "difficulty": 3
     },
     {
       "name": "Every Night",
-      "duration": "3:35"
+      "duration": "3:35",
+      "difficulty": 3
     },
     {
       "name": "Bleeding Out",
-      "duration": "3:41"
+      "duration": "3:41",
+      "difficulty": 3
     },
     {
       "name": "Underdog",
-      "duration": "3:26"
+      "duration": "3:26",
+      "difficulty": 3
     },
     {
       "name": "Nothing Left to Say / Rocks",
-      "duration": "8:56"
+      "duration": "8:56",
+      "difficulty": 3
     }
   ]
 }

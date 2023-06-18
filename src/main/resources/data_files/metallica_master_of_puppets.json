@@ -8,35 +8,43 @@
   "songs": [
     {
       "name": "Battery",
-      "duration": "5:13"
+      "duration": "5:13",
+      "difficulty": 3
     },
     {
       "name": "Master of Puppets",
-      "duration": "8:36"
+      "duration": "8:36",
+      "difficulty": 1
     },
     {
       "name": "The Thing That Should Not Be",
-      "duration": "6:36"
+      "duration": "6:36",
+      "difficulty": 3
     },
     {
       "name": "Welcome Home (Sanitarium)",
-      "duration": "6:27"
+      "duration": "6:27",
+      "difficulty": 2
     },
     {
       "name": "Disposable Heroes",
-      "duration": "8:17"
+      "duration": "8:17",
+      "difficulty": 2
     },
     {
       "name": "Leper Messiah",
-      "duration": "5:40"
+      "duration": "5:40",
+      "difficulty": 3
     },
     {
       "name": "Orion",
-      "duration": "8:27"
+      "duration": "8:27",
+      "difficulty": 2
     },
     {
       "name": "Damage, Inc.",
-      "duration": "5:32"
+      "duration": "5:32",
+      "difficulty": 3
     }
   ]
 }

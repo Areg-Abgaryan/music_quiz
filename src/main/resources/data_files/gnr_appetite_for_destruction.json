@@ -8,51 +8,63 @@
   "songs": [
     {
       "name": "Welcome to the Jungle",
-      "duration": "4:31"
+      "duration": "4:31",
+      "difficulty": 1
     },
     {
       "name": "It's So Easy",
-      "duration": "4:26"
+      "duration": "4:26",
+      "difficulty": 3
     },
     {
       "name": "Nightrain",
-      "duration": "4:26"
+      "duration": "4:26",
+      "difficulty": 3
     },
     {
       "name": "Out ta Get Me",
-      "duration": "4:20"
+      "duration": "4:20",
+      "difficulty": 3
     },
     {
       "name": "Mr. Brownstone",
-      "duration": "3:46"
+      "duration": "3:46",
+      "difficulty": 3
     },
     {
       "name": "Paradise City",
-      "duration": "6:46"
+      "duration": "6:46",
+      "difficulty": 1
     },
     {
       "name": "My Michelle",
-      "duration": "3:39"
+      "duration": "3:39",
+      "difficulty": 3
     },
     {
       "name": "Think About You",
-      "duration": "3:50"
+      "duration": "3:50",
+      "difficulty": 3
     },
     {
       "name": "Sweet Child o' Mine",
-      "duration": "5:55"
+      "duration": "5:55",
+      "difficulty": 1
     },
     {
       "name": "You're Crazy",
-      "duration": "3:16"
+      "duration": "3:16",
+      "difficulty": 3
     },
     {
       "name": "Anything Goes",
-      "duration": "3:25"
+      "duration": "3:25",
+      "difficulty": 3
     },
     {
       "name": "Rocket Queen",
-      "duration": "6:13"
+      "duration": "6:13",
+      "difficulty": 3
     }
   ]
 }

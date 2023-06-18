@@ -8,39 +8,48 @@
   "songs": [
     {
       "name": "Good Times Bad Times",
-      "duration": "2:43"
+      "duration": "2:43",
+      "difficulty": 3
     },
     {
       "name": "Babe I'm Gonna Leave You",
-      "duration": "6:40"
+      "duration": "6:40",
+      "difficulty": 1
     },
     {
       "name": "You Shook Me",
-      "duration": "6:30"
+      "duration": "6:30",
+      "difficulty": 3
     },
     {
       "name": "Dazed and Confused",
-      "duration": "6:27"
+      "duration": "6:27",
+      "difficulty": 2
     },
     {
       "name": "Your Time Is Gonna Come",
-      "duration": "4:41"
+      "duration": "4:41",
+      "difficulty": 3
     },
     {
       "name": "Black Mountain Side",
-      "duration": "2:06"
+      "duration": "2:06",
+      "difficulty": 3
     },
     {
       "name": "Communication Breakdown",
-      "duration": "2:26"
+      "duration": "2:26",
+      "difficulty": 2
     },
     {
       "name": "I Can't Quit You Baby",
-      "duration": "4:42"
+      "duration": "4:42",
+      "difficulty": 3
     },
     {
       "name": "How Many More Times",
-      "duration": "8:28"
+      "duration": "8:28",
+      "difficulty": 3
     }
   ]
 }

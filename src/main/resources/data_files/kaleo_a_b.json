@@ -8,43 +8,53 @@
   "songs": [
     {
       "name": "No Good",
-      "duration": "3:55"
+      "duration": "3:55",
+      "difficulty": 2
     },
     {
       "name": "Way Down We Go",
-      "duration": "3:39"
+      "duration": "3:39",
+      "difficulty": 1
     },
     {
       "name": "Broken Bones",
-      "duration": "4:05"
+      "duration": "4:05",
+      "difficulty": 3
     },
     {
       "name": "Glass House",
-      "duration": "4:01"
+      "duration": "4:01",
+      "difficulty": 3
     },
     {
       "name": "Hot Blood",
-      "duration": "3:38"
+      "duration": "3:38",
+      "difficulty": 3
     },
     {
       "name": "All the Pretty Girls",
-      "duration": "4:29"
+      "duration": "4:29",
+      "difficulty": 3
     },
     {
       "name": "Automobile",
-      "duration": "3:06"
+      "duration": "3:06",
+      "difficulty": 3
     },
     {
       "name": "Vor í Vaglaskógi",
-      "duration": "4:37"
+      "duration": "4:37",
+      "difficulty": 2
     },
     {
       "name": "Save Yourself",
-      "duration": "4:33"
+      "duration": "4:33",
+      "difficulty": 1
     },
     {
       "name": "I Can't Go on Without You",
-      "duration": "6:14"
+      "duration": "6:14",
+      "difficulty": 3
     }
   ]
 }

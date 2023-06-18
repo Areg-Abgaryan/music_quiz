@@ -1,0 +1,40 @@
+{
+  "name": "Meddle",
+  "artist": "Pink Floyd",
+  "releaseYear": 1971,
+  "numberOfSongs": 6,
+  "totalLength": "46:47",
+
+  "songs": [
+    {
+      "name": "One of These Days",
+      "duration": "5:57",
+      "difficulty": 2
+    },
+    {
+      "name": "A Pillow of Winds",
+      "duration": "5:13",
+      "difficulty": 3
+    },
+    {
+      "name": "Fearless",
+      "duration": "6:08",
+      "difficulty": 3
+    },
+    {
+      "name": "San Tropez",
+      "duration": "3:44",
+      "difficulty": 3
+    },
+    {
+      "name": "Seamus",
+      "duration": "2:15",
+      "difficulty": 3
+    },
+    {
+      "name": "Echoes",
+      "duration": "23:30",
+      "difficulty": 1
+    }
+  ]
+}

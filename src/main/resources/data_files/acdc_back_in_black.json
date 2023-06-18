@@ -8,43 +8,53 @@
   "songs": [
     {
       "name": "Hells Bells",
-      "duration": "5:10"
+      "duration": "5:10",
+      "difficulty": 1
     },
     {
       "name": "Shoot to Thrill",
-      "duration": "5:17"
+      "duration": "5:17",
+      "difficulty": 1
     },
     {
       "name": "What Do You Do for Money Honey",
-      "duration": "3:33"
+      "duration": "3:33",
+      "difficulty": 2
     },
     {
       "name": "Given the Dog a Bone",
-      "duration": "3:30"
+      "duration": "3:30",
+      "difficulty": 3
     },
     {
       "name": "Let Me Put My Love into You",
-      "duration": "4:16"
+      "duration": "4:16",
+      "difficulty": 2
     },
     {
       "name": "Back in Black",
-      "duration": "4:15"
+      "duration": "4:15",
+      "difficulty": 1
     },
     {
       "name": "You Shook Me All Night Long",
-      "duration": "3:30"
+      "duration": "3:30",
+      "difficulty": 1
     },
     {
       "name": "Have a Drink on Me",
-      "duration": "3:57"
+      "duration": "3:57",
+      "difficulty": 3
     },
     {
       "name": "Shake a Leg",
-      "duration": "4:06"
+      "duration": "4:06",
+      "difficulty": 2
     },
     {
       "name": "Rock and Roll Ain't Noise Pollution",
-      "duration": "4:15"
+      "duration": "4:15",
+      "difficulty": 2
     }
   ]
 }

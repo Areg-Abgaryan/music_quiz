@@ -1,0 +1,35 @@
+{
+  "name": "Animals",
+  "artist": "Pink Floyd",
+  "releaseYear": 1977,
+  "numberOfSongs": 5,
+  "totalLength": "41:40",
+
+  "songs": [
+    {
+      "name": "Pigs on the Wing (Part One)",
+      "duration": "1:24",
+      "difficulty": 3
+    },
+    {
+      "name": "Dogs",
+      "duration": "17:04",
+      "difficulty": 2
+    },
+    {
+      "name": "Pigs (Three Different Ones)",
+      "duration": "11:28",
+      "difficulty": 1
+    },
+    {
+      "name": "Sheep",
+      "duration": "10:20",
+      "difficulty": 3
+    },
+    {
+      "name": "Pigs on the Wing (Part One)",
+      "duration": "1:24",
+      "difficulty": 3
+    }
+  ]
+}

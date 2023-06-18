@@ -8,67 +8,83 @@
   "songs": [
     {
       "name": "Right Next Door to Hell",
-      "duration": "3:02"
+      "duration": "3:02",
+      "difficulty": 3
     },
     {
       "name": "Dust N' Bones",
-      "duration": "4:58"
+      "duration": "4:58",
+      "difficulty": 3
     },
     {
       "name": "Live and Let Die",
-      "duration": "3:04"
+      "duration": "3:04",
+      "difficulty": 2
     },
     {
       "name": "Don't Cry",
-      "duration": "4:44"
+      "duration": "4:44",
+      "difficulty": 1
     },
     {
       "name": "Perfect Crime",
-      "duration": "2:23"
+      "duration": "2:23",
+      "difficulty": 3
     },
     {
       "name": "You Ain't the First",
-      "duration": "2:36"
+      "duration": "2:36",
+      "difficulty": 3
     },
     {
       "name": "Bad Obsession",
-      "duration": "5:28"
+      "duration": "5:28",
+      "difficulty": 3
     },
     {
       "name": "Back Off Bitch",
-      "duration": "5:03"
+      "duration": "5:03",
+      "difficulty": 3
     },
     {
       "name": "Double Talkin' Jive",
-      "duration": "3:23"
+      "duration": "3:23",
+      "difficulty": 3
     },
     {
       "name": "November Rain",
-      "duration": "8:57"
+      "duration": "8:57",
+      "difficulty": 1
     },
     {
       "name": "The Garden",
-      "duration": "5:22"
+      "duration": "5:22",
+      "difficulty": 3
     },
     {
       "name": "Garden of Eden",
-      "duration": "2:41"
+      "duration": "2:41",
+      "difficulty": 2
     },
     {
       "name": "Don't Damn Me",
-      "duration": "5:18"
+      "duration": "5:18",
+      "difficulty": 3
     },
     {
       "name": "Bad Apples",
-      "duration": "4:28"
+      "duration": "4:28",
+      "difficulty": 3
     },
     {
       "name": "Dead Horse",
-      "duration": "4:17"
+      "duration": "4:17",
+      "difficulty": 3
     },
     {
       "name": "Coma",
-      "duration": "10:13"
+      "duration": "10:13",
+      "difficulty": 3
     }
   ]
 }

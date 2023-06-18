@@ -1,0 +1,65 @@
+{
+  "name": "The Division Bell",
+  "artist": "Pink Floyd",
+  "releaseYear": 1994,
+  "numberOfSongs": 11,
+  "totalLength": "66:23",
+
+  "songs": [
+    {
+      "name": "Cluster One",
+      "duration": "5:56",
+      "difficulty": 3
+    },
+    {
+      "name": "What Do You Want from Me",
+      "duration": "4:22",
+      "difficulty": 2
+    },
+    {
+      "name": "Poles Apart",
+      "duration": "7:03",
+      "difficulty": 3
+    },
+    {
+      "name": "Marooned",
+      "duration": "5:30",
+      "difficulty": 2
+    },
+    {
+      "name": "A Great Day for Freedom",
+      "duration": "4:16",
+      "difficulty": 3
+    },
+    {
+      "name": "Wearing the Inside Out",
+      "duration": "6:49",
+      "difficulty": 3
+    },
+    {
+      "name": "Take It Back",
+      "duration": "6:12",
+      "difficulty": 3
+    },
+    {
+      "name": "Coming Back to Life",
+      "duration": "6:19",
+      "difficulty": 1
+    },
+    {
+      "name": "Keep Talking",
+      "duration": "6:11",
+      "difficulty": 3
+    },
+    {
+      "name": "Lost for Words",
+      "duration": "5:15",
+      "difficulty": 3
+    },
+    {
+      "name": "High Hopes",
+      "duration": "8:31",
+      "difficulty": 1
+    }
+  ]
+}

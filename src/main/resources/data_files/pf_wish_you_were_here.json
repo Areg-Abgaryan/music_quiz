@@ -8,23 +8,28 @@
   "songs": [
     {
       "name": "Shine On You Crazy Diamond (Parts I–V)",
-      "duration": "13:32"
+      "duration": "13:32",
+      "difficulty": 1
     },
     {
       "name": "Welcome to the Machine",
-      "duration": "7:28"
+      "duration": "7:28",
+      "difficulty": 2
     },
     {
       "name": "Have a Cigar",
-      "duration": "5:08"
+      "duration": "5:08",
+      "difficulty": 2
     },
     {
       "name": "Wish You Were Here",
-      "duration": "5:35"
+      "duration": "5:35",
+      "difficulty": 1
     },
     {
       "name": "Shine On You Crazy Diamond (Parts VI–IX)",
-      "duration": "12:28"
+      "duration": "12:28",
+      "difficulty": 1
     }
   ]
 }

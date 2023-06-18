@@ -8,39 +8,48 @@
   "songs": [
     {
       "name": "Bad Boys Running Wild",
-      "duration": "3:54"
+      "duration": "3:54",
+      "difficulty": 3
     },
     {
       "name": "Rock You Like a Hurricane",
-      "duration": "4:11"
+      "duration": "4:11",
+      "difficulty": 
     },
     {
       "name": "I'm Leaving You",
-      "duration": "4:16"
+      "duration": "4:16",
+      "difficulty": 3
     },
     {
       "name": "Coming Home",
-      "duration": "4:58"
+      "duration": "4:58",
+      "difficulty": 3
     },
     {
       "name": "The Same Thrill",
-      "duration": "3:30"
+      "duration": "3:30",
+      "difficulty": 3
     },
     {
       "name": "Big City Nights",
-      "duration": "4:08"
+      "duration": "4:08",
+      "difficulty": 3
     },
     {
       "name": "As Soon as the Good Times Roll",
-      "duration": "5:01"
+      "duration": "5:01",
+      "difficulty": 3
     },
     {
       "name": "Crossfire",
-      "duration": "4:31"
+      "duration": "4:31",
+      "difficulty": 3
     },
     {
       "name": "Still Loving You",
-      "duration": "6:26"
+      "duration": "6:26",
+      "difficulty": 1
     }
   ]
 }

@@ -6,9 +6,10 @@ package com.areg.project.managers;
 
 import com.areg.project.QuizDifficulty;
 import com.areg.project.QuizModeContext;
-import com.areg.project.orchestrators.AlbumsOrchestrator;
-import com.areg.project.orchestrators.ArtistsOrchestrator;
-import com.areg.project.orchestrators.SongsOrchestrator;
+import com.areg.project.orchestrators.AlbumToArtistsOrchestrator;
+import com.areg.project.orchestrators.ArtistToAlbumsOrchestrator;
+import com.areg.project.orchestrators.SongToAlbumsOrchestrator;
+import com.areg.project.orchestrators.SongToArtistsOrchestrator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,9 +21,10 @@ public class QuizWorkflowManager {
     private static final Logger logger = LoggerFactory.getLogger(QuizWorkflowManager.class);
 
     //  FIXME !! Make these managers as Spring.io Services, & init in Autowired constructors
-    private final AlbumsOrchestrator albumsOrchestrator = new AlbumsOrchestrator();
-    private final SongsOrchestrator songsOrchestrator = new SongsOrchestrator();
-    private final ArtistsOrchestrator artistsOrchestrator = new ArtistsOrchestrator();
+    private final AlbumToArtistsOrchestrator albumToArtistsOrchestrator = new AlbumToArtistsOrchestrator();
+    private final ArtistToAlbumsOrchestrator artistToAlbumsOrchestrator = new ArtistToAlbumsOrchestrator();
+    private final SongToArtistsOrchestrator songToArtistsOrchestrator = new SongToArtistsOrchestrator();
+    private final SongToAlbumsOrchestrator songToAlbumsOrchestrator = new SongToAlbumsOrchestrator();
 
     public void initQuiz() {
 
@@ -32,7 +34,10 @@ public class QuizWorkflowManager {
                 Hey ! Welcome to Music Quiz !
                 
                 Modes that are currently supported :
-                1. Albums 2. Songs 3. Artists
+                1. Album from Artists
+                2. Artist from Albums
+                3. Song from Artists
+                4. Song from Albums
                 
                 Enter quiz mode :\s""");
 
@@ -53,12 +58,10 @@ public class QuizWorkflowManager {
 
         //  FIXME !! Add timeout wait logic
         switch (mode) {
-            case "1" ->
-                    albumsOrchestrator.startQuiz(quizModeContext);
-            case "2" ->
-                    songsOrchestrator.startQuiz(quizModeContext);
-            case "3" ->
-                    artistsOrchestrator.startQuiz(quizModeContext);
+            case "1" -> albumToArtistsOrchestrator.startQuiz(quizModeContext);
+            case "2" -> artistToAlbumsOrchestrator.startQuiz(quizModeContext);
+            case "3" -> songToArtistsOrchestrator.startQuiz(quizModeContext);
+            case "4" -> songToAlbumsOrchestrator.startQuiz(quizModeContext);
         }
     }
 }

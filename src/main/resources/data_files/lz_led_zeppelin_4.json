@@ -8,35 +8,43 @@
   "songs": [
     {
       "name": "Black Dog",
-      "duration": "4:55"
+      "duration": "4:55",
+      "difficulty": 2
     },
     {
       "name": "Rock and Roll",
-      "duration": "3:40"
+      "duration": "3:40",
+      "difficulty": 1
     },
     {
       "name": "The Battle of Evermore",
-      "duration": "5:38"
+      "duration": "5:38",
+      "difficulty": 3
     },
     {
       "name": "Stairway to Heaven",
-      "duration": "3:27"
+      "duration": "3:27",
+      "difficulty": 1
     },
     {
       "name": "Misty Mountain Hop",
-      "duration": "4:39"
+      "duration": "4:39",
+      "difficulty": 3
     },
     {
       "name": "Four Sticks",
-      "duration": "4:49"
+      "duration": "4:49",
+      "difficulty": 3
     },
     {
       "name": "Going to California",
-      "duration": "3:36"
+      "duration": "3:36",
+      "difficulty": 3
     },
     {
       "name": "When the Levee Breaks",
-      "duration": "7:08"
+      "duration": "7:08",
+      "difficulty": 3
     }
   ]
 }

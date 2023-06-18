@@ -8,43 +8,53 @@
   "songs": [
     {
       "name": "Mein Herz brennt",
-      "duration": "4:39"
+      "duration": "4:39",
+      "difficulty": 1
     },
     {
       "name": "Links 2 3 4",
-      "duration": "3:36"
+      "duration": "3:36",
+      "difficulty": 2
     },
     {
       "name": "Sonne",
-      "duration": "4:32"
+      "duration": "4:32",
+      "difficulty": 1
     },
     {
       "name": "Ich will",
-      "duration": "3:37"
+      "duration": "3:37",
+      "difficulty": 1
     },
     {
       "name": "Feuer frei!",
-      "duration": "3:11"
+      "duration": "3:11",
+      "difficulty": 2
     },
     {
       "name": "Mutter",
-      "duration": "4:32"
+      "duration": "4:32",
+      "difficulty": 1
     },
     {
       "name": "Spieluhr",
-      "duration": "4:46"
+      "duration": "4:46",
+      "difficulty": 3
     },
     {
       "name": "Zwitter",
-      "duration": "4:17"
+      "duration": "4:17",
+      "difficulty": 3
     },
     {
       "name": "Rein raus",
-      "duration": "3:09"
+      "duration": "3:09",
+      "difficulty": 3
     },
     {
       "name": "Adios",
-      "duration": "3:39"
+      "duration": "3:39",
+      "difficulty": 3
     }
   ]
 }

@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
  *  Giving quizModeContext.numberOfRounds artists,
  *  The user needs to choose the right album that he released at each step.
  */
-public class ArtistsOrchestrator extends OrchestratorBase {
+public class ArtistToAlbumsOrchestrator extends OrchestratorBase {
 
     @Override
     public void startQuiz(QuizModeContext quizModeContext) {

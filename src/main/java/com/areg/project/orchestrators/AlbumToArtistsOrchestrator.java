@@ -5,8 +5,8 @@
 package com.areg.project.orchestrators;
 
 import com.areg.project.QuizModeContext;
+import com.areg.project.models.MusicAlbum;
 import com.areg.project.models.MusicArtist;
-import com.areg.project.models.MusicSong;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,10 +18,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- *  Giving quizModeContext.numberOfRounds songs,
+ *  Giving quizModeContext.numberOfRounds albums,
  *  The user needs to choose the right artist at each step.
  */
-public class SongsOrchestrator extends OrchestratorBase {
+public class AlbumToArtistsOrchestrator extends OrchestratorBase {
 
     @Override
     public void startQuiz(QuizModeContext quizModeContext) {
@@ -31,33 +31,34 @@ public class SongsOrchestrator extends OrchestratorBase {
             return;
         }
 
-        final Map<MusicSong, Boolean> songsUsedInTheGame = musicDatabase.getSongs().stream()
+        final Map<MusicAlbum, Boolean> albumsUsedInTheGame = musicDatabase.getAlbums().stream()
                 .collect(Collectors.toMap(album -> album, album -> false, (a, b) -> b));
-        final List<MusicSong> songsList = new ArrayList<>(songsUsedInTheGame.keySet());
+        final List<MusicAlbum> albumsList = new ArrayList<>(albumsUsedInTheGame.keySet());
         final List<MusicArtist> artistsList = new ArrayList<>(musicDatabase.getArtists());
 
+        //  FIXME !! Add a score tracker, then add to the db with the user's info
         int score = 0;
         final int rounds = quizModeContext.getNumberOfRounds();
 
         //  Building correct & wrong answers candidates
         for (int r = 1; r <= rounds; ++r) {
 
-            MusicSong song;
-            //  Find a song that was never used for next quiz round
+            MusicAlbum album;
+            //  Find an album that was never used for next quiz round
             for ( ; ; ) {
-                final MusicSong randomKey = songsList.get(new Random().nextInt(songsList.size()));
-                final Boolean randomValue = songsUsedInTheGame.get(randomKey);
+                final MusicAlbum randomKey = albumsList.get(new Random().nextInt(albumsList.size()));
+                final Boolean randomValue = albumsUsedInTheGame.get(randomKey);
 
                 //  FIXME !! Try to call randomizer directly from the map, not create list for it
                 if (! randomValue) {
-                    song = randomKey;
-                    songsUsedInTheGame.put(randomKey, true);
+                    album = randomKey;
+                    albumsUsedInTheGame.put(randomKey, true);
                     break;
                 }
             }
 
             //  Here is the right answer
-            final String correctAnswer = musicDatabase.getSongToArtistMap().get(song).getName();
+            final String correctAnswer = musicDatabase.getAlbumToArtistMap().get(album).getName();
             Set<String> fourArtists = new HashSet<>(Collections.singleton(correctAnswer));
 
             //  Adding 3 wrong answers
@@ -67,7 +68,7 @@ public class SongsOrchestrator extends OrchestratorBase {
 
             //  Asking user to choose the correct answer
             System.out.println("\nRound " + r + " :\n");
-            System.out.println("Song : \"" + song.getName() + "\"");
+            System.out.println("Album : \"" + album.getName() + "\"");
             System.out.print("Artists : ");
 
             final var artistToOption = super.subtypeToOption(fourArtists);

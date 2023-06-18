@@ -8,31 +8,38 @@
   "songs": [
     {
       "name": "Highway Star",
-      "duration": "6:05"
+      "duration": "6:05",
+      "difficulty": 2
     },
     {
       "name": "Maybe I'm a Leo",
-      "duration": "4:51"
+      "duration": "4:51",
+      "difficulty": 3
     },
     {
       "name": "Pictures of Home",
-      "duration": "5:03"
+      "duration": "5:03",
+      "difficulty": 3
     },
     {
       "name": "Never Before",
-      "duration": "3:56"
+      "duration": "3:56",
+      "difficulty": 3
     },
     {
       "name": "Smoke on the Water",
-      "duration": "5:40"
+      "duration": "5:40",
+      "difficulty": 1
     },
     {
       "name": "Lazy",
-      "duration": "7:19"
+      "duration": "7:19",
+      "difficulty": 3
     },
     {
       "name": "Space Truckin'",
-      "duration": "4:31"
+      "duration": "4:31",
+      "difficulty": 3
     }
   ]
 }

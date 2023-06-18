@@ -8,51 +8,63 @@
   "songs": [
     {
       "name": "Auberge",
-      "duration": "7:18"
+      "duration": "7:18",
+      "difficulty": 2
     },
     {
       "name": "Gone Fishing",
-      "duration": "4:41"
+      "duration": "4:41",
+      "difficulty": 3
     },
     {
       "name": "You're Not a Number",
-      "duration": "5:00"
+      "duration": "5:00",
+      "difficulty": 3
     },
     {
       "name": "Heaven",
-      "duration": "4:13"
+      "duration": "4:13",
+      "difficulty": 3
     },
     {
       "name": "Set Me Free",
-      "duration": "6:53"
+      "duration": "6:53",
+      "difficulty": 2
     },
     {
       "name": "Winter Song",
-      "duration": "4:35"
+      "duration": "4:35",
+      "difficulty": 2
     },
     {
       "name": "Red Shoes",
-      "duration": "3:54"
+      "duration": "3:54",
+      "difficulty": 3
     },
     {
       "name": "Sing a Song of Love to Me",
-      "duration": "3:34"
+      "duration": "3:34",
+      "difficulty": 3
     },
     {
       "name": "Every Second Counts",
-      "duration": "5:08"
+      "duration": "5:08",
+      "difficulty": 3
     },
     {
       "name": "Looking for the Summer",
-      "duration": "5:03"
+      "duration": "5:03",
+      "difficulty": 2
     },
     {
       "name": "And You My Love",
-      "duration": "5:28"
+      "duration": "5:28",
+      "difficulty": 2
     },
     {
       "name": "The Mention of Your Name",
-      "duration": "3:17"
+      "duration": "3:17",
+      "difficulty": 3
     }
   ]
 }

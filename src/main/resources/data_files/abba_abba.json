@@ -8,47 +8,58 @@
   "songs": [
     {
       "name": "Mamma Mia",
-      "duration": "3:32"
+      "duration": "3:32",
+      "difficulty": 1
     },
     {
       "name": "Hey, Hey Helen",
-      "duration": "3:16"
+      "duration": "3:16",
+      "difficulty": 3
     },
     {
       "name": "Tropical Loveland",
-      "duration": "3:05"
+      "duration": "3:05",
+      "difficulty": 3
     },
     {
       "name": "SOS",
-      "duration": "3:22"
+      "duration": "3:22",
+      "difficulty": 3
     },
     {
       "name": "Man in the Middle",
-      "duration": "3:04"
+      "duration": "3:04",
+      "difficulty": 3
     },
     {
       "name": "Bang-A-Boomerang",
-      "duration": "3:05"
+      "duration": "3:05",
+      "difficulty": 3
     },
     {
       "name": "I Do, I Do, I Do, I Do, I Do",
-      "duration": "3:15"
+      "duration": "3:15",
+      "difficulty": 3
     },
     {
       "name": "Rock Me",
-      "duration": "3:03"
+      "duration": "3:03",
+      "difficulty": 3
     },
     {
       "name": "Intermezzo No. 1",
-      "duration": "3:48"
+      "duration": "3:48",
+      "difficulty": 3
     },
     {
       "name": "I've Been Waiting for You",
-      "duration": "3:39"
+      "duration": "3:39",
+      "difficulty": 3
     },
     {
       "name": "So Long",
-      "duration": "3:06"
+      "duration": "3:06",
+      "difficulty": 3
     }
   ]
 }

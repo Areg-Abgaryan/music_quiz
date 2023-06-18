@@ -8,43 +8,53 @@
   "songs": [
     {
       "name": "Speak to Me",
-      "duration": "1:05"
+      "duration": "1:05",
+      "difficulty": 2
     },
     {
       "name": "Breathe (In the Air)",
-      "duration": "2:49"
+      "duration": "2:49",
+      "difficulty": 1
     },
     {
       "name": "On the Run",
-      "duration": "3:45"
+      "duration": "3:45",
+      "difficulty": 3
     },
     {
       "name": "Time",
-      "duration": "6:53"
+      "duration": "6:53",
+      "difficulty": 1
     },
     {
       "name": "The Great Gig in the Sky",
-      "duration": "4:43"
+      "duration": "4:43",
+      "difficulty": 2
     },
     {
       "name": "Money",
-      "duration": "6:22"
+      "duration": "6:22",
+      "difficulty": 1
     },
     {
       "name": "Us and Them",
-      "duration": "7:49"
+      "duration": "7:49",
+      "difficulty": 2
     },
     {
       "name": "Any Colour You Like",
-      "duration": "3:26"
+      "duration": "3:26",
+      "difficulty": 2
     },
     {
       "name": "Brain Damage",
-      "duration": "3:46"
+      "duration": "3:46",
+      "difficulty": 2
     },
     {
       "name": "Eclipse",
-      "duration": "2:12"
+      "duration": "2:12",
+      "difficulty": 1
     }
   ]
 }

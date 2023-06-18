@@ -4,7 +4,13 @@
 
 package com.areg.project;
 
-//  FIXME !! Add Difficulty logic in orchestrators; Maybe also add Extreme difficulty level
+//  FIXME !! Add Difficulty logic in orchestrators;
+
+/**
+ * Easy - everyone knows
+ * Medium - you might know
+ * Hard - no one should know
+ */
 public enum QuizDifficulty {
     EASY,
     MEDIUM,
