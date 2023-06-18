@@ -28,13 +28,11 @@ public class QuizWorkflowManager {
 
         //  FIXME !! Add survival mode support for each submode
         //  FIXME !! Ask for user's name to track records for each mode, here is when the need for the db comes
-        //  FIXME !! Add 3. Artists logic
-        //  FIXME !! Refactor everything
         System.out.print("""
                 Hey ! Welcome to Music Quiz !
                 
                 Modes that are currently supported :
-                1. Albums 2. Songs
+                1. Albums 2. Songs 3. Artists
                 
                 Enter quiz mode :\s""");
 

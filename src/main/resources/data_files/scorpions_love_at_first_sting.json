@@ -1,0 +1,46 @@
+{
+  "name": "Love at First Sting",
+  "artist": "Scorpions",
+  "releaseYear": 1984,
+  "numberOfSongs": 9,
+  "totalLength": "40:55",
+
+  "songs": [
+    {
+      "name": "Bad Boys Running Wild",
+      "duration": "3:54"
+    },
+    {
+      "name": "Rock You Like a Hurricane",
+      "duration": "4:11"
+    },
+    {
+      "name": "I'm Leaving You",
+      "duration": "4:16"
+    },
+    {
+      "name": "Coming Home",
+      "duration": "4:58"
+    },
+    {
+      "name": "The Same Thrill",
+      "duration": "3:30"
+    },
+    {
+      "name": "Big City Nights",
+      "duration": "4:08"
+    },
+    {
+      "name": "As Soon as the Good Times Roll",
+      "duration": "5:01"
+    },
+    {
+      "name": "Crossfire",
+      "duration": "4:31"
+    },
+    {
+      "name": "Still Loving You",
+      "duration": "6:26"
+    }
+  ]
+}

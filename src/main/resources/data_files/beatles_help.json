@@ -1,0 +1,66 @@
+{
+  "name": "Help",
+  "artist": "The Beatles",
+  "releaseYear": 1965,
+  "numberOfSongs": 14,
+  "totalLength": "33:44",
+
+  "songs": [
+    {
+      "name": "Help!",
+      "duration": "2:18"
+    },
+    {
+      "name": "The Night Before",
+      "duration": "2:34"
+    },
+    {
+      "name": "You've Got to Hide Your Love Away",
+      "duration": "2:09"
+    },
+    {
+      "name": "I Need You",
+      "duration": "2:28"
+    },
+    {
+      "name": "Another Girl",
+      "duration": "2:05"
+    },
+    {
+      "name": "You're Going to Lose That Girl",
+      "duration": "2:18"
+    },
+    {
+      "name": "Ticket to Ride",
+      "duration": "3:09"
+    },
+    {
+      "name": "Act Naturally",
+      "duration": "2:30"
+    },
+    {
+      "name": "It's Only Love",
+      "duration": "1:56"
+    },
+    {
+      "name": "You Like Me Too Much",
+      "duration": "2:36"
+    },
+    {
+      "name": "Tell Me What You See",
+      "duration": "2:37"
+    },
+    {
+      "name": "I've Just Seen a Face",
+      "duration": "2:05"
+    },
+    {
+      "name": "Yesterday",
+      "duration": "2:05"
+    },
+    {
+      "name": "Dizzy Miss Lizzy",
+      "duration": "2:54"
+    }
+  ]
+}

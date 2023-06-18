@@ -1,0 +1,50 @@
+{
+  "name": "A/B",
+  "artist": "Kaleo",
+  "releaseYear": 2016,
+  "numberOfSongs": 10,
+  "totalLength": "42:17",
+
+  "songs": [
+    {
+      "name": "No Good",
+      "duration": "3:55"
+    },
+    {
+      "name": "Way Down We Go",
+      "duration": "3:39"
+    },
+    {
+      "name": "Broken Bones",
+      "duration": "4:05"
+    },
+    {
+      "name": "Glass House",
+      "duration": "4:01"
+    },
+    {
+      "name": "Hot Blood",
+      "duration": "3:38"
+    },
+    {
+      "name": "All the Pretty Girls",
+      "duration": "4:29"
+    },
+    {
+      "name": "Automobile",
+      "duration": "3:06"
+    },
+    {
+      "name": "Vor í Vaglaskógi",
+      "duration": "4:37"
+    },
+    {
+      "name": "Save Yourself",
+      "duration": "4:33"
+    },
+    {
+      "name": "I Can't Go on Without You",
+      "duration": "6:14"
+    }
+  ]
+}

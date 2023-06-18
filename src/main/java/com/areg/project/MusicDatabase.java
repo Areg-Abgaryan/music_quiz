@@ -16,16 +16,16 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-@Getter
 public class MusicDatabase {
 
     private static final Logger logger = LoggerFactory.getLogger(MusicDatabase.class);
+
     private static MusicDatabase instance;
 
-    //  FIXME !! Close access to these fields
-    private final Map<MusicAlbum, MusicArtist> albumToArtistMap;
-    private final Map<MusicSong, MusicArtist> songToArtistMap;
-    private final Map<MusicArtist, Set<MusicAlbum>> artistToAlbumsMap;
+    //  FIXME !! Try to remove this getter
+    @Getter private final Map<MusicAlbum, MusicArtist> albumToArtistMap;
+    @Getter private final Map<MusicSong, MusicArtist> songToArtistMap;
+    @Getter private final Map<MusicArtist, Set<MusicAlbum>> artistToAlbumsMap;
 
     private MusicDatabase() {
         albumToArtistMap = new HashMap<>();
@@ -55,7 +55,31 @@ public class MusicDatabase {
     }
 
     public void addAlbumToArtist(MusicAlbum album, MusicArtist artist) {
-        if (!album.getArtist().equals(artist.getName())) {
+        if (album == null || artist == null) {
+            logger.debug("Unexpected null value for album or artist");
+            return;
+        }
+        if (! album.getArtist().equals(artist.getName())) {
+            logger.debug("The album {} is not written by the {}", album, artist);
+            return;
+        }
+        albumToArtistMap.put(album, artist);
+    }
+
+    public void addSongToArtist(MusicSong song, MusicArtist artist) {
+        if (song == null || artist == null) {
+            logger.debug("Unexpected null value for song or artist");
+            return;
+        }
+        if (! song.getArtist().getName().equals(artist.getName())) {
+            logger.debug("The song {} is not written by the {}", song, artist);
+            return;
+        }
+        songToArtistMap.put(song, artist);
+    }
+
+    public void addArtistToAlbum(MusicArtist artist, MusicAlbum album) {
+        if (! album.getArtist().equals(artist.getName())) {
             logger.debug("The album {} is not written by the {}", album, artist);
             return;
         }

@@ -1,0 +1,54 @@
+{
+  "name": "Night Visions",
+  "artist": "Imagine Dragons",
+  "releaseYear": 2012,
+  "numberOfSongs": 11,
+  "totalLength": "43:51",
+
+  "songs": [
+    {
+      "name": "Radioactive",
+      "duration": "3:06"
+    },
+    {
+      "name": "Tiptoe",
+      "duration": "3:13"
+    },
+    {
+      "name": "It's Time",
+      "duration": "3:57"
+    },
+    {
+      "name": "Demons",
+      "duration": "2:55"
+    },
+    {
+      "name": "On Top of the World",
+      "duration": "3:09"
+    },
+    {
+      "name": "Amsterdam",
+      "duration": "4:01"
+    },
+    {
+      "name": "Hear Me",
+      "duration": "3:52"
+    },
+    {
+      "name": "Every Night",
+      "duration": "3:35"
+    },
+    {
+      "name": "Bleeding Out",
+      "duration": "3:41"
+    },
+    {
+      "name": "Underdog",
+      "duration": "3:26"
+    },
+    {
+      "name": "Nothing Left to Say / Rocks",
+      "duration": "8:56"
+    }
+  ]
+}

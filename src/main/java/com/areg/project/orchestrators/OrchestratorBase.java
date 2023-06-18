@@ -12,9 +12,16 @@ import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.stream.IntStream;
 
 public abstract class OrchestratorBase {
 
@@ -30,7 +37,7 @@ public abstract class OrchestratorBase {
         int i = 1;
         Map<String, Integer> subtypeToOption = new HashMap<>(QuizConstants.RoundOptions);
         for (var artist : fourOptions) {
-            System.out.print(i + ". " + artist);
+            System.out.print(i + ". \"" + artist + "\"");
             if (i != 4) {
                 System.out.print("  ");
             }
@@ -43,27 +50,56 @@ public abstract class OrchestratorBase {
     //  This method updates the score after each round based on the answer of the user
     protected int answerCheck(Map<String, Integer> subtypeToOption, String correctAnswer, int score) {
 
-        System.out.print("\n\nPlease, choose the correct option : ");
+        System.out.print("\n\nEnter your choice in " + QuizConstants.RoundTimeoutSeconds + "seconds : ");
 
-        //  FIXME !! Add timeout logic for each answer, ~30 secs
-        while (true) {
-            final var scanner = new Scanner(System.in);
-            final String option = scanner.next();
-            //  FIXME !! Here, optimize 1-1 check
-            if (! (Objects.equals(option, "1") || Objects.equals(option, "2") ||
-                    Objects.equals(option, "3") || Objects.equals(option, "4"))) {
-                System.out.println("Wrong input ! Please choose from the options above.");
+        final String option = getOptionFromUserInput();
+        if (option.equals("")) {
+            return score;
+        }
+        if (! isValidOption(option)) {
+            logger.debug("Wrong input : {} ", option);
+            System.out.println("Wrong input : \"" + option + "\"");
+        } else {
+            final var correctNumber = subtypeToOption.get(correctAnswer);
+            if (Integer.parseInt(option) == correctNumber) {
+                ++score;
+                System.out.println("Exactly !");
             } else {
-                final var correctNumber = subtypeToOption.get(correctAnswer);
-                if (Integer.parseInt(option) == correctNumber) {
-                    ++score;
-                    System.out.println("Exactly !");
-                } else {
-                    System.out.println("No :( ! The correct answer is : " + correctNumber + ". " + correctAnswer);
-                }
-                break;
+                System.out.println("No :( ! The correct answer is : " + correctNumber + ". " + correctAnswer);
             }
         }
         return score;
     }
+
+    private String getOptionFromUserInput() {
+
+        final ExecutorService service = Executors.newFixedThreadPool(1);
+        final Callable<String> callable = () -> new Scanner(System.in).next();
+        final Future<String> inputFuture = service.submit(callable);
+
+        try {
+            return inputFuture.get(QuizConstants.RoundTimeoutSeconds, TimeUnit.SECONDS);
+        } catch (InterruptedException | ExecutionException e) {
+            throw new IllegalStateException("Thread was interrupted", e);
+        } catch (TimeoutException e) {
+            // Tell user they timed out
+            System.out.println("\nTime out !");
+        } finally {
+            service.shutdown();
+        }
+        return "";
+    }
+
+    private boolean isValidOption(String option) {
+        if (option == null) {
+            return false;
+        }
+        try {
+            int intOption = Integer.parseInt(option);
+            return IntStream.rangeClosed(1, QuizConstants.RoundOptions).anyMatch(i -> i == intOption);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+    }
+
 }

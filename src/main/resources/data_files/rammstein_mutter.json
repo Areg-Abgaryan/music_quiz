@@ -1,0 +1,50 @@
+{
+  "name": "Mutter",
+  "artist": "Rammstein",
+  "releaseYear": 2001,
+  "numberOfSongs": 11,
+  "totalLength": "45:02",
+
+  "songs": [
+    {
+      "name": "Mein Herz brennt",
+      "duration": "4:39"
+    },
+    {
+      "name": "Links 2 3 4",
+      "duration": "3:36"
+    },
+    {
+      "name": "Sonne",
+      "duration": "4:32"
+    },
+    {
+      "name": "Ich will",
+      "duration": "3:37"
+    },
+    {
+      "name": "Feuer frei!",
+      "duration": "3:11"
+    },
+    {
+      "name": "Mutter",
+      "duration": "4:32"
+    },
+    {
+      "name": "Spieluhr",
+      "duration": "4:46"
+    },
+    {
+      "name": "Zwitter",
+      "duration": "4:17"
+    },
+    {
+      "name": "Rein raus",
+      "duration": "3:09"
+    },
+    {
+      "name": "Adios",
+      "duration": "3:39"
+    }
+  ]
+}

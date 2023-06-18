@@ -21,6 +21,7 @@ public class QuizApplication {
     private static final QuizWorkflowManager quizWorkflowManager = new QuizWorkflowManager();
 
 
+    //  FIXME !! Refactor everything
     public static void main(String[] args) {
         SpringApplication.run(QuizApplication.class, args);
         fileParsingManager.parseDataFiles(dataFilesPath);
