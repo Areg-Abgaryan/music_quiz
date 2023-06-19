@@ -26,8 +26,7 @@ public class SongToArtistsOrchestrator extends OrchestratorBase {
     @Override
     public void startQuiz(QuizModeContext quizModeContext) {
 
-        if (quizModeContext.getNumberOfRounds() > musicDatabase.getAlbums().size()) {
-            logger.debug("Too many rounds required to play");
+        if (! isValidQuizModeContext(quizModeContext)) {
             return;
         }
 
@@ -42,22 +41,10 @@ public class SongToArtistsOrchestrator extends OrchestratorBase {
         //  Building correct & wrong answers candidates
         for (int r = 1; r <= rounds; ++r) {
 
-            MusicSong song;
-            //  Find a song that was never used for next quiz round
-            for ( ; ; ) {
-                final MusicSong randomKey = songsList.get(new Random().nextInt(songsList.size()));
-                final Boolean randomValue = songsUsedInTheGame.get(randomKey);
-
-                //  FIXME !! Try to call randomizer directly from the map, not create list for it
-                if (! randomValue) {
-                    song = randomKey;
-                    songsUsedInTheGame.put(randomKey, true);
-                    break;
-                }
-            }
+            final MusicSong song = super.getRandomItem(songsList, songsUsedInTheGame);
 
             //  Here is the right answer
-            final String correctAnswer = musicDatabase.getSongToArtistMap().get(song).getName();
+            final String correctAnswer = song.getArtist().getName();
             Set<String> fourArtists = new HashSet<>(Collections.singleton(correctAnswer));
 
             //  Adding 3 wrong answers

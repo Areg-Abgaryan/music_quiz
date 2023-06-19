@@ -24,7 +24,7 @@ public class MusicDatabase {
 
     //  FIXME !! Try to remove this getter
     @Getter private final Map<MusicAlbum, MusicArtist> albumToArtistMap;
-    @Getter private final Map<MusicSong, MusicArtist> songToArtistMap;
+    private final Map<MusicSong, MusicArtist> songToArtistMap;
     @Getter private final Map<MusicArtist, Set<MusicAlbum>> artistToAlbumsMap;
 
     private MusicDatabase() {
@@ -56,11 +56,11 @@ public class MusicDatabase {
 
     public void addAlbumToArtist(MusicAlbum album, MusicArtist artist) {
         if (album == null || artist == null) {
-            logger.debug("Unexpected null value for album or artist");
+            logger.debug("Unexpected null value for album or artist.");
             return;
         }
         if (! album.getArtist().equals(artist.getName())) {
-            logger.debug("The album {} is not written by the {}", album, artist);
+            logger.debug("The album {} is not written by the {}.", album, artist);
             return;
         }
         albumToArtistMap.put(album, artist);
@@ -68,11 +68,11 @@ public class MusicDatabase {
 
     public void addSongToArtist(MusicSong song, MusicArtist artist) {
         if (song == null || artist == null) {
-            logger.debug("Unexpected null value for song or artist");
+            logger.debug("Unexpected null value for song or artist.");
             return;
         }
         if (! song.getArtist().getName().equals(artist.getName())) {
-            logger.debug("The song {} is not written by the {}", song, artist);
+            logger.debug("The song {} is not written by the {}.", song, artist);
             return;
         }
         songToArtistMap.put(song, artist);
@@ -80,7 +80,7 @@ public class MusicDatabase {
 
     public void addArtistToAlbum(MusicArtist artist, MusicAlbum album) {
         if (! album.getArtist().equals(artist.getName())) {
-            logger.debug("The album {} is not written by the {}", album, artist);
+            logger.debug("The album {} is not written by the {}.", album, artist);
             return;
         }
 

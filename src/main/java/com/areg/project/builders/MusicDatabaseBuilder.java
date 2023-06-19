@@ -33,10 +33,10 @@ public class MusicDatabaseBuilder {
             musicDatabase.addArtistToAlbum(artist, album);
 
             for (var song : album.getSongs()) {
-                final var tempSong = new MusicSong(song.getName(), artist, song.getDuration());
+                final var tempSong = new MusicSong(song.getName(), artist, album, song.getDuration(), song.getDifficulty());
                 musicDatabase.addSongToArtist(tempSong, artist);
             }
         }
-        logger.debug("buildMusicDatabase takes {} milliseconds", + (System.currentTimeMillis() - startTime));
+        logger.debug("buildMusicDatabase takes {} milliseconds.", + (System.currentTimeMillis() - startTime));
     }
 }

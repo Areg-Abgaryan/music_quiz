@@ -16,5 +16,7 @@ import lombok.ToString;
 public class MusicSong {
     private String name;
     private MusicArtist artist;
+    private MusicAlbum album;
     private String duration;
+    private int difficulty;
 }

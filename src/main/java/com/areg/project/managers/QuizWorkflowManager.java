@@ -45,8 +45,9 @@ public class QuizWorkflowManager {
         String mode = scanner.next();
 
         while (true) {
-            if (Objects.equals(mode, "1") || Objects.equals(mode, "2") || Objects.equals(mode, "3")) {
-                logger.debug("Starting quiz mode {}", mode);
+            if (Objects.equals(mode, "1") || Objects.equals(mode, "2")
+                    || Objects.equals(mode, "3") || Objects.equals(mode, "4")) {
+                logger.debug("Starting quiz mode {}.", mode);
                 break;
             }
             System.out.println("Wrong input ! Please, choose one of the above mentioned modes.");

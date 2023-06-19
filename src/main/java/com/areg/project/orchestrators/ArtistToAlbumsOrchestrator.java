@@ -26,8 +26,7 @@ public class ArtistToAlbumsOrchestrator extends OrchestratorBase {
     @Override
     public void startQuiz(QuizModeContext quizModeContext) {
 
-        if (quizModeContext.getNumberOfRounds() > musicDatabase.getAlbums().size()) {
-            logger.debug("Too many rounds required to play");
+        if (! isValidQuizModeContext(quizModeContext)) {
             return;
         }
 
@@ -43,19 +42,7 @@ public class ArtistToAlbumsOrchestrator extends OrchestratorBase {
         //  Building correct & wrong answers candidates
         for (int r = 1; r <= rounds; ++r) {
 
-            MusicArtist artist;
-            //  Find an artist that was never used for next quiz round
-            for ( ; ; ) {
-                final MusicArtist randomKey = artistsList.get(new Random().nextInt(artistsList.size()));
-                final Boolean randomValue = artistsUsedInTheGame.get(randomKey);
-
-                //  FIXME !! Try to call randomizer directly from the map, not create list for it
-                if (! randomValue) {
-                    artist = randomKey;
-                    artistsUsedInTheGame.put(randomKey, true);
-                    break;
-                }
-            }
+            final MusicArtist artist = super.getRandomItem(artistsList, artistsUsedInTheGame);
 
             //  Here is the right answer
             final List<MusicAlbum> artistAlbumsList = new ArrayList<>(musicDatabase.getArtistToAlbumsMap().get(artist));

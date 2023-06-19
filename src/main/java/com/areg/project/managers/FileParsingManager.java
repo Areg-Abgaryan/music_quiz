@@ -52,7 +52,7 @@ public class FileParsingManager {
                 throw new RuntimeException(e);
             }
         }
-        logger.debug("parseDataFiles takes {} milliseconds", + (System.currentTimeMillis() - startTime));
+        logger.debug("parseDataFiles takes {} milliseconds.", + (System.currentTimeMillis() - startTime));
         musicDatabaseBuilder.buildMusicDatabase(albums);
     }
 
@@ -63,7 +63,7 @@ public class FileParsingManager {
 
     private boolean isValid(String dataFilesPath){
         if (dataFilesPath.isEmpty()) {
-            logger.error("Error : Invalid path provided {}, ", dataFilesPath);
+            logger.error("Error : Invalid path provided {}.", dataFilesPath);
             return false;
         }
 
@@ -76,7 +76,7 @@ public class FileParsingManager {
 
     private boolean isJsonFile(File file) {
         if (! file.getName().endsWith(".json")) {
-            logger.debug("{} is not a .json file", file.getName());
+            logger.debug("{} is not a .json file.", file.getName());
             return false;
         }
         return true;
