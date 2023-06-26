@@ -7,11 +7,9 @@ package com.areg.project.orchestrators;
 import com.areg.project.MusicDatabase;
 import com.areg.project.QuizConstants;
 import com.areg.project.QuizModeContext;
-import com.areg.project.models.MusicSong;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,7 +59,7 @@ public abstract class OrchestratorBase {
     protected boolean isValidQuizModeContext(QuizModeContext quizModeContext) {
 
         if (quizModeContext == null) {
-            logger.debug("Quiz Mode Context is null.");
+            logger.debug("Quiz mode context is null.");
             return false;
         }
 
@@ -91,6 +89,8 @@ public abstract class OrchestratorBase {
      * This method updates the score after each round based on the answer of the user
      */
     protected int answerCheck(Map<String, Integer> subtypeToOption, String correctAnswer, int score) {
+
+        //  FIXME !! Add a score tracker, then add to the db with the user's info
 
         System.out.print("\n\nEnter your choice in " + QuizConstants.RoundTimeoutSeconds + " seconds : ");
 

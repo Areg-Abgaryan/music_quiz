@@ -22,8 +22,8 @@ public class MusicDatabase {
 
     private static MusicDatabase instance;
 
-    //  FIXME !! Try to remove this getter
-    @Getter private final Map<MusicAlbum, MusicArtist> albumToArtistMap;
+    //  FIXME !! Try to remove thi getter
+    private final Map<MusicAlbum, MusicArtist> albumToArtistMap;
     private final Map<MusicSong, MusicArtist> songToArtistMap;
     @Getter private final Map<MusicArtist, Set<MusicAlbum>> artistToAlbumsMap;
 

@@ -35,7 +35,6 @@ public class SongToAlbumsOrchestrator extends OrchestratorBase {
         final List<MusicSong> songsList = new ArrayList<>(songsUsedInTheGame.keySet());
         final List<MusicAlbum> albumsList = new ArrayList<>(musicDatabase.getAlbums());
 
-        //  FIXME !! Add a score tracker, then add to the db with the user's info
         int score = 0;
         final int rounds = quizModeContext.getNumberOfRounds();
 

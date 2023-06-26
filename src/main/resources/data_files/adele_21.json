@@ -1,0 +1,65 @@
+{
+  "name": "21",
+  "artist": "Adele",
+  "releaseYear": 2011,
+  "numberOfSongs": 11,
+  "totalLength": "48:01",
+
+  "songs": [
+    {
+      "name": "Rolling in the Deep",
+      "duration": "3:49",
+      "difficulty": 1
+    },
+    {
+      "name": "Rumour Has It",
+      "duration": "3:43",
+      "difficulty": 3
+    },
+    {
+      "name": "Turning Tables",
+      "duration": "3:10",
+      "difficulty": 3
+    },
+    {
+      "name": "Don't You Remember",
+      "duration": "4:03",
+      "difficulty": 3
+    },
+    {
+      "name": "Set Fire to the Rain",
+      "duration": "4:01",
+      "difficulty": 2
+    },
+    {
+      "name": "He Won't Go",
+      "duration": "4:37",
+      "difficulty": 3
+    },
+    {
+      "name": "Take It All",
+      "duration": "3:48",
+      "difficulty": 3
+    },
+    {
+      "name": "I'll Be Waiting",
+      "duration": "4:01",
+      "difficulty": 3
+    },
+    {
+      "name": "One and Only",
+      "duration": "5:48",
+      "difficulty": 3
+    },
+    {
+      "name": "Lovesong",
+      "duration": "5:16",
+      "difficulty": 2
+    },
+    {
+      "name": "Someone like You",
+      "duration": "4:47",
+      "difficulty": 1
+    }
+  ]
+}

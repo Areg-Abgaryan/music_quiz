@@ -4,9 +4,11 @@
 
 package com.areg.project.models;
 
+import com.areg.project.QuizDifficulty;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.ArrayList;
@@ -22,4 +24,5 @@ public class MusicAlbum {
     private int numberOfSongs;
     private String totalLength;
     private ArrayList<MusicSong> songs;
+    @Setter QuizDifficulty difficulty;
 }

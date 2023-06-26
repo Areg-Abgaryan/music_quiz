@@ -29,7 +29,7 @@
     {
       "name": "Feuer frei!",
       "duration": "3:11",
-      "difficulty": 2
+      "difficulty": 1
     },
     {
       "name": "Mutter",
@@ -44,7 +44,7 @@
     {
       "name": "Zwitter",
       "duration": "4:17",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "name": "Rein raus",
@@ -54,6 +54,11 @@
     {
       "name": "Adios",
       "duration": "3:39",
+      "difficulty": 3
+    },
+    {
+      "name": "Nebel",
+      "duration": "4:54",
       "difficulty": 3
     }
   ]

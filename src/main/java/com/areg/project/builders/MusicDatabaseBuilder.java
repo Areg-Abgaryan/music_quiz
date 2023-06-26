@@ -4,6 +4,7 @@
 
 package com.areg.project.builders;
 
+import com.areg.project.QuizDifficulty;
 import com.areg.project.models.MusicAlbum;
 import com.areg.project.models.MusicArtist;
 import com.areg.project.MusicDatabase;
@@ -12,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Set;
+import java.util.stream.IntStream;
 
 public class MusicDatabaseBuilder {
 
@@ -28,6 +30,8 @@ public class MusicDatabaseBuilder {
         final long startTime = System.currentTimeMillis();
 
         for (var album : musicAlbums) {
+            album.setDifficulty(calculateAlbumDifficulty(album));
+
             final var artist = new MusicArtist(album.getArtist());
             musicDatabase.addAlbumToArtist(album, artist);
             musicDatabase.addArtistToAlbum(artist, album);
@@ -38,5 +42,20 @@ public class MusicDatabaseBuilder {
             }
         }
         logger.debug("buildMusicDatabase takes {} milliseconds.", + (System.currentTimeMillis() - startTime));
+    }
+
+    private QuizDifficulty calculateAlbumDifficulty(MusicAlbum album) {
+
+        final int songs = album.getNumberOfSongs();
+        int totalDifficultySum = IntStream.range(0, songs).map(i -> album.getSongs().get(i).getDifficulty()).sum();
+        final double averageDifficulty = (double) totalDifficultySum / songs;
+
+        if (averageDifficulty > 2) {
+            return QuizDifficulty.HARD;
+        } else if (averageDifficulty > 1) {
+            return QuizDifficulty.MEDIUM;
+        } else {
+            return QuizDifficulty.EASY;
+        }
     }
 }
