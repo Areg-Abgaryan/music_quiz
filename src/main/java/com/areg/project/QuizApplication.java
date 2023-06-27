@@ -22,6 +22,8 @@ public class QuizApplication {
 
 
     //  FIXME !! Refactor everything
+    //  FIXME !! Check 2nd mode : F. ex. : ACDC : Highway to Hell , Back in Black
+    //  FIXME !! Check when timeout is 20 seconds, it doesn't work
     public static void main(String[] args) {
         SpringApplication.run(QuizApplication.class, args);
         fileParsingManager.parseDataFiles(dataFilesPath);

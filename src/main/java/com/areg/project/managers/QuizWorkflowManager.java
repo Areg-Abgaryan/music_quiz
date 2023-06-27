@@ -4,6 +4,7 @@
 
 package com.areg.project.managers;
 
+import com.areg.project.QuizConstants;
 import com.areg.project.QuizDifficulty;
 import com.areg.project.QuizModeContext;
 import com.areg.project.orchestrators.AlbumToArtistsOrchestrator;
@@ -55,7 +56,7 @@ public class QuizWorkflowManager {
         }
 
         //  FIXME !! Add fields from user input
-        var quizModeContext = new QuizModeContext(5, QuizDifficulty.EASY);
+        var quizModeContext = new QuizModeContext(QuizConstants.NumberOfRounds, QuizDifficulty.EASY);
 
         //  FIXME !! Add timeout wait logic
         switch (mode) {
