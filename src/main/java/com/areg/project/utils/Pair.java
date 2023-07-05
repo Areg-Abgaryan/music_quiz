@@ -2,7 +2,7 @@
  * Copyright (c) 2023 Areg Abgaryan
  */
 
-package com.areg.project.util;
+package com.areg.project.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

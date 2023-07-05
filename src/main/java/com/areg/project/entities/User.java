@@ -19,7 +19,7 @@ import lombok.ToString;
 //  FIXME !! Add personal records for each mode, mail, country, maybe auth info (keys)
 
 @Table(name = "users", schema = "public")
-@Entity //  This tells Hibernate to make a table out of this class
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

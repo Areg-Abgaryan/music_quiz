@@ -43,7 +43,7 @@ public class AuthenticationManager {
 
         System.out.print("""
                 \n
-                1. Login
+                1. Log In
                 2. Sign Up
                 Enter option :\s""");
 
@@ -57,20 +57,38 @@ public class AuthenticationManager {
         }
 
         switch (option) {
-            case "1" -> login();
+            case "1" -> logIn();
             case "2" -> signUp();
         }
     }
 
-    private void login() {
-        //  FIXME !! Refactor, make only 1 call here, besides, add another call from db for fetching by id
-        final var users = userManager.getAllUsers();
+    private void logIn() {
+        while (true) {
+            final var scanner = new Scanner(System.in);
+
+            System.out.println("E-mail : ");
+            final String email = scanner.next();
+            System.out.println("Password : ");
+            final String password = scanner.next();
+
+            final var user = userManager.getUserByEmail(email);
+            if (user != null) {
+                //  FIXME !! Decrypt password here, the condition is always false
+                if (! password.equals(user.getPassword())) {
+                    System.out.println("Invalid password provided !");
+                } else {
+                    System.out.println("Successfully logged in !");
+                    break;
+                }
+            } else {
+                System.out.println("Invalid email provided !");
+            }
+        }
     }
+
     private void signUp() {
 
-        //  FIXME !! Call only when the user is signing up, not logging in
         final var users = userManager.getAllUsers();
-
         String userName, email, password;
 
         while (true) {
@@ -146,19 +164,12 @@ public class AuthenticationManager {
     /*
     public boolean checkPassword(String password) {
 
-		// if the password doesn't equal itself in full lowercase, it must have an uppercase char
 		boolean hasUppercase = !password.equals(password.toLowerCase());
-		// and vice versa
 		boolean hasLowercase = !password.equals(password.toUpperCase());
-
-		// check for at least one number
 		boolean hasNumber = password.matches(".*\\d.*");
-
 		boolean isLongEnough = password.length() >= validLength;
 
-		// default this to true to pass the check if no special characters are required
 		boolean hasSpecialCharacters = true;
-
 		if (checkSpecialCharacters) {
 			//Checks at least one char is not alphanumeric
 			hasSpecialCharacters = !password.matches("[A-Za-z0-9 ]*");
@@ -179,7 +190,7 @@ public class AuthenticationManager {
         final var spec = new PBEKeySpec(chars, salt, iterations, 64 * 8);
         SecretKeyFactory skf;
         try {
-            skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+            skf = SecretKeyFactory.getInstance(QuizConstants.SecretKeyAlgorithm);
             final byte[] hash = skf.generateSecret(spec).getEncoded();
             generatedPassword = iterations + ":" + toHex(salt) + ":" + toHex(hash);
         } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
@@ -210,7 +221,7 @@ public class AuthenticationManager {
 
     private Random createSecureRandom() {
         try {
-            return SecureRandom.getInstance("SHA1PRNG");
+            return SecureRandom.getInstance(QuizConstants.RNGAlgorithm);
         } catch (NoSuchAlgorithmException nae) {
             logger.warn("Couldn't create strong secure random generator, reason : {}.", nae.getMessage());
             return new SecureRandom();
