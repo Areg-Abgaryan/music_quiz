@@ -1,0 +1,55 @@
+{
+  "name": "Thriller",
+  "artist": "Michael Jackson",
+  "releaseYear": 1982,
+  "numberOfSongs": 9,
+  "totalLength": "42:16",
+
+  "songs": [
+    {
+      "name": "Wanna Be Startin' Somethin'",
+      "duration": "6:03",
+      "difficulty": 3
+    },
+    {
+      "name": "Baby Be Mine",
+      "duration": "4:20",
+      "difficulty": 3
+    },
+    {
+      "name": "The Girl Is Mine",
+      "duration": "3:42",
+      "difficulty": 2
+    },
+    {
+      "name": "Thriller",
+      "duration": "5:58",
+      "difficulty": 1
+    },
+    {
+      "name": "Beat It",
+      "duration": "4:17",
+      "difficulty": 2
+    },
+    {
+      "name": "Billie Jean",
+      "duration": "4:57",
+      "difficulty": 1
+    },
+    {
+      "name": "Human Nature",
+      "duration": "4:06",
+      "difficulty": 3
+    },
+    {
+      "name": "P.Y.T. (Pretty Young Thing)",
+      "duration": "3:58",
+      "difficulty": 3
+    },
+    {
+      "name": "The Lady in My Life",
+      "duration": "5:00",
+      "difficulty": 3
+    }
+  ]
+}

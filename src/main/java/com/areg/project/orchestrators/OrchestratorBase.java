@@ -9,6 +9,7 @@ import com.areg.project.QuizConstants;
 import com.areg.project.QuizModeContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,6 +26,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.IntStream;
 
+@Service
 public abstract class OrchestratorBase {
 
     protected static final Logger logger = LoggerFactory.getLogger(OrchestratorBase.class);
@@ -33,7 +35,7 @@ public abstract class OrchestratorBase {
     /**
      * @param quizModeContext Settings about the concrete quiz mode
      */
-    abstract void startQuiz(QuizModeContext quizModeContext);
+    public abstract void startQuiz(QuizModeContext quizModeContext);
 
     protected <Type> Type getRandomItem(List<Type> itemsList, Map<Type, Boolean> itemsUsedInTheGame) {
 
@@ -140,6 +142,7 @@ public abstract class OrchestratorBase {
             int intOption = Integer.parseInt(option);
             return IntStream.rangeClosed(1, QuizConstants.RoundOptions).anyMatch(i -> i == intOption);
         } catch (NumberFormatException nfe) {
+            nfe.printStackTrace();
             return false;
         }
     }

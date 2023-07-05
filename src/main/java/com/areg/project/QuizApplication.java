@@ -8,12 +8,14 @@ import com.areg.project.managers.FileParsingManager;
 import com.areg.project.managers.QuizWorkflowManager;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 /**
  * Music Quiz Java application
  * @author Areg Abgaryan
  */
 @SpringBootApplication
+@EntityScan
 public class QuizApplication {
 
     private static final FileParsingManager fileParsingManager = new FileParsingManager();
@@ -22,8 +24,6 @@ public class QuizApplication {
 
 
     //  FIXME !! Refactor everything
-    //  FIXME !! Check 2nd mode : F. ex. : ACDC : Highway to Hell , Back in Black
-    //  FIXME !! Check when timeout is 20 seconds, it doesn't work
     public static void main(String[] args) {
         SpringApplication.run(QuizApplication.class, args);
         fileParsingManager.parseDataFiles(dataFilesPath);

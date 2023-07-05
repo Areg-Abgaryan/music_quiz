@@ -11,10 +11,12 @@ import com.areg.project.MusicDatabase;
 import com.areg.project.models.MusicSong;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 import java.util.stream.IntStream;
 
+@Service
 public class MusicDatabaseBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(MusicDatabaseBuilder.class);
@@ -47,7 +49,7 @@ public class MusicDatabaseBuilder {
     private QuizDifficulty calculateAlbumDifficulty(MusicAlbum album) {
 
         final int songs = album.getNumberOfSongs();
-        int totalDifficultySum = IntStream.range(0, songs).map(i -> album.getSongs().get(i).getDifficulty()).sum();
+        final int totalDifficultySum = IntStream.range(0, songs).map(i -> album.getSongs().get(i).getDifficulty()).sum();
         final double averageDifficulty = (double) totalDifficultySum / songs;
 
         if (averageDifficulty > 2) {
