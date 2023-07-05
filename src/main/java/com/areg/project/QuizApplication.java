@@ -4,11 +4,16 @@
 
 package com.areg.project;
 
+import com.areg.project.managers.AuthenticationManager;
 import com.areg.project.managers.FileParsingManager;
 import com.areg.project.managers.QuizWorkflowManager;
+import com.areg.project.managers.UserManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+//  FIXME !! Refactor everything
 
 /**
  * Music Quiz Java application
@@ -18,12 +23,13 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @EntityScan
 public class QuizApplication {
 
+    //  FIXME !! Refactor this
     private static final FileParsingManager fileParsingManager = new FileParsingManager();
     private static final String dataFilesPath = fileParsingManager.getDataFilesDirectory();
-    private static final QuizWorkflowManager quizWorkflowManager = new QuizWorkflowManager();
+    private static final UserManager userManager = new UserManager();
+    private static final AuthenticationManager authenticationManager = new AuthenticationManager(userManager);
+    private static final QuizWorkflowManager quizWorkflowManager = new QuizWorkflowManager(authenticationManager);
 
-
-    //  FIXME !! Refactor everything
     public static void main(String[] args) {
         SpringApplication.run(QuizApplication.class, args);
         fileParsingManager.parseDataFiles(dataFilesPath);

@@ -14,22 +14,21 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-//  FIXME !! Change package name
 //  FIXME !! Add personal records for each mode, mail, country, maybe auth info (keys)
 
-@Table(name = "user", schema = "public")
+@Table(name = "users", schema = "public")
 @Entity //  This tells Hibernate to make a table out of this class
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(unique = true, nullable = false)
-    private String userName;
 
     @Column(unique = true, nullable = false)
     private String email;
@@ -37,11 +36,14 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column(unique = true, nullable = false)
+    private String userName;
+
+    //  private String country;
+
     public User(String userName, String email, String password) {
         this.userName = userName;
         this.email = email;
         this.password = password;
     }
-
-    //  private String country;
 }

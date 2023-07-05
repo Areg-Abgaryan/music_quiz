@@ -7,7 +7,6 @@ package com.areg.project.managers;
 import com.areg.project.QuizConstants;
 import com.areg.project.QuizDifficulty;
 import com.areg.project.QuizModeContext;
-import com.areg.project.entities.User;
 import com.areg.project.orchestrators.AlbumToArtistsOrchestrator;
 import com.areg.project.orchestrators.ArtistToAlbumsOrchestrator;
 import com.areg.project.orchestrators.OrchestratorBase;
@@ -15,43 +14,40 @@ import com.areg.project.orchestrators.SongToAlbumsOrchestrator;
 import com.areg.project.orchestrators.SongToArtistsOrchestrator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 import java.util.Scanner;
 
+//  FIXME !! Init in Autowired constructors all Spring beans
+//  FIXME !! Add survival mode support for each submode
+//  FIXME !! Add exit & goto beginning logic in the end
+//  FIXME !! Parse all the data into the database, remove run-time local db creation
 @Service
 public class QuizWorkflowManager {
 
     private static final Logger logger = LoggerFactory.getLogger(QuizWorkflowManager.class);
 
-    //  FIXME !! Keep only one base class instance and initialize as an argument child class
-    //  FIXME !! Make these managers as Spring.io Services, & init in Autowired constructors
-
     private OrchestratorBase orchestratorBase;
 
-    //  @Autowired
-    //  public QuizWorkflowManager(AlbumToArtistsOrchestrator albumToArtistsOrchestrator,
-    //                             ArtistToAlbumsOrchestrator artistToAlbumsOrchestrator,
-    //                             SongToArtistsOrchestrator songToArtistsOrchestrator,
-    //                             SongToAlbumsOrchestrator songToAlbumsOrchestrator) {
-    //      this.albumToArtistsOrchestrator = albumToArtistsOrchestrator;
-    //      this.artistToAlbumsOrchestrator = artistToAlbumsOrchestrator;
-    //      this.songToArtistsOrchestrator = songToArtistsOrchestrator;
-    //      this.songToAlbumsOrchestrator = songToAlbumsOrchestrator;
-    //  }
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    public QuizWorkflowManager(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
+
     public void initQuiz() {
 
-        //  FIXME !! Add survival mode support for each submode
-        //  FIXME !! Ask for user's name to track records for each mode, here is when the need for the db comes
+        System.out.print("Hey ! Welcome to Music Quiz !");
 
-        UserManager.createUser(new User("ss", "@mail", "1234"));
+        authenticationManager.authenticate();
 
+        //  FIXME !! After authentication, choose play game or see my info or see my records
 
         System.out.print("""
-                Hey ! Welcome to Music Quiz !
-                
-                Modes that are currently supported :
+                \nModes that are currently supported :
                 1. Album from Artists
                 2. Artist from Albums
                 3. Song from Artists
@@ -62,6 +58,7 @@ public class QuizWorkflowManager {
         final var scanner = new Scanner(System.in);
         String mode = scanner.next();
 
+        //  FIXME !! Refactor this
         while (true) {
             if (Objects.equals(mode, "1") || Objects.equals(mode, "2")
                     || Objects.equals(mode, "3") || Objects.equals(mode, "4")) {
