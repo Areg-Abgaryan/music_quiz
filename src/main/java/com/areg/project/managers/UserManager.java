@@ -70,6 +70,7 @@ public class UserManager {
         return null;
     }
 
+    //  FIXME !! Fix these methods, update/delete
     public void deleteUser(User user) {
         final Session session = HibernateUtils.getSessionFactory().openSession();
         try {
@@ -78,6 +79,20 @@ public class UserManager {
             session.getTransaction().commit();
         } catch (Exception e) {
             logger.error("Error : Could not delete user : {}", e.getMessage());
+            session.getTransaction().rollback();
+        } finally {
+            session.close();
+        }
+    }
+
+    public void updateUser(User user) {
+        final Session session = HibernateUtils.getSessionFactory().openSession();
+        try {
+            session.beginTransaction();
+            session.refresh(user);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            logger.error("Error : Could not update user : {}", e.getMessage());
             session.getTransaction().rollback();
         } finally {
             session.close();

@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 //  FIXME !! Init in Autowired constructors all Spring beans
@@ -31,7 +30,7 @@ public class QuizWorkflowManager {
 
     private OrchestratorBase orchestratorBase;
 
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
 
     @Autowired
     public QuizWorkflowManager(AuthenticationManager authenticationManager) {
@@ -55,41 +54,46 @@ public class QuizWorkflowManager {
                 
                 Enter quiz mode :\s""");
 
-        final var scanner = new Scanner(System.in);
-        String mode = scanner.next();
-
-        //  FIXME !! Refactor this
-        while (true) {
-            if (Objects.equals(mode, "1") || Objects.equals(mode, "2")
-                    || Objects.equals(mode, "3") || Objects.equals(mode, "4")) {
-                logger.debug("Starting quiz mode {}.", mode);
-                break;
-            }
-            System.out.println("Wrong input ! Please, choose one of the above mentioned modes.");
-            mode = scanner.next();
-        }
 
         //  FIXME !! Add fields from user input
         var quizModeContext = new QuizModeContext(QuizConstants.NumberOfRounds, QuizDifficulty.EASY);
 
+        final var scanner = new Scanner(System.in);
+        String mode = scanner.next();
+
         //  FIXME !! Add timeout wait logic
-        switch (mode) {
-            case "1" -> {
-                orchestratorBase = new AlbumToArtistsOrchestrator();
-                orchestratorBase.startQuiz(quizModeContext);
+        boolean isInputValid = false;
+        do {
+            switch (mode) {
+                case "1" -> {
+                    logger.debug("Starting quiz mode {}.", mode);
+                    isInputValid = true;
+                    orchestratorBase = new AlbumToArtistsOrchestrator();
+                    orchestratorBase.startQuiz(quizModeContext);
+                }
+                case "2" -> {
+                    logger.debug("Starting quiz mode {}.", mode);
+                    isInputValid = true;
+                    orchestratorBase = new ArtistToAlbumsOrchestrator();
+                    orchestratorBase.startQuiz(quizModeContext);
+                }
+                case "3" -> {
+                    logger.debug("Starting quiz mode {}.", mode);
+                    isInputValid = true;
+                    orchestratorBase = new SongToArtistsOrchestrator();
+                    orchestratorBase.startQuiz(quizModeContext);
+                }
+                case "4" -> {
+                    logger.debug("Starting quiz mode {}.", mode);
+                    isInputValid = true;
+                    orchestratorBase = new SongToAlbumsOrchestrator();
+                    orchestratorBase.startQuiz(quizModeContext);
+                }
+                default -> {
+                    System.out.println("Wrong input ! Please, choose one of the options above.");
+                    mode = scanner.next();
+                }
             }
-            case "2" -> {
-                orchestratorBase = new ArtistToAlbumsOrchestrator();
-                orchestratorBase.startQuiz(quizModeContext);
-            }
-            case "3" -> {
-                orchestratorBase = new SongToArtistsOrchestrator();
-                orchestratorBase.startQuiz(quizModeContext);
-            }
-            case "4" -> {
-                orchestratorBase = new SongToAlbumsOrchestrator();
-                orchestratorBase.startQuiz(quizModeContext);
-            }
-        }
+        } while (! isInputValid);
     }
 }

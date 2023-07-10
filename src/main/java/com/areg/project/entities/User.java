@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-//  FIXME !! Add personal records for each mode, mail, country, maybe auth info (keys)
+//  FIXME !! Add personal records for each mode, country, maybe auth info (keys)
 
 @Table(name = "users", schema = "public")
 @Entity

@@ -10,6 +10,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -34,7 +35,7 @@ public class HibernateUtils {
                 configuration.addAnnotatedClass(User.class);
                 var builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
-            } catch (Exception e) {
+            } catch (HibernateException e) {
                 logger.error("Error : Could not instantiate Session Factory !");
                 e.printStackTrace();
             }
@@ -54,6 +55,7 @@ public class HibernateUtils {
         final CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(type);
         final Root<T> root = criteriaQuery.from(type);
         criteriaQuery.select(root).where(criteriaBuilder.equal(root.get(fieldName), fieldValue));
+        //  Here we can write an HQL query
         final Query<T> query = session.createQuery(criteriaQuery);
         return query.getSingleResult();
     }

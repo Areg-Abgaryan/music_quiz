@@ -50,19 +50,27 @@ public class AuthenticationManager {
         final var scanner = new Scanner(System.in);
         String option = scanner.next();
 
-        //  FIXME !! Refactor this
-        while (! Objects.equals(option, "1") && ! Objects.equals(option, "2")) {
-            System.out.println("Wrong input ! Please, choose one of the options above.");
-            option = scanner.next();
-        }
-
-        switch (option) {
-            case "1" -> logIn();
-            case "2" -> signUp();
-        }
+        boolean isInputValid = false;
+        do {
+            switch (option) {
+                case "1" -> {
+                    logIn();
+                    isInputValid = true;
+                }
+                case "2" -> {
+                    signUp();
+                    isInputValid = true;
+                }
+                default -> {
+                    System.out.println("Wrong input ! Please, choose one of the options above.");
+                    option = scanner.next();
+                }
+            }
+        } while (! isInputValid);
     }
 
     private void logIn() {
+
         while (true) {
             final var scanner = new Scanner(System.in);
 
@@ -107,9 +115,7 @@ public class AuthenticationManager {
             System.out.println("Enter username : ");
             final var scanner = new Scanner(System.in);
             String username = scanner.next();
-            if (! isValidUserName(users, username)) {
-                System.out.println("Username is already specified, choose another");
-            } else {
+            if (isValidUserName(users, username)) {
                 userName = username;
                 break;
             }
@@ -144,9 +150,18 @@ public class AuthenticationManager {
         userManager.createUser(user);
     }
 
-    //  FIXME !! Add username validation [length, startsWith, special characters]
     private boolean isValidUserName(List<User> users, String userName) {
-        return users.stream().noneMatch(user -> userName.equals(user.getUserName()));
+        for (var user : users) {
+            if (userName.equals(user.getUserName())) {
+                System.out.println("This username is already reserved. Choose another one !");
+                return false;
+            }
+        }
+        if (userName.length() < 4 || userName.length() > 20) {
+            System.out.println("The username length must be 4-20 characters. Choose another one !");
+            return false;
+        }
+        return true;
     }
 
     //  FIXME !! Add mail validation [endsWith, startsWith, special characters, etc]
