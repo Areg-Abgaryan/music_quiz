@@ -24,5 +24,5 @@ public class MusicAlbum {
     private int numberOfSongs;
     private String totalLength;
     private ArrayList<MusicSong> songs;
-    @Setter QuizDifficulty difficulty;
+    @Setter private QuizDifficulty difficulty;
 }

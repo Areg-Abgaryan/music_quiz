@@ -6,7 +6,7 @@ package com.areg.project.orchestrators;
 
 import com.areg.project.MusicDatabase;
 import com.areg.project.QuizConstants;
-import com.areg.project.QuizModeContext;
+import com.areg.project.QuizContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -33,9 +33,11 @@ public abstract class OrchestratorBase {
     protected final MusicDatabase musicDatabase = MusicDatabase.getMusicDBInstance();
 
     /**
-     * @param quizModeContext Settings about the concrete quiz mode
+     * @param quizContext Settings about the concrete quiz mode
      */
-    public abstract void startQuiz(QuizModeContext quizModeContext);
+    public void startQuiz(QuizContext quizContext) {
+        logger.debug("Starting quiz mode {}.", quizContext.getMode());
+    }
 
     protected <Type> Type getRandomItem(List<Type> itemsList, Map<Type, Boolean> itemsUsedInTheGame) {
 
@@ -58,14 +60,14 @@ public abstract class OrchestratorBase {
     /**
      *  Validate context of quiz mode
      */
-    protected boolean isValidQuizModeContext(QuizModeContext quizModeContext) {
+    protected boolean isValidQuizModeContext(QuizContext quizContext) {
 
-        if (quizModeContext == null) {
+        if (quizContext == null) {
             logger.debug("Quiz mode context is null.");
             return false;
         }
 
-        if (quizModeContext.getNumberOfRounds() > musicDatabase.getAlbums().size()) {
+        if (quizContext.getNumberOfRounds() > musicDatabase.getAlbums().size()) {
             logger.debug("Too many rounds required to play.");
             return false;
         }

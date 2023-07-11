@@ -9,7 +9,8 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class QuizModeContext {
-    private int numberOfRounds;
+public class QuizContext {
+    private QuizMode mode;
     private QuizDifficulty difficulty;
+    private int numberOfRounds;
 }

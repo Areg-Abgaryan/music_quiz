@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="997f2f74-84ab-41c1-bbe9-fb41b5c46ffb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizRecords.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Album.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Artist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizModeContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/util/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicAlbum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicAlbum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,19 +56,42 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2SQCHdbF05pBJcx6FsQvW76X6tP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;341c20719b45994d14896cd82bd2de22&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="QuizApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Quiz.main" />
@@ -78,8 +112,22 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="997f2f74-84ab-41c1-bbe9-fb41b5c46ffb" name="Changes" comment="" />
+      <created>1689069331991</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689069331991</updated>
+      <workItem from="1689069333637" duration="1024000" />
+      <workItem from="1689076700837" duration="1146000" />
+      <workItem from="1689098766433" duration="4043000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

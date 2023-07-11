@@ -6,7 +6,8 @@ package com.areg.project.managers;
 
 import com.areg.project.QuizConstants;
 import com.areg.project.QuizDifficulty;
-import com.areg.project.QuizModeContext;
+import com.areg.project.QuizContext;
+import com.areg.project.QuizMode;
 import com.areg.project.orchestrators.AlbumToArtistsOrchestrator;
 import com.areg.project.orchestrators.ArtistToAlbumsOrchestrator;
 import com.areg.project.orchestrators.OrchestratorBase;
@@ -55,8 +56,8 @@ public class QuizWorkflowManager {
                 Enter quiz mode :\s""");
 
 
-        //  FIXME !! Add fields from user input
-        var quizModeContext = new QuizModeContext(QuizConstants.NumberOfRounds, QuizDifficulty.EASY);
+        //  FIXME !! Consider adding fields from user input, refactor hardcoded everything
+        var quizModeContext = new QuizContext(QuizMode.AlbumFromArtists, QuizDifficulty.EASY, QuizConstants.NumberOfRounds);
 
         final var scanner = new Scanner(System.in);
         String mode = scanner.next();
@@ -66,25 +67,21 @@ public class QuizWorkflowManager {
         do {
             switch (mode) {
                 case "1" -> {
-                    logger.debug("Starting quiz mode {}.", mode);
                     isInputValid = true;
                     orchestratorBase = new AlbumToArtistsOrchestrator();
                     orchestratorBase.startQuiz(quizModeContext);
                 }
                 case "2" -> {
-                    logger.debug("Starting quiz mode {}.", mode);
                     isInputValid = true;
                     orchestratorBase = new ArtistToAlbumsOrchestrator();
                     orchestratorBase.startQuiz(quizModeContext);
                 }
                 case "3" -> {
-                    logger.debug("Starting quiz mode {}.", mode);
                     isInputValid = true;
                     orchestratorBase = new SongToArtistsOrchestrator();
                     orchestratorBase.startQuiz(quizModeContext);
                 }
                 case "4" -> {
-                    logger.debug("Starting quiz mode {}.", mode);
                     isInputValid = true;
                     orchestratorBase = new SongToAlbumsOrchestrator();
                     orchestratorBase.startQuiz(quizModeContext);

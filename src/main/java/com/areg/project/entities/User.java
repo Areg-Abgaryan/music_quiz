@@ -4,6 +4,7 @@
 
 package com.areg.project.entities;
 
+import com.areg.project.QuizRecords;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,12 +23,13 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //  FIXME !! Understand & choose the strategy
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(unique = true, nullable = false)
@@ -38,6 +40,11 @@ public class User {
 
     @Column(unique = true, nullable = false)
     private String userName;
+
+    //  FIXME !!
+    @Column
+    private QuizRecords record;
+
 
     //  private String country;
 

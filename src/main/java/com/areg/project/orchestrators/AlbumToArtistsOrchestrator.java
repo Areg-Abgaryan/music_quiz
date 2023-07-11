@@ -4,7 +4,7 @@
 
 package com.areg.project.orchestrators;
 
-import com.areg.project.QuizModeContext;
+import com.areg.project.QuizContext;
 import com.areg.project.models.MusicAlbum;
 import com.areg.project.models.MusicArtist;
 import org.springframework.stereotype.Service;
@@ -26,11 +26,13 @@ import java.util.stream.Collectors;
 public class AlbumToArtistsOrchestrator extends OrchestratorBase {
 
     @Override
-    public void startQuiz(QuizModeContext quizModeContext) {
+    public void startQuiz(QuizContext quizContext) {
 
-        if (! isValidQuizModeContext(quizModeContext)) {
+        if (! isValidQuizModeContext(quizContext)) {
             return;
         }
+
+        super.startQuiz(quizContext);
 
         final Map<MusicAlbum, Boolean> albumsUsedInTheGame = musicDatabase.getAlbums().stream()
                 .collect(Collectors.toMap(album -> album, album -> false, (a, b) -> b));
@@ -38,7 +40,7 @@ public class AlbumToArtistsOrchestrator extends OrchestratorBase {
         final List<MusicArtist> artistsList = new ArrayList<>(musicDatabase.getArtists());
 
         int score = 0;
-        final int rounds = quizModeContext.getNumberOfRounds();
+        final int rounds = quizContext.getNumberOfRounds();
 
         //  Building correct & wrong answers candidates
         for (int r = 1; r <= rounds; ++r) {

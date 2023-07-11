@@ -37,8 +37,6 @@ public class AuthenticationManager {
         this.userManager = userManager;
     }
 
-    //  FIXME !! Add password hash reverse from the database
-
     public void authenticate() {
 
         System.out.print("""
@@ -68,6 +66,8 @@ public class AuthenticationManager {
             }
         } while (! isInputValid);
     }
+
+    //  FIXME !! Shorten password hash size
 
     private void logIn() {
 
@@ -126,7 +126,9 @@ public class AuthenticationManager {
             
             Password length : 8-20 characters.
             It contains at least one digit, one upper case letter, one lower case letter,
-            one special character [ !@#$%&*()-+=^. ], doesn’t contain any white space.\n\n""");
+            one special character [ !@#$%&*()-+=^. ], doesn’t contain any white space.
+            
+            """);
 
         while (true) {
             System.out.println("Enter password : ");

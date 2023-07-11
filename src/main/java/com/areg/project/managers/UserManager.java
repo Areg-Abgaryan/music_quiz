@@ -36,7 +36,6 @@ public class UserManager {
         }
     }
 
-    //  FIXME !!  Consider making this method generic & moving to a higher level
     public List<User> getAllUsers() {
         final Session session = HibernateUtils.getSessionFactory().openSession();
         try {
