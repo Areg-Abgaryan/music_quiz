@@ -5,6 +5,7 @@
 package com.areg.project.orchestrators;
 
 import com.areg.project.QuizContext;
+import com.areg.project.QuizMode;
 import com.areg.project.models.MusicAlbum;
 import com.areg.project.models.MusicArtist;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -39,11 +41,11 @@ public class AlbumToArtistsOrchestrator extends OrchestratorBase {
         final List<MusicAlbum> albumsList = new ArrayList<>(albumsUsedInTheGame.keySet());
         final List<MusicArtist> artistsList = new ArrayList<>(musicDatabase.getArtists());
 
-        int score = 0;
-        final int rounds = quizContext.getNumberOfRounds();
+        short score = 0;
+        final short rounds = quizContext.getNumberOfRounds();
 
         //  Building correct & wrong answers candidates
-        for (int r = 1; r <= rounds; ++r) {
+        for (short r = 1; r <= rounds; ++r) {
 
             final MusicAlbum album = super.getRandomItem(albumsList, albumsUsedInTheGame);
 
@@ -65,5 +67,44 @@ public class AlbumToArtistsOrchestrator extends OrchestratorBase {
             score = super.answerCheck(artistToOption, correctAnswer, score);
         }
         System.out.println("\nYour final score is : " + score);
+
+/*
+        System.out.print("""
+                Choose mode :
+                1. Normal
+                2. Survival
+                Enter option :\s""");
+
+        boolean isInputValid = false;
+        final var scanner = new Scanner(System.in);
+        String option = scanner.next();
+        do {
+            switch (option) {
+                case "1" -> {
+                    //  if 1
+                    isInputValid = true;
+                    normalMode(quizContext);
+                }
+                case "2" -> {
+                    isInputValid = true;
+                    quizContext.setMode(QuizMode.Survival_Album_from_Artists);
+                    survivalMode(quizContext);
+                }
+                default -> {
+                    System.out.println("Wrong input ! Please, choose one of the options above.");
+                    option = scanner.next();
+                }
+            }
+        } while (! isInputValid);
+        */
+    }
+
+    //  FIXME !!
+    private void survivalMode(QuizContext quizContext) {
+
+    }
+
+    private void normalMode(QuizContext quizContext) {
+
     }
 }

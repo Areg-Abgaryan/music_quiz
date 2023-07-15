@@ -23,14 +23,14 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public class User {
 
     @Id
-    //  FIXME !! Understand & choose the strategy
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userId")
+    private Long userId;
 
     @Column(unique = true, nullable = false)
     private String email;
@@ -41,11 +41,8 @@ public class User {
     @Column(unique = true, nullable = false)
     private String userName;
 
-    //  FIXME !!
-    @Column
-    private QuizRecords record;
-
-
+    //  //  FIXME !!
+    //  private QuizRecords record;
     //  private String country;
 
     public User(String userName, String email, String password) {

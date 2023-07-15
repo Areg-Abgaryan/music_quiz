@@ -7,5 +7,5 @@ package com.areg.project;
 import java.util.Map;
 
 public class QuizRecords {
-    private Map<QuizMode, Integer> records;
+    private Map<QuizMode, Short> records;
 }

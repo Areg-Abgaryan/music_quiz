@@ -4,13 +4,13 @@
 
 package com.areg.project;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-@AllArgsConstructor
+@Setter
 public class QuizContext {
     private QuizMode mode;
     private QuizDifficulty difficulty;
-    private int numberOfRounds;
+    private short numberOfRounds;
 }

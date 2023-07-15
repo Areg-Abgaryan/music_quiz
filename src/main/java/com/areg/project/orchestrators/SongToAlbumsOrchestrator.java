@@ -39,11 +39,11 @@ public class SongToAlbumsOrchestrator extends OrchestratorBase {
         final List<MusicSong> songsList = new ArrayList<>(songsUsedInTheGame.keySet());
         final List<MusicAlbum> albumsList = new ArrayList<>(musicDatabase.getAlbums());
 
-        int score = 0;
-        final int rounds = quizContext.getNumberOfRounds();
+        short score = 0;
+        final short rounds = quizContext.getNumberOfRounds();
 
         //  Building correct & wrong answers candidates
-        for (int r = 1; r <= rounds; ++r) {
+        for (short r = 1; r <= rounds; ++r) {
 
             final MusicSong song = super.getRandomItem(songsList, songsUsedInTheGame);
 

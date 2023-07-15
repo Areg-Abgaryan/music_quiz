@@ -4,6 +4,9 @@
 
 package com.areg.project.utils;
 
+import com.areg.project.entities.Album;
+import com.areg.project.entities.Artist;
+import com.areg.project.entities.Song;
 import com.areg.project.entities.User;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -32,7 +35,8 @@ public class HibernateUtils {
         if (sessionFactory == null) {
             try {
                 var configuration = new Configuration().configure();
-                configuration.addAnnotatedClass(User.class);
+                configuration.addAnnotatedClass(Artist.class).addAnnotatedClass(Album.class).addAnnotatedClass(Song.class)
+                        .addAnnotatedClass(User.class);
                 var builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (HibernateException e) {

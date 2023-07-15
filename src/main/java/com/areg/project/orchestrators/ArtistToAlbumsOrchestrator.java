@@ -39,11 +39,11 @@ public class ArtistToAlbumsOrchestrator extends OrchestratorBase {
         final List<MusicArtist> artistsList = new ArrayList<>(artistsUsedInTheGame.keySet());
         final List<MusicAlbum> albumsList = new ArrayList<>(musicDatabase.getAlbums());
 
-        int score = 0;
-        final int rounds = quizContext.getNumberOfRounds();
+        short score = 0;
+        final short rounds = quizContext.getNumberOfRounds();
 
         //  Building correct & wrong answers candidates
-        for (int r = 1; r <= rounds; ++r) {
+        for (short r = 1; r <= rounds; ++r) {
 
             final MusicArtist artist = super.getRandomItem(artistsList, artistsUsedInTheGame);
 
@@ -56,7 +56,7 @@ public class ArtistToAlbumsOrchestrator extends OrchestratorBase {
             while (fourAlbums.size() != 4) {
 
                 //  Get only albums of not right artist's ones
-                final int randomAlbumIndex = new Random().nextInt(albumsList.size());
+                final short randomAlbumIndex = (short) new Random().nextInt(albumsList.size());
                 final var randomAlbum = albumsList.get(randomAlbumIndex);
                 if (! randomAlbum.getArtist().equals(correctAlbum.getArtist())) {
                     fourAlbums.add(randomAlbum.getName());

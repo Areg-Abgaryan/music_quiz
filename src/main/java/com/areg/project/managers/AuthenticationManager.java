@@ -5,6 +5,10 @@
 package com.areg.project.managers;
 
 import com.areg.project.QuizConstants;
+import com.areg.project.QuizDifficulty;
+import com.areg.project.entities.Album;
+import com.areg.project.entities.Artist;
+import com.areg.project.entities.Song;
 import com.areg.project.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +23,6 @@ import java.security.SecureRandom;
 
 import java.security.spec.InvalidKeySpecException;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -32,12 +35,41 @@ public class AuthenticationManager {
 
     private final UserManager userManager;
 
+    private final ArtistManager artistManager;
+
     @Autowired
-    public AuthenticationManager(UserManager userManager) {
+    public AuthenticationManager(UserManager userManager, ArtistManager artistManager) {
         this.userManager = userManager;
+        this.artistManager = artistManager;
     }
 
     public void authenticate() {
+
+
+        //  Test data
+        var chel = new Artist("Cardie B");
+        artistManager.createArtist(chel);
+
+        var albumFirst = new Album("album1", chel, (short) 2012, (byte) 13, "43:57", null, QuizDifficulty.EASY);
+        var albumSecond = new Album("album2", chel, (short) 2015, (byte) 10, "41:29", null, QuizDifficulty.EASY);
+
+        var albumManager = new AlbumManager();
+        albumManager.createAlbum(albumFirst, chel);
+        albumManager.createAlbum(albumSecond, chel);
+
+        final var songManager = new SongManager();
+        final var songFirstAlbumFirst = new Song("Song1", chel, albumFirst, "3:05", (byte) 1);
+        final var songFirstAlbumSecond = new Song("Song2", chel, albumFirst, "3:16", (byte) 1);
+        final var songSecondAlbumFirst = new Song("Song3", chel, albumSecond, "3:27", (byte) 1);
+        final var songSecondAlbumSecond = new Song("Song4", chel, albumSecond, "3:38", (byte) 1);
+
+        songManager.createSong(songFirstAlbumFirst,albumFirst,chel);
+        songManager.createSong(songFirstAlbumSecond,albumFirst,chel);
+        songManager.createSong(songSecondAlbumFirst,albumSecond,chel);
+        songManager.createSong(songSecondAlbumSecond,albumSecond,chel);
+
+
+
 
         System.out.print("""
                 \n
@@ -66,8 +98,6 @@ public class AuthenticationManager {
             }
         } while (! isInputValid);
     }
-
-    //  FIXME !! Shorten password hash size
 
     private void logIn() {
 
@@ -134,7 +164,7 @@ public class AuthenticationManager {
             System.out.println("Enter password : ");
             final var scanner = new Scanner(System.in);
             String pass = scanner.next();
-            if (isValidPassword(pass)) {
+            if (! isValidPassword(pass)) {
                 System.out.println("Invalid password, choose another");
             } else {
                 System.out.println("Repeat password : ");
@@ -196,15 +226,18 @@ public class AuthenticationManager {
 	}
      */
 
-    //  FIXME !! Maybe check String == null case
     private String generateSecurePasswordHash(String password) {
 
-        final int iterations = 1000;
+        if (password == null || password.isEmpty()) {
+            throw new RuntimeException("Error : Password can't be null or empty !");
+        }
+
+        final short iterations = 1000;
         final char[] chars = password.toCharArray();
         final byte[] salt = generateSalt();
         String generatedPassword = null;
 
-        final var spec = new PBEKeySpec(chars, salt, iterations, 64 * 8);
+        final var spec = new PBEKeySpec(chars, salt, iterations, 32 * 8);
         SecretKeyFactory skf;
         try {
             skf = SecretKeyFactory.getInstance(QuizConstants.SecretKeyAlgorithm);
@@ -221,7 +254,7 @@ public class AuthenticationManager {
         final var bi = new BigInteger(1, array);
         final String hex = bi.toString(16);
 
-        final int paddingLength = (array.length * 2) - hex.length();
+        final short paddingLength = (short) ((array.length * 2) - hex.length());
         if (paddingLength > 0) {
             return String.format("%0" + paddingLength + "d", 0) + hex;
         } else {

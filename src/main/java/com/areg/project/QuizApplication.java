@@ -4,6 +4,7 @@
 
 package com.areg.project;
 
+import com.areg.project.managers.ArtistManager;
 import com.areg.project.managers.AuthenticationManager;
 import com.areg.project.managers.FileParsingManager;
 import com.areg.project.managers.QuizWorkflowManager;
@@ -27,7 +28,8 @@ public class QuizApplication {
     private static final FileParsingManager fileParsingManager = new FileParsingManager();
     private static final String dataFilesPath = fileParsingManager.getDataFilesDirectory();
     private static final UserManager userManager = new UserManager();
-    private static final AuthenticationManager authenticationManager = new AuthenticationManager(userManager);
+    private static final ArtistManager artistManager = new ArtistManager();
+    private static final AuthenticationManager authenticationManager = new AuthenticationManager(userManager, artistManager);
     private static final QuizWorkflowManager quizWorkflowManager = new QuizWorkflowManager(authenticationManager);
 
     public static void main(String[] args) {

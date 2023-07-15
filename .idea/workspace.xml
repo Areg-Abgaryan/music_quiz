@@ -5,32 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="997f2f74-84ab-41c1-bbe9-fb41b5c46ffb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizMode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizRecords.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Album.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Artist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Song.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AlbumManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/ArtistManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/SongManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizModeContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizRecords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/builders/MusicDatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/builders/MusicDatabaseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Artist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Song.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicAlbum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicAlbum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicSong.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/utils/HibernateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/utils/HibernateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -92,7 +115,54 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.areg.project.managers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.QuizApplication">
+    <configuration name="Quiz [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Quiz [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="QuizApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Quiz.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.areg.project.QuizApplication" />
@@ -109,6 +179,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.QuizApplication" />
+        <item itemvalue="Gradle.Quiz [build]" />
+        <item itemvalue="Gradle.Quiz [buildDependents]" />
       </list>
     </recent_temporary>
   </component>
@@ -122,20 +194,57 @@
       <updated>1689069331991</updated>
       <workItem from="1689069333637" duration="1024000" />
       <workItem from="1689076700837" duration="1146000" />
-      <workItem from="1689098766433" duration="4043000" />
+      <workItem from="1689098766433" duration="5391000" />
+      <workItem from="1689176295911" duration="2559000" />
+      <workItem from="1689245470129" duration="1350000" />
+      <workItem from="1689282754684" duration="2063000" />
+      <workItem from="1689343087190" duration="12545000" />
+      <workItem from="1689408793161" duration="7197000" />
+      <workItem from="1689416063287" duration="1662000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java</url>
-          <line>61</line>
+          <line>62</line>
           <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/AlbumManager.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/ArtistManager.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.2.0.Final/3319030c3735ce5469450981348398aaef481a2b/hibernate-core-6.2.0.Final-sources.jar!/org/hibernate/event/internal/DefaultPersistEventListener.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.2.0.Final/3319030c3735ce5469450981348398aaef481a2b/hibernate-core-6.2.0.Final-sources.jar!/org/hibernate/engine/internal/ForeignKeys.java</url>
+          <line>292</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

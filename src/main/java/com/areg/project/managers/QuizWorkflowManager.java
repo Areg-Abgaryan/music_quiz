@@ -8,6 +8,7 @@ import com.areg.project.QuizConstants;
 import com.areg.project.QuizDifficulty;
 import com.areg.project.QuizContext;
 import com.areg.project.QuizMode;
+import com.areg.project.entities.Artist;
 import com.areg.project.orchestrators.AlbumToArtistsOrchestrator;
 import com.areg.project.orchestrators.ArtistToAlbumsOrchestrator;
 import com.areg.project.orchestrators.OrchestratorBase;
@@ -24,6 +25,7 @@ import java.util.Scanner;
 //  FIXME !! Add survival mode support for each submode
 //  FIXME !! Add exit & goto beginning logic in the end
 //  FIXME !! Parse all the data into the database, remove run-time local db creation
+//  FIXME !! Create a log file, save there, & config it with logging.properties
 @Service
 public class QuizWorkflowManager {
 
@@ -57,40 +59,45 @@ public class QuizWorkflowManager {
 
 
         //  FIXME !! Consider adding fields from user input, refactor hardcoded everything
-        var quizModeContext = new QuizContext(QuizMode.AlbumFromArtists, QuizDifficulty.EASY, QuizConstants.NumberOfRounds);
+        var quizModeContext = new QuizContext();
+        quizModeContext.setDifficulty(QuizDifficulty.EASY);
+        quizModeContext.setNumberOfRounds(QuizConstants.NumberOfRounds);
 
         final var scanner = new Scanner(System.in);
-        String mode = scanner.next();
+        String baseMode = scanner.next();
 
         //  FIXME !! Add timeout wait logic
+        //  FIXME !! Refactor this
         boolean isInputValid = false;
         do {
-            switch (mode) {
+            switch (baseMode) {
                 case "1" -> {
                     isInputValid = true;
+                    quizModeContext.setMode(QuizMode.Normal_Album_from_Artists);
                     orchestratorBase = new AlbumToArtistsOrchestrator();
-                    orchestratorBase.startQuiz(quizModeContext);
                 }
                 case "2" -> {
                     isInputValid = true;
+                    quizModeContext.setMode(QuizMode.Normal_Artist_from_Albums);
                     orchestratorBase = new ArtistToAlbumsOrchestrator();
-                    orchestratorBase.startQuiz(quizModeContext);
                 }
                 case "3" -> {
                     isInputValid = true;
+                    quizModeContext.setMode(QuizMode.Normal_Song_from_Artists);
                     orchestratorBase = new SongToArtistsOrchestrator();
-                    orchestratorBase.startQuiz(quizModeContext);
                 }
                 case "4" -> {
                     isInputValid = true;
+                    quizModeContext.setMode(QuizMode.Normal_Artist_from_Albums);
                     orchestratorBase = new SongToAlbumsOrchestrator();
-                    orchestratorBase.startQuiz(quizModeContext);
                 }
                 default -> {
                     System.out.println("Wrong input ! Please, choose one of the options above.");
-                    mode = scanner.next();
+                    baseMode = scanner.next();
                 }
             }
         } while (! isInputValid);
+
+        orchestratorBase.startQuiz(quizModeContext);
     }
 }

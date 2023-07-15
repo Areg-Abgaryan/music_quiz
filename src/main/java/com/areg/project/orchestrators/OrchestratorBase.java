@@ -74,10 +74,10 @@ public abstract class OrchestratorBase {
         return true;
     }
 
-    protected Map<String, Integer> subtypeToOption(Set<String> fourOptions) {
+    protected Map<String, Byte> subtypeToOption(Set<String> fourOptions) {
 
-        int i = 1;
-        Map<String, Integer> subtypeToOption = new HashMap<>(QuizConstants.RoundOptions);
+        byte i = 1;
+        Map<String, Byte> subtypeToOption = new HashMap<>(QuizConstants.RoundOptions);
         for (var artist : fourOptions) {
             System.out.print(i + ". \"" + artist + "\"");
             if (i != 4) {
@@ -90,9 +90,9 @@ public abstract class OrchestratorBase {
     }
 
     /**
-     * This method updates the score after each round based on the answer of the user
+     * This method returns a pair of the score & last answer after each round
      */
-    protected int answerCheck(Map<String, Integer> subtypeToOption, String correctAnswer, int score) {
+    protected short answerCheck(Map<String, Byte> subtypeToOption, String correctAnswer, short score) {
 
         //  FIXME !! Add a score tracker, then add to the db with the user's info
 
@@ -107,7 +107,7 @@ public abstract class OrchestratorBase {
             System.out.println("Wrong input : \"" + option + "\"");
         } else {
             final var correctNumber = subtypeToOption.get(correctAnswer);
-            if (Integer.parseInt(option) == correctNumber) {
+            if (Byte.parseByte(option) == correctNumber) {
                 ++score;
                 System.out.println("Exactly !");
             } else {
@@ -141,7 +141,7 @@ public abstract class OrchestratorBase {
             return false;
         }
         try {
-            int intOption = Integer.parseInt(option);
+            byte intOption = Byte.parseByte(option);
             return IntStream.rangeClosed(1, QuizConstants.RoundOptions).anyMatch(i -> i == intOption);
         } catch (NumberFormatException nfe) {
             nfe.printStackTrace();

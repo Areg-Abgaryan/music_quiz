@@ -18,5 +18,5 @@ public class MusicSong {
     private MusicArtist artist;
     private MusicAlbum album;
     private String duration;
-    private int difficulty;
+    private byte difficulty;
 }

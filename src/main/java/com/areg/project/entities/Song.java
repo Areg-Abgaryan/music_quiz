@@ -4,42 +4,58 @@
 
 package com.areg.project.entities;
 
-import com.areg.project.models.MusicAlbum;
-import com.areg.project.models.MusicArtist;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Table(name = "songs", schema = "public")
 @Entity
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@Getter
 @ToString
 public class Song {
 
-    //  FIXME !! Fix relations in this table
-
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "songId")
+    private Long songId;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private MusicArtist artist;
+    @Setter
+    @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
+    @JoinColumn(name = "artistForeignKey", referencedColumnName = "artistId", nullable = false)
+    private Artist artist;
 
-    @Column(nullable = false)
-    private MusicAlbum album;
+    @Setter
+    @JoinColumn(name = "albumForeignKey", referencedColumnName = "albumId")
+    @ManyToOne//(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
+    private Album album;
 
     @Column(nullable = false)
     private String duration;
 
     @Column(nullable = false)
-    private int difficulty;
+    private byte difficulty;
+
+    public Song(String name, Artist artist, Album album, String duration, byte difficulty) {
+        this.name = name;
+        this.album = album;
+        this.artist = artist;
+        this.duration = duration;
+        this.difficulty = difficulty;
+    }
 }

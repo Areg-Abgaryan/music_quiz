@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 import java.util.stream.IntStream;
 
-//  Consider removing this run-time database creation & getting all information from the persistent db
+//  FIXME !! Consider removing this run-time database creation & getting all information from the persistent db
 @Service
 public class MusicDatabaseBuilder {
 
@@ -49,8 +49,8 @@ public class MusicDatabaseBuilder {
 
     private QuizDifficulty calculateAlbumDifficulty(MusicAlbum album) {
 
-        final int songs = album.getNumberOfSongs();
-        final int totalDifficultySum = IntStream.range(0, songs).map(i -> album.getSongs().get(i).getDifficulty()).sum();
+        final byte songs = album.getNumberOfSongs();
+        final byte totalDifficultySum = (byte) IntStream.range(0, songs).map(i -> album.getSongs().get(i).getDifficulty()).sum();
         final double averageDifficulty = (double) totalDifficultySum / songs;
 
         if (averageDifficulty > 2) {

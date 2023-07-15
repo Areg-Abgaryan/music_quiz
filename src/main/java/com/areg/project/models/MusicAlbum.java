@@ -20,8 +20,8 @@ import java.util.ArrayList;
 public class MusicAlbum {
     private String name;
     private String artist;
-    private int releaseYear;
-    private int numberOfSongs;
+    private short releaseYear;
+    private byte numberOfSongs;
     private String totalLength;
     private ArrayList<MusicSong> songs;
     @Setter private QuizDifficulty difficulty;
