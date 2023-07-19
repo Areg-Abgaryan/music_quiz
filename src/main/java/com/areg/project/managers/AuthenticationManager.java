@@ -45,7 +45,7 @@ public class AuthenticationManager {
 
     public void authenticate() {
 
-
+        /*  //  FIXME !! Remove this after db fix
         //  Test data
         var chel = new Artist("Cardie B");
         artistManager.createArtist(chel);
@@ -68,8 +68,7 @@ public class AuthenticationManager {
         songManager.createSong(songSecondAlbumFirst,albumSecond,chel);
         songManager.createSong(songSecondAlbumSecond,albumSecond,chel);
 
-
-
+        */
 
         System.out.print("""
                 \n
@@ -132,10 +131,8 @@ public class AuthenticationManager {
         while (true) {
             System.out.println("Enter e-mail : ");
             final var scanner = new Scanner(System.in);
-            String mail = scanner.next();
-            if (! isValidEmail(users, mail)) {
-                System.out.println("E-mail is already specified, choose another");
-            } else {
+            final String mail = scanner.next();
+            if (isValidEmail(users, mail)) {
                 email = mail;
                 break;
             }
@@ -144,7 +141,7 @@ public class AuthenticationManager {
         while (true) {
             System.out.println("Enter username : ");
             final var scanner = new Scanner(System.in);
-            String username = scanner.next();
+            final String username = scanner.next();
             if (isValidUserName(users, username)) {
                 userName = username;
                 break;
@@ -163,7 +160,7 @@ public class AuthenticationManager {
         while (true) {
             System.out.println("Enter password : ");
             final var scanner = new Scanner(System.in);
-            String pass = scanner.next();
+            final String pass = scanner.next();
             if (! isValidPassword(pass)) {
                 System.out.println("Invalid password, choose another");
             } else {
@@ -183,48 +180,50 @@ public class AuthenticationManager {
     }
 
     private boolean isValidUserName(List<User> users, String userName) {
+        if (userName.length() < 4 || userName.length() > 20) {
+            System.out.println("The username length must be 4-20 characters. Choose another one !");
+            return false;
+        }
+
         for (var user : users) {
             if (userName.equals(user.getUserName())) {
                 System.out.println("This username is already reserved. Choose another one !");
                 return false;
             }
         }
-        if (userName.length() < 4 || userName.length() > 20) {
-            System.out.println("The username length must be 4-20 characters. Choose another one !");
-            return false;
-        }
         return true;
     }
 
-    //  FIXME !! Add mail validation [endsWith, startsWith, special characters, etc]
     private boolean isValidEmail(List<User> users, String email) {
-        return users.stream().noneMatch(user -> email.equals(user.getEmail()));
+        final var regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
+                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+        final Pattern pattern = Pattern.compile(regexPattern);
+        final Matcher matcher = pattern.matcher(email);
+        
+        if (! matcher.matches()) {
+            System.out.println("E-mail format is invalid");
+            return false;
+        }
+
+        for (var user : users) {
+            if (email.equals(user.getEmail())) {
+                System.out.println("E-mail is already specified, choose another");
+                return false;
+            }
+        }
+        return true;
     }
 
     private boolean isValidPassword(String password) {
         final String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()-+=^.])(?=\\S+$).{8,20}$";
         final Pattern pattern = Pattern.compile(regex);
         final Matcher matcher = pattern.matcher(password);
-        return matcher.matches();
+        if (! matcher.matches()) {
+            System.out.println("Invalid password, choose another");
+            return false;
+        }
+        return true;
     }
-
-    /*
-    public boolean checkPassword(String password) {
-
-		boolean hasUppercase = !password.equals(password.toLowerCase());
-		boolean hasLowercase = !password.equals(password.toUpperCase());
-		boolean hasNumber = password.matches(".*\\d.*");
-		boolean isLongEnough = password.length() >= validLength;
-
-		boolean hasSpecialCharacters = true;
-		if (checkSpecialCharacters) {
-			//Checks at least one char is not alphanumeric
-			hasSpecialCharacters = !password.matches("[A-Za-z0-9 ]*");
-		}
-
-		return hasUppercase && hasLowercase && isLongEnough && hasSpecialCharacters && hasNumber;
-	}
-     */
 
     private String generateSecurePasswordHash(String password) {
 

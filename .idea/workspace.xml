@@ -5,38 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="997f2f74-84ab-41c1-bbe9-fb41b5c46ffb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AlbumManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/ArtistManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/SongManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizRecords.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/builders/MusicDatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/builders/MusicDatabaseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicAlbum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicAlbum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/models/MusicSong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/utils/HibernateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/utils/HibernateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,6 +173,8 @@
       <workItem from="1689343087190" duration="12545000" />
       <workItem from="1689408793161" duration="7197000" />
       <workItem from="1689416063287" duration="1662000" />
+      <workItem from="1689417745335" duration="8013000" />
+      <workItem from="1689795126272" duration="2265000" />
     </task>
     <servers />
   </component>
@@ -223,13 +197,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java</url>
-          <line>62</line>
+          <line>61</line>
           <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/AlbumManager.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/ArtistManager.java</url>
@@ -237,14 +206,14 @@
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.2.0.Final/3319030c3735ce5469450981348398aaef481a2b/hibernate-core-6.2.0.Final-sources.jar!/org/hibernate/event/internal/DefaultPersistEventListener.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="53" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java</url>
+          <line>279</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.2.0.Final/3319030c3735ce5469450981348398aaef481a2b/hibernate-core-6.2.0.Final-sources.jar!/org/hibernate/engine/internal/ForeignKeys.java</url>
-          <line>292</line>
-          <option name="timeStamp" value="54" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java</url>
+          <line>250</line>
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
