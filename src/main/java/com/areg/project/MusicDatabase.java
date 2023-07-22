@@ -22,7 +22,6 @@ public class MusicDatabase {
 
     private static MusicDatabase instance;
 
-    //  FIXME !! Try to remove this getter
     private final Map<MusicAlbum, MusicArtist> albumToArtistMap;
     private final Map<MusicSong, MusicArtist> songToArtistMap;
     @Getter private final Map<MusicArtist, Set<MusicAlbum>> artistToAlbumsMap;
@@ -56,7 +55,7 @@ public class MusicDatabase {
 
     public void addAlbumToArtist(MusicAlbum album, MusicArtist artist) {
         if (album == null || artist == null) {
-            logger.debug("Unexpected null value for album or artist.");
+            logger.info("Unexpected null value for album or artist.");
             return;
         }
         if (! album.getArtist().equals(artist.getName())) {
@@ -68,7 +67,7 @@ public class MusicDatabase {
 
     public void addSongToArtist(MusicSong song, MusicArtist artist) {
         if (song == null || artist == null) {
-            logger.debug("Unexpected null value for song or artist.");
+            logger.info("Unexpected null value for song or artist.");
             return;
         }
         if (! song.getArtist().getName().equals(artist.getName())) {

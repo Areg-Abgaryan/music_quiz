@@ -114,6 +114,7 @@ public class AuthenticationManager {
                 if (! password.equals(user.getPassword())) {
                     System.out.println("Invalid password provided !");
                 } else {
+                    logger.info("User {} successfully logged in !", user.getUserName());
                     System.out.println("Successfully logged in !");
                     break;
                 }
@@ -161,12 +162,10 @@ public class AuthenticationManager {
             System.out.println("Enter password : ");
             final var scanner = new Scanner(System.in);
             final String pass = scanner.next();
-            if (! isValidPassword(pass)) {
-                System.out.println("Invalid password, choose another");
-            } else {
+            if (isValidPassword(pass)) {
                 System.out.println("Repeat password : ");
                 final var scanner2 = new Scanner(System.in);
-                String pass2 = scanner2.next();
+                final String pass2 = scanner2.next();
                 if (! pass2.equals(pass)) {
                     System.out.println("Passwords do not match");
                 }
@@ -199,7 +198,7 @@ public class AuthenticationManager {
                 + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
         final Pattern pattern = Pattern.compile(regexPattern);
         final Matcher matcher = pattern.matcher(email);
-        
+
         if (! matcher.matches()) {
             System.out.println("E-mail format is invalid");
             return false;
@@ -272,7 +271,7 @@ public class AuthenticationManager {
         try {
             return SecureRandom.getInstance(QuizConstants.RNGAlgorithm);
         } catch (NoSuchAlgorithmException nae) {
-            logger.warn("Couldn't create strong secure random generator, reason : {}.", nae.getMessage());
+            logger.info("Couldn't create strong secure random generator, reason : {}.", nae.getMessage());
             return new SecureRandom();
         }
     }

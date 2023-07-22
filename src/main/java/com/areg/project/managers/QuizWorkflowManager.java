@@ -8,7 +8,6 @@ import com.areg.project.QuizConstants;
 import com.areg.project.QuizDifficulty;
 import com.areg.project.QuizContext;
 import com.areg.project.QuizMode;
-import com.areg.project.entities.Artist;
 import com.areg.project.orchestrators.AlbumToArtistsOrchestrator;
 import com.areg.project.orchestrators.ArtistToAlbumsOrchestrator;
 import com.areg.project.orchestrators.OrchestratorBase;
@@ -21,18 +20,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
-//  FIXME !! Init in Autowired constructors all Spring beans
 //  FIXME !! Add survival mode support for each submode
 //  FIXME !! Add exit & goto beginning logic in the end
-//  FIXME !! Parse all the data into the database, remove run-time local db creation
-//  FIXME !! Create a log file, save there, & config it with logging.properties
 @Service
 public class QuizWorkflowManager {
 
     private static final Logger logger = LoggerFactory.getLogger(QuizWorkflowManager.class);
 
     private OrchestratorBase orchestratorBase;
-
     private final AuthenticationManager authenticationManager;
 
     @Autowired
@@ -42,6 +37,7 @@ public class QuizWorkflowManager {
 
     public void initQuiz() {
 
+        logger.info("Music quiz started");
         System.out.print("Hey ! Welcome to Music Quiz !");
 
         authenticationManager.authenticate();
@@ -59,12 +55,15 @@ public class QuizWorkflowManager {
 
 
         //  FIXME !! Consider adding fields from user input, refactor hardcoded everything
-        var quizModeContext = new QuizContext();
+        final var quizModeContext = new QuizContext();
         quizModeContext.setDifficulty(QuizDifficulty.EASY);
         quizModeContext.setNumberOfRounds(QuizConstants.NumberOfRounds);
+        logger.info("Quiz difficulty : {}", quizModeContext.getDifficulty());
+        logger.info("Quiz number of rounds : {}", quizModeContext.getNumberOfRounds());
 
         final var scanner = new Scanner(System.in);
         String baseMode = scanner.next();
+        logger.info("Music input mode : {}", baseMode);
 
         //  FIXME !! Add timeout wait logic
         //  FIXME !! Refactor this

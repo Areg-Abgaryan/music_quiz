@@ -22,7 +22,7 @@ public class ArtistManager {
             session.beginTransaction();
             session.persist(artist);
             session.getTransaction().commit();
-            logger.info("Successfully created artist {}", artist.getName());
+            logger.debug("Successfully created artist {}", artist.getName());
         } catch (Exception e) {
             logger.error("Error : Could not create artist : {}", e.getMessage());
             e.printStackTrace();

@@ -1,0 +1,22 @@
+"2023-07-21 18:01:54 - Starting QuizApplication using Java 17.0.6 with PID 46872 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
+""2023-07-21 18:01:54 - No active profile set, falling back to 1 default profile: "default"
+""2023-07-21 18:01:55 - Tomcat initialized with port(s): 8080 (http)
+""2023-07-21 18:01:55 - Starting service [Tomcat]
+""2023-07-21 18:01:55 - Starting Servlet engine: [Apache Tomcat/10.1.10]
+""2023-07-21 18:01:55 - Initializing Spring embedded WebApplicationContext
+""2023-07-21 18:01:55 - Root WebApplicationContext: initialization completed in 999 ms
+""2023-07-21 18:01:56 - Tomcat started on port(s): 8080 (http) with context path ''
+""2023-07-21 18:01:56 - Started QuizApplication in 1.962 seconds (process running for 2.649)
+""2023-07-21 18:02:04 - HHH000412: Hibernate ORM core version 6.2.0.Final
+""2023-07-21 18:02:05 - HHH000406: Using bytecode reflection optimizer
+""2023-07-21 18:02:05 - HHH10001002: Using built-in connection pool (not intended for production use)
+""2023-07-21 18:02:05 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+""2023-07-21 18:02:05 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
+""2023-07-21 18:02:05 - HHH10001001: Connection properties: {password=****, user=postgres}
+""2023-07-21 18:02:05 - HHH10001003: Autocommit mode: false
+""2023-07-21 18:02:05 - HHH10001115: Connection pool size: 20 (min=1)
+""2023-07-21 18:02:05 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2023-07-21 18:02:05 - HHH000021: Bytecode provider name : bytebuddy
+""2023-07-21 18:02:06 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@233ece92] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+""2023-07-21 18:02:32 - Starting quiz mode Normal_Artist_from_Albums.
+"

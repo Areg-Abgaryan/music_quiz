@@ -24,7 +24,7 @@ public class AlbumManager {
             session.beginTransaction();
             session.merge(album);
             session.getTransaction().commit();
-            logger.info("Successfully created album {}", album.getName());
+            logger.debug("Successfully created album {}", album.getName());
         } catch (Exception e) {
             logger.error("Error : Could not create album : {}", e.getMessage());
             e.printStackTrace();

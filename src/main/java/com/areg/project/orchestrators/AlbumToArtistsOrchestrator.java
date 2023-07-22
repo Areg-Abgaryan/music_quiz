@@ -38,7 +38,6 @@ public class AlbumToArtistsOrchestrator extends OrchestratorBase {
 
         final Map<MusicAlbum, Boolean> albumsUsedInTheGame = musicDatabase.getAlbums().stream()
                 .collect(Collectors.toMap(album -> album, album -> false, (a, b) -> b));
-        final List<MusicAlbum> albumsList = new ArrayList<>(albumsUsedInTheGame.keySet());
         final List<MusicArtist> artistsList = new ArrayList<>(musicDatabase.getArtists());
 
         short score = 0;
@@ -47,11 +46,11 @@ public class AlbumToArtistsOrchestrator extends OrchestratorBase {
         //  Building correct & wrong answers candidates
         for (short r = 1; r <= rounds; ++r) {
 
-            final MusicAlbum album = super.getRandomItem(albumsList, albumsUsedInTheGame);
+            final MusicAlbum album = super.getRandomItem(new ArrayList<>(albumsUsedInTheGame.keySet()), albumsUsedInTheGame);
 
             //  Here is the right answer
             final String correctAnswer = album.getArtist();
-            Set<String> fourArtists = new HashSet<>(Collections.singleton(correctAnswer));
+            final Set<String> fourArtists = new HashSet<>(Collections.singleton(correctAnswer));
 
             //  Adding 3 wrong answers
             while (fourArtists.size() != 4) {

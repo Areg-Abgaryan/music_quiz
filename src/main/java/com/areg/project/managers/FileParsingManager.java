@@ -54,7 +54,7 @@ public class FileParsingManager {
                 throw new RuntimeException(e);
             }
         }
-        logger.debug("parseDataFiles takes {} milliseconds.", + (System.currentTimeMillis() - startTime));
+        logger.info("parseDataFiles takes {} milliseconds.", + (System.currentTimeMillis() - startTime));
         musicDatabaseBuilder.buildMusicDatabase(albums);
     }
 
@@ -78,7 +78,7 @@ public class FileParsingManager {
 
     private boolean isJsonFile(File file) {
         if (! file.getName().endsWith(".json")) {
-            logger.debug("{} is not a .json file.", file.getName());
+            logger.info("{} is not a .json file.", file.getName());
             return false;
         }
         return true;

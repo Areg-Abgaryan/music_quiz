@@ -26,7 +26,7 @@ public class SongManager {
             session.beginTransaction();
             session.persist(song);
             session.getTransaction().commit();
-            logger.info("Successfully created song {}", song.getName());
+            logger.debug("Successfully created song {}", song.getName());
         } catch (Exception e) {
             logger.error("Error : Could not create song : {}", e.getMessage());
             e.printStackTrace();

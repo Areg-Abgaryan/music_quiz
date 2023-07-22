@@ -36,7 +36,7 @@ public abstract class OrchestratorBase {
      * @param quizContext Settings about the concrete quiz mode
      */
     public void startQuiz(QuizContext quizContext) {
-        logger.debug("Starting quiz mode {}.", quizContext.getMode());
+        logger.info("Starting quiz mode : {}.", quizContext.getMode());
     }
 
     protected <Type> Type getRandomItem(List<Type> itemsList, Map<Type, Boolean> itemsUsedInTheGame) {
@@ -46,8 +46,6 @@ public abstract class OrchestratorBase {
         for ( ; ; ) {
             final Type randomKey = itemsList.get(new Random().nextInt(itemsList.size()));
             final Boolean randomValue = itemsUsedInTheGame.get(randomKey);
-
-            //  FIXME !! Try to call randomizer directly from the map, not create list for it
             if (! randomValue) {
                 type = randomKey;
                 itemsUsedInTheGame.put(randomKey, true);
@@ -63,12 +61,12 @@ public abstract class OrchestratorBase {
     protected boolean isValidQuizModeContext(QuizContext quizContext) {
 
         if (quizContext == null) {
-            logger.debug("Quiz mode context is null.");
+            logger.info("Quiz mode context is null.");
             return false;
         }
 
         if (quizContext.getNumberOfRounds() > musicDatabase.getAlbums().size()) {
-            logger.debug("Too many rounds required to play.");
+            logger.info("Too many rounds required to play.");
             return false;
         }
         return true;
@@ -77,7 +75,7 @@ public abstract class OrchestratorBase {
     protected Map<String, Byte> subtypeToOption(Set<String> fourOptions) {
 
         byte i = 1;
-        Map<String, Byte> subtypeToOption = new HashMap<>(QuizConstants.RoundOptions);
+        final Map<String, Byte> subtypeToOption = new HashMap<>(QuizConstants.RoundOptions);
         for (var artist : fourOptions) {
             System.out.print(i + ". \"" + artist + "\"");
             if (i != 4) {
@@ -103,7 +101,7 @@ public abstract class OrchestratorBase {
             return score;
         }
         if (! isValidOption(option)) {
-            logger.debug("Wrong input : {}.", option);
+            logger.info("Wrong input : {}.", option);
             System.out.println("Wrong input : \"" + option + "\"");
         } else {
             final var correctNumber = subtypeToOption.get(correctAnswer);
@@ -129,6 +127,7 @@ public abstract class OrchestratorBase {
             throw new IllegalStateException("Thread was interrupted", e);
         } catch (TimeoutException e) {
             // Tell user they timed out
+            logger.info("Error : Time out !");
             System.out.println("\nTime out !");
         } finally {
             service.shutdown();

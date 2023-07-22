@@ -41,7 +41,7 @@ public class User {
     @Column(unique = true, nullable = false)
     private String userName;
 
-    //  //  FIXME !!
+    //  FIXME !!
     //  private QuizRecords record;
     //  private String country;
 

@@ -26,7 +26,7 @@ public class MusicDatabaseBuilder {
     public void buildMusicDatabase(Set<MusicAlbum> musicAlbums) {
 
         if (musicAlbums.isEmpty()) {
-            logger.debug("No music albums found !");
+            logger.info("No music albums found !");
             return;
         }
 
@@ -44,7 +44,7 @@ public class MusicDatabaseBuilder {
                 musicDatabase.addSongToArtist(tempSong, artist);
             }
         }
-        logger.debug("buildMusicDatabase takes {} milliseconds.", + (System.currentTimeMillis() - startTime));
+        logger.info("buildMusicDatabase takes {} milliseconds.", + (System.currentTimeMillis() - startTime));
     }
 
     private QuizDifficulty calculateAlbumDifficulty(MusicAlbum album) {
