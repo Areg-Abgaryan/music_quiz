@@ -17,7 +17,7 @@ import lombok.ToString;
 
 @Table(name = "artists", schema = "public")
 @Entity
-@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString
 public class Artist {

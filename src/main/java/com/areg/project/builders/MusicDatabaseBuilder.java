@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 import java.util.stream.IntStream;
 
-//  FIXME !! Remove this run-time database creation & get all information from the persistent db
 @Service
 public class MusicDatabaseBuilder {
 

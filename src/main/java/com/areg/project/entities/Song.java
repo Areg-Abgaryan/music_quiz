@@ -22,7 +22,7 @@ import lombok.ToString;
 
 @Table(name = "songs", schema = "public")
 @Entity
-@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString
 public class Song {
@@ -37,12 +37,12 @@ public class Song {
 
     @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
-    @JoinColumn(name = "artistForeignKey", referencedColumnName = "artistId", nullable = false)
+    @JoinColumn(name = "fk_song_artist", referencedColumnName = "artistId", nullable = false)
     private Artist artist;
 
     @Setter
-    @JoinColumn(name = "albumForeignKey", referencedColumnName = "albumId")
-    @ManyToOne//(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
+    @JoinColumn(name = "fk_song_album", referencedColumnName = "albumId")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
     private Album album;
 
     @Column(nullable = false)
@@ -53,8 +53,8 @@ public class Song {
 
     public Song(String name, Artist artist, Album album, String duration, byte difficulty) {
         this.name = name;
-        this.album = album;
         this.artist = artist;
+        this.album = album;
         this.duration = duration;
         this.difficulty = difficulty;
     }

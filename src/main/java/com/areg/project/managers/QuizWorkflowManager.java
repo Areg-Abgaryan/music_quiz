@@ -22,11 +22,12 @@ import java.util.Scanner;
 
 //  FIXME !! Add survival mode support for each submode
 //  FIXME !! Add exit & goto beginning logic in the end
+//  FIXME !! Replace Hibernate#save with #persist - problems occured
+//  FIXME !! Remove run-time database creation & get all information from the persistent db
 @Service
 public class QuizWorkflowManager {
 
     private static final Logger logger = LoggerFactory.getLogger(QuizWorkflowManager.class);
-
     private OrchestratorBase orchestratorBase;
     private final AuthenticationManager authenticationManager;
 

@@ -23,12 +23,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.ArrayList;
-import java.util.Set;
+import java.util.List;
 
 @Table(name = "albums", schema = "public")
 @Entity
-@NoArgsConstructor(access = AccessLevel.PUBLIC)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString
 public class Album {
@@ -41,9 +40,11 @@ public class Album {
     @Column(nullable = false)
     private String name;
 
+    //  FIXME !! Consider changing heavy objects to Strings, like albumName, songName
+
     @Setter
-    @JoinColumn(name = "artistForeignKey", referencedColumnName = "artistId", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
+    @JoinColumn(name = "fk_album_artist", referencedColumnName = "artistId", nullable = false)
     private Artist artist;
 
     @Column(nullable = false)
@@ -59,13 +60,14 @@ public class Album {
     //  FIXME !!    @Column(nullable = false)
     @OneToMany(mappedBy = "album") //, orphanRemoval = true, fetch = FetchType.LAZY,
             //cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
-    private Set<Song> songs;
+    private List<Song> songs;
 
     @Setter
-    @Column
+    @Column(nullable = false)
     private QuizDifficulty difficulty;
 
-    public Album(String name, Artist artist, short releaseYear, byte numberOfSongs, String totalLength, Set<Song> songs, QuizDifficulty difficulty) {
+    public Album(String name, Artist artist, short releaseYear, byte numberOfSongs, String totalLength,
+                 List<Song> songs, QuizDifficulty difficulty) {
         this.name = name;
         this.artist = artist;
         this.releaseYear = releaseYear;

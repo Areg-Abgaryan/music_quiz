@@ -19,7 +19,6 @@ import java.util.Set;
 public class MusicDatabase {
 
     private static final Logger logger = LoggerFactory.getLogger(MusicDatabase.class);
-
     private static MusicDatabase instance;
 
     private final Map<MusicAlbum, MusicArtist> albumToArtistMap;

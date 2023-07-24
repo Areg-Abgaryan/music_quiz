@@ -24,7 +24,7 @@ public class SongManager {
             song.setArtist(artist);
             song.setAlbum(album);
             session.beginTransaction();
-            session.persist(song);
+            session.save(song);
             session.getTransaction().commit();
             logger.debug("Successfully created song {}", song.getName());
         } catch (Exception e) {

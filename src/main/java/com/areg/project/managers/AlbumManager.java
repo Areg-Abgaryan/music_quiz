@@ -20,9 +20,9 @@ public class AlbumManager {
     public void createAlbum(Album album, Artist artist) {
         final Session session = HibernateUtils.getSessionFactory().openSession();
         try {
-            album.setArtist(artist);
             session.beginTransaction();
-            session.merge(album);
+            album.setArtist(artist);
+            session.save(album);
             session.getTransaction().commit();
             logger.debug("Successfully created album {}", album.getName());
         } catch (Exception e) {

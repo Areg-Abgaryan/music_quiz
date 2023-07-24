@@ -22,12 +22,12 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 public class QuizApplication {
 
     //  FIXME !! Refactor everything
+    //  FIXME !! Fix column names of entities
     //  FIXME !! Init in Autowired constructors all Spring beans
     private static final FileParsingManager fileParsingManager = new FileParsingManager();
     private static final String dataFilesPath = fileParsingManager.getDataFilesDirectory();
     private static final UserManager userManager = new UserManager();
-    private static final ArtistManager artistManager = new ArtistManager();
-    private static final AuthenticationManager authenticationManager = new AuthenticationManager(userManager, artistManager);
+    private static final AuthenticationManager authenticationManager = new AuthenticationManager(userManager);
     private static final QuizWorkflowManager quizWorkflowManager = new QuizWorkflowManager(authenticationManager);
 
     public static void main(String[] args) {

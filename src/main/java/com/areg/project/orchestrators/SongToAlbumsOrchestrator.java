@@ -28,7 +28,7 @@ public class SongToAlbumsOrchestrator extends OrchestratorBase {
     @Override
     public void startQuiz(QuizContext quizContext) {
 
-        if (! isValidQuizModeContext(quizContext)) {
+        if (! isQuizModeContextValid(quizContext)) {
             return;
         }
 

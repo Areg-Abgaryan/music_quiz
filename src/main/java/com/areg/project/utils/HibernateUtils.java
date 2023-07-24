@@ -28,16 +28,16 @@ import java.util.List;
 public class HibernateUtils {
 
     private static final Logger logger = LoggerFactory.getLogger(HibernateUtils.class);
-
     private static SessionFactory sessionFactory;
+
     public static SessionFactory getSessionFactory() {
 
         if (sessionFactory == null) {
             try {
-                var configuration = new Configuration().configure();
+                final var configuration = new Configuration().configure();
                 configuration.addAnnotatedClass(Artist.class).addAnnotatedClass(Album.class).addAnnotatedClass(Song.class)
                         .addAnnotatedClass(User.class);
-                var builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+                final var builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (HibernateException e) {
                 logger.error("Error : Could not instantiate Session Factory !");

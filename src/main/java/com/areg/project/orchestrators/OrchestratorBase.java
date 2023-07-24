@@ -58,7 +58,7 @@ public abstract class OrchestratorBase {
     /**
      *  Validate context of quiz mode
      */
-    protected boolean isValidQuizModeContext(QuizContext quizContext) {
+    protected boolean isQuizModeContextValid(QuizContext quizContext) {
 
         if (quizContext == null) {
             logger.info("Quiz mode context is null.");

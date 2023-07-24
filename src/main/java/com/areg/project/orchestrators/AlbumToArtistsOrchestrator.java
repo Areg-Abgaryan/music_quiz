@@ -5,7 +5,6 @@
 package com.areg.project.orchestrators;
 
 import com.areg.project.QuizContext;
-import com.areg.project.QuizMode;
 import com.areg.project.models.MusicAlbum;
 import com.areg.project.models.MusicArtist;
 import org.springframework.stereotype.Service;
@@ -16,7 +15,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -30,7 +28,7 @@ public class AlbumToArtistsOrchestrator extends OrchestratorBase {
     @Override
     public void startQuiz(QuizContext quizContext) {
 
-        if (! isValidQuizModeContext(quizContext)) {
+        if (! isQuizModeContextValid(quizContext)) {
             return;
         }
 

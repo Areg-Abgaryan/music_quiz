@@ -22,6 +22,8 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 import java.security.spec.InvalidKeySpecException;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -32,43 +34,44 @@ import java.util.regex.Pattern;
 public class AuthenticationManager {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationManager.class);
-
     private final UserManager userManager;
 
-    private final ArtistManager artistManager;
-
     @Autowired
-    public AuthenticationManager(UserManager userManager, ArtistManager artistManager) {
+    public AuthenticationManager(UserManager userManager) {
         this.userManager = userManager;
-        this.artistManager = artistManager;
     }
 
     public void authenticate() {
 
-        /*  //  FIXME !! Remove this after db fix
-        //  Test data
-        var chel = new Artist("Cardie B");
+        /*
+        //  FIXME !! Remove this after db fix
+
+        final var chel = new Artist("Cardie B");
+        final var artistManager = new ArtistManager();
         artistManager.createArtist(chel);
 
-        var albumFirst = new Album("album1", chel, (short) 2012, (byte) 13, "43:57", null, QuizDifficulty.EASY);
-        var albumSecond = new Album("album2", chel, (short) 2015, (byte) 10, "41:29", null, QuizDifficulty.EASY);
+        var getingChel = artistManager.getArtist(1L);
+
+        var albumFirst = new Album("album1", getingChel, (short) 2012, (byte) 13, "43:57", null, QuizDifficulty.EASY);
+        var albumSecond = new Album("album2", getingChel, (short) 2015, (byte) 10, "41:29", null, QuizDifficulty.EASY);
 
         var albumManager = new AlbumManager();
-        albumManager.createAlbum(albumFirst, chel);
-        albumManager.createAlbum(albumSecond, chel);
+
+        albumManager.createAlbum(albumFirst, getingChel);
+        albumManager.createAlbum(albumSecond, getingChel);
 
         final var songManager = new SongManager();
-        final var songFirstAlbumFirst = new Song("Song1", chel, albumFirst, "3:05", (byte) 1);
-        final var songFirstAlbumSecond = new Song("Song2", chel, albumFirst, "3:16", (byte) 1);
-        final var songSecondAlbumFirst = new Song("Song3", chel, albumSecond, "3:27", (byte) 1);
-        final var songSecondAlbumSecond = new Song("Song4", chel, albumSecond, "3:38", (byte) 1);
+        final var songFirstAlbumFirst = new Song("Song1", getingChel, albumFirst, "3:05", (byte) 1);
+        final var songFirstAlbumSecond = new Song("Song2", getingChel, albumFirst, "3:16", (byte) 1);
+        final var songSecondAlbumFirst = new Song("Song3", getingChel, albumSecond, "3:27", (byte) 1);
+        final var songSecondAlbumSecond = new Song("Song4", getingChel, albumSecond, "3:38", (byte) 1);
 
-        songManager.createSong(songFirstAlbumFirst,albumFirst,chel);
-        songManager.createSong(songFirstAlbumSecond,albumFirst,chel);
-        songManager.createSong(songSecondAlbumFirst,albumSecond,chel);
-        songManager.createSong(songSecondAlbumSecond,albumSecond,chel);
+        songManager.createSong(songFirstAlbumFirst,albumFirst,getingChel);
+        songManager.createSong(songFirstAlbumSecond,albumFirst,getingChel);
+        songManager.createSong(songSecondAlbumFirst,albumSecond,getingChel);
+        songManager.createSong(songSecondAlbumSecond,albumSecond,getingChel);
 
-        */
+         */
 
         System.out.print("""
                 \n
@@ -230,17 +233,15 @@ public class AuthenticationManager {
             throw new RuntimeException("Error : Password can't be null or empty !");
         }
 
-        final short iterations = 1000;
         final char[] chars = password.toCharArray();
         final byte[] salt = generateSalt();
+        final var spec = new PBEKeySpec(chars, salt, QuizConstants.PBEKeyIterations, QuizConstants.PBEKeyLength);
         String generatedPassword = null;
 
-        final var spec = new PBEKeySpec(chars, salt, iterations, 32 * 8);
-        SecretKeyFactory skf;
         try {
-            skf = SecretKeyFactory.getInstance(QuizConstants.SecretKeyAlgorithm);
+            final SecretKeyFactory skf = SecretKeyFactory.getInstance(QuizConstants.SecretKeyAlgorithm);
             final byte[] hash = skf.generateSecret(spec).getEncoded();
-            generatedPassword = iterations + ":" + toHex(salt) + ":" + toHex(hash);
+            generatedPassword = QuizConstants.PBEKeyIterations + ":" + toHex(salt) + ":" + toHex(hash);
         } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             e.printStackTrace();
         }
@@ -262,7 +263,7 @@ public class AuthenticationManager {
 
     private byte[] generateSalt() {
         final var random = createSecureRandom();
-        byte[] salt = new byte[QuizConstants.PasswordSaltSize];
+        final byte[] salt = new byte[QuizConstants.PasswordSaltSize];
         random.nextBytes(salt);
         return salt;
     }

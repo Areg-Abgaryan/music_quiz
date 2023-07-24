@@ -33,7 +33,6 @@ public class FileParsingManager {
         }
 
         final File[] filesInDirectory = new File(dataFilesPath).listFiles();
-
         if (filesInDirectory == null || filesInDirectory.length == 0) {
             logger.error("Error : No data files found in the directory !");
             return;
