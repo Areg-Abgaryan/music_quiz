@@ -38,12 +38,7 @@ public class QuizWorkflowManager {
 
     public void initQuiz() {
 
-        logger.info("Music quiz started");
         System.out.print("Hey ! Welcome to Music Quiz !");
-
-        authenticationManager.authenticate();
-
-        //  FIXME !! After authentication, choose play game or see my info or see my records
 
         System.out.print("""
                 \nModes that are currently supported :

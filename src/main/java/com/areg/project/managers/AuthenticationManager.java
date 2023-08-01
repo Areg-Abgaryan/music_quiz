@@ -4,37 +4,24 @@
 
 package com.areg.project.managers;
 
-import com.areg.project.QuizConstants;
-import com.areg.project.QuizDifficulty;
-import com.areg.project.entities.Album;
-import com.areg.project.entities.Artist;
-import com.areg.project.entities.Song;
 import com.areg.project.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
-import java.math.BigInteger;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-
-import java.security.spec.InvalidKeySpecException;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+//  FIXME !! Consider adding user info to quiz mode context after authentication
 @Service
 public class AuthenticationManager {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationManager.class);
     private final UserManager userManager;
+    private final PasswordSecurityManager passwordSecurityManager = PasswordSecurityManager.getInstance();
 
     @Autowired
     public AuthenticationManager(UserManager userManager) {
@@ -42,21 +29,17 @@ public class AuthenticationManager {
     }
 
     public void authenticate() {
-
-        /*
         //  FIXME !! Remove this after db fix
-
+        /*
         final var chel = new Artist("Cardie B");
         final var artistManager = new ArtistManager();
         artistManager.createArtist(chel);
 
         var getingChel = artistManager.getArtist(1L);
-
         var albumFirst = new Album("album1", getingChel, (short) 2012, (byte) 13, "43:57", null, QuizDifficulty.EASY);
         var albumSecond = new Album("album2", getingChel, (short) 2015, (byte) 10, "41:29", null, QuizDifficulty.EASY);
 
         var albumManager = new AlbumManager();
-
         albumManager.createAlbum(albumFirst, getingChel);
         albumManager.createAlbum(albumSecond, getingChel);
 
@@ -72,6 +55,12 @@ public class AuthenticationManager {
         songManager.createSong(songSecondAlbumSecond,albumSecond,getingChel);
 
          */
+
+        //  O7J7LxIdslOLglJEhvDNxQ==
+        //  works when encrypted / decrypted, doesn't work when decrypted
+        var e = passwordSecurityManager.encrypt("Aregushka15");
+        var d = passwordSecurityManager.decrypt("0KTsZCCn1NCx4+xmPZJexw==");
+
 
         System.out.print("""
                 \n
@@ -114,7 +103,7 @@ public class AuthenticationManager {
             final var user = userManager.getUserByEmail(email);
             if (user != null) {
                 //  FIXME !! Decrypt password here, the condition is always false
-                if (! password.equals(user.getPassword())) {
+                if (! password.equals(passwordSecurityManager.decrypt(user.getPassword()))) {
                     System.out.println("Invalid password provided !");
                 } else {
                     logger.info("User {} successfully logged in !", user.getUserName());
@@ -153,7 +142,7 @@ public class AuthenticationManager {
         }
 
         System.out.print("""
-            Create a password following these rules :
+            Create a secure password following these rules :
             
             Password length : 8-20 characters.
             It contains at least one digit, one upper case letter, one lower case letter,
@@ -177,11 +166,17 @@ public class AuthenticationManager {
             }
         }
 
-        final var user = new User(userName, email, generateSecurePasswordHash(password));
+        final var user = new User(userName, email, passwordSecurityManager.encrypt(password));
         userManager.createUser(user);
     }
 
     private boolean isValidUserName(List<User> users, String userName) {
+
+        //  FIXME !! Consider changing this to logger.error
+        if (userName == null || userName.isEmpty()) {
+            throw new RuntimeException("Error : Username can't be null or empty !");
+        }
+
         if (userName.length() < 4 || userName.length() > 20) {
             System.out.println("The username length must be 4-20 characters. Choose another one !");
             return false;
@@ -197,6 +192,12 @@ public class AuthenticationManager {
     }
 
     private boolean isValidEmail(List<User> users, String email) {
+
+        //  FIXME !! Consider changing this to logger.error
+        if (email == null || email.isEmpty()) {
+            throw new RuntimeException("Error : Email can't be null or empty !");
+        }
+
         final var regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
                 + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
         final Pattern pattern = Pattern.compile(regexPattern);
@@ -217,6 +218,12 @@ public class AuthenticationManager {
     }
 
     private boolean isValidPassword(String password) {
+
+        //  FIXME !! Consider changing this to logger.error
+        if (password == null || password.isEmpty()) {
+            throw new RuntimeException("Error : Password can't be null or empty !");
+        }
+
         final String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()-+=^.])(?=\\S+$).{8,20}$";
         final Pattern pattern = Pattern.compile(regex);
         final Matcher matcher = pattern.matcher(password);
@@ -225,55 +232,5 @@ public class AuthenticationManager {
             return false;
         }
         return true;
-    }
-
-    private String generateSecurePasswordHash(String password) {
-
-        if (password == null || password.isEmpty()) {
-            throw new RuntimeException("Error : Password can't be null or empty !");
-        }
-
-        final char[] chars = password.toCharArray();
-        final byte[] salt = generateSalt();
-        final var spec = new PBEKeySpec(chars, salt, QuizConstants.PBEKeyIterations, QuizConstants.PBEKeyLength);
-        String generatedPassword = null;
-
-        try {
-            final SecretKeyFactory skf = SecretKeyFactory.getInstance(QuizConstants.SecretKeyAlgorithm);
-            final byte[] hash = skf.generateSecret(spec).getEncoded();
-            generatedPassword = QuizConstants.PBEKeyIterations + ":" + toHex(salt) + ":" + toHex(hash);
-        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-            e.printStackTrace();
-        }
-
-        return generatedPassword;
-    }
-
-    private String toHex(byte[] array) {
-        final var bi = new BigInteger(1, array);
-        final String hex = bi.toString(16);
-
-        final short paddingLength = (short) ((array.length * 2) - hex.length());
-        if (paddingLength > 0) {
-            return String.format("%0" + paddingLength + "d", 0) + hex;
-        } else {
-            return hex;
-        }
-    }
-
-    private byte[] generateSalt() {
-        final var random = createSecureRandom();
-        final byte[] salt = new byte[QuizConstants.PasswordSaltSize];
-        random.nextBytes(salt);
-        return salt;
-    }
-
-    private Random createSecureRandom() {
-        try {
-            return SecureRandom.getInstance(QuizConstants.RNGAlgorithm);
-        } catch (NoSuchAlgorithmException nae) {
-            logger.info("Couldn't create strong secure random generator, reason : {}.", nae.getMessage());
-            return new SecureRandom();
-        }
     }
 }

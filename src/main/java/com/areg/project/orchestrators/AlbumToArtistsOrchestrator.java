@@ -95,13 +95,4 @@ public class AlbumToArtistsOrchestrator extends OrchestratorBase {
         } while (! isInputValid);
         */
     }
-
-    //  FIXME !!
-    private void survivalMode(QuizContext quizContext) {
-
-    }
-
-    private void normalMode(QuizContext quizContext) {
-
-    }
 }

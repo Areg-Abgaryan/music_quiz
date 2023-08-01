@@ -4,7 +4,6 @@
 
 package com.areg.project;
 
-import com.areg.project.managers.ArtistManager;
 import com.areg.project.managers.AuthenticationManager;
 import com.areg.project.managers.FileParsingManager;
 import com.areg.project.managers.QuizWorkflowManager;
@@ -14,7 +13,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 /**
- * Music Quiz Java application
+ * Music Quiz Application
+ *
+ * @since 2023
+ * @version 1.0
  * @author Areg Abgaryan
  */
 @SpringBootApplication
@@ -33,6 +35,9 @@ public class QuizApplication {
     public static void main(String[] args) {
         SpringApplication.run(QuizApplication.class, args);
         fileParsingManager.parseDataFiles(dataFilesPath);
+        //  FIXME !! After authentication, choose play game or see my info or see my records
+        //  FIXME !! Consider authenticating in a loop, sign out, sign in maybe
+        authenticationManager.authenticate();
         quizWorkflowManager.initQuiz();
     }
 }

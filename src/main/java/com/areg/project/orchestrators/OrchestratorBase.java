@@ -55,9 +55,6 @@ public abstract class OrchestratorBase {
         return type;
     }
 
-    /**
-     *  Validate context of quiz mode
-     */
     protected boolean isQuizModeContextValid(QuizContext quizContext) {
 
         if (quizContext == null) {
