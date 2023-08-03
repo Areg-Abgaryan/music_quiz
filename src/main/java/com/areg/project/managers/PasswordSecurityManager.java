@@ -37,7 +37,7 @@ public class PasswordSecurityManager {
     private PasswordSecurityManager() {
         try {
             //  FIXME !! Delete then
-            Decrypter.start();
+            //Decrypter.start();
 
             final var factory = SecretKeyFactory.getInstance(QuizConstants.SecretKeyAlgorithm);
             final var spec = new PBEKeySpec(QuizConstants.PBEKeySpecPassword.toCharArray(), generateSalt(), QuizConstants.PBEKeyIterations, QuizConstants.PBEKeyLength);
@@ -92,6 +92,7 @@ public class PasswordSecurityManager {
         return null;
     }
 
+    //  FIXME !! Add user salt to db
     private byte[] generateSalt() {
         final var random = createSecureRandom();
         final byte[] salt = new byte[QuizConstants.PasswordSaltSize];

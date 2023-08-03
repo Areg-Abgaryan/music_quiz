@@ -13,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+
 @Service
 public class SongManager {
 
@@ -29,6 +31,22 @@ public class SongManager {
             logger.debug("Successfully created song {}", song.getName());
         } catch (Exception e) {
             logger.error("Error : Could not create song : {}", e.getMessage());
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            session.close();
+        }
+    }
+
+    public void createSongs(Collection<Song> songs) {
+        final Session session = HibernateUtils.getSessionFactory().openSession();
+        try {
+            session.beginTransaction();
+            songs.forEach(session::save);
+            session.getTransaction().commit();
+            logger.debug("Successfully created songs");
+        } catch (Exception e) {
+            logger.error("Error : Could not create songs : {}", e.getMessage());
             e.printStackTrace();
             session.getTransaction().rollback();
         } finally {
