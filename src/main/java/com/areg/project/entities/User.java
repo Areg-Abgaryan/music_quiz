@@ -4,7 +4,6 @@
 
 package com.areg.project.entities;
 
-import com.areg.project.QuizRecords;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,27 +28,27 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userId")
+    @Column(name = "user_id")
     private Long userId;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, name = "email")
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "password_salt")
     private String passwordSalt;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "password")
     private String password;
 
-    @Column(unique = true, nullable = false)
-    private String userName;
+    @Column(unique = true, nullable = false, name = "username")
+    private String username;
 
     //  FIXME !!
     //  private QuizRecords record;
     //  private String country;
 
-    public User(String userName, String email, String passwordSalt, String password) {
-        this.userName = userName;
+    public User(String username, String email, String passwordSalt, String password) {
+        this.username = username;
         this.email = email;
         this.passwordSalt = passwordSalt;
         this.password = password;

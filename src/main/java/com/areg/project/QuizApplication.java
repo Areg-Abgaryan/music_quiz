@@ -22,9 +22,6 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @SpringBootApplication
 @EntityScan
 public class QuizApplication {
-
-    //  FIXME !! Refactor everything
-    //  FIXME !! Fix column names of entities
     //  FIXME !! Init in Autowired constructors all Spring beans
     private static final FileParsingManager fileParsingManager = new FileParsingManager();
     private static final String dataFilesPath = fileParsingManager.getDataFilesDirectory();

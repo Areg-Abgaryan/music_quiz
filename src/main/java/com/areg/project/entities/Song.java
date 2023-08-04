@@ -29,26 +29,26 @@ public class Song {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "songId")
+    @Column(name = "song_id")
     private Long songId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "name")
     private String name;
 
     @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
-    @JoinColumn(name = "fk_song_artist", referencedColumnName = "artistId", nullable = false)
+    @JoinColumn(name = "fk_song_artist", referencedColumnName = "artist_id", nullable = false)
     private Artist artist;
 
     @Setter
-    @JoinColumn(name = "fk_song_album", referencedColumnName = "albumId")
+    @JoinColumn(name = "fk_song_album", referencedColumnName = "album_id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
     private Album album;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "duration")
     private String duration;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "difficulty")
     private byte difficulty;
 
     public Song(String name, Artist artist, Album album, String duration, byte difficulty) {

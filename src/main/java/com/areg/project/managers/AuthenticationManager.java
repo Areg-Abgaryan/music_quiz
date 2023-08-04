@@ -5,6 +5,10 @@
 package com.areg.project.managers;
 
 import com.areg.project.QuizConstants;
+import com.areg.project.QuizDifficulty;
+import com.areg.project.entities.Album;
+import com.areg.project.entities.Artist;
+import com.areg.project.entities.Song;
 import com.areg.project.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,31 +34,30 @@ public class AuthenticationManager {
     }
 
     public void authenticate() {
-        //  FIXME !! Remove this after db fix
-        /*
-        final var chel = new Artist("Cardie B");
-        final var artistManager = new ArtistManager();
-        artistManager.createArtist(chel);
 
-        var getingChel = artistManager.getArtist(1L);
-        var albumFirst = new Album("album1", getingChel, (short) 2012, (byte) 13, "43:57", null, QuizDifficulty.EASY);
-        var albumSecond = new Album("album2", getingChel, (short) 2015, (byte) 10, "41:29", null, QuizDifficulty.EASY);
+        //  FIXME !! Remove this after db fix
+        final var artist = new Artist("Cardie B");
+        final var artistManager = new ArtistManager();
+        artistManager.createArtist(artist);
+
+        var albumFirst = new Album("album1", artist, (short) 2012, (byte) 13, "43:57", null, QuizDifficulty.EASY);
+        var albumSecond = new Album("album2", artist, (short) 2015, (byte) 10, "41:29", null, QuizDifficulty.EASY);
 
         var albumManager = new AlbumManager();
-        albumManager.createAlbum(albumFirst, getingChel);
-        albumManager.createAlbum(albumSecond, getingChel);
+        albumManager.createAlbum(albumFirst, artist);
+        albumManager.createAlbum(albumSecond, artist);
 
         final var songManager = new SongManager();
-        final var songFirstAlbumFirst = new Song("Song1", getingChel, albumFirst, "3:05", (byte) 1);
-        final var songFirstAlbumSecond = new Song("Song2", getingChel, albumFirst, "3:16", (byte) 1);
-        final var songSecondAlbumFirst = new Song("Song3", getingChel, albumSecond, "3:27", (byte) 1);
-        final var songSecondAlbumSecond = new Song("Song4", getingChel, albumSecond, "3:38", (byte) 1);
+        final var songFirstAlbumFirst = new Song("Song1", artist, albumFirst, "3:05", (byte) 1);
+        final var songFirstAlbumSecond = new Song("Song2", artist, albumFirst, "3:16", (byte) 1);
+        final var songSecondAlbumFirst = new Song("Song3", artist, albumSecond, "3:27", (byte) 1);
+        final var songSecondAlbumSecond = new Song("Song4", artist, albumSecond, "3:38", (byte) 1);
 
-        songManager.createSong(songFirstAlbumFirst,albumFirst,getingChel);
-        songManager.createSong(songFirstAlbumSecond,albumFirst,getingChel);
-        songManager.createSong(songSecondAlbumFirst,albumSecond,getingChel);
-        songManager.createSong(songSecondAlbumSecond,albumSecond,getingChel);
-         */
+        songManager.createSong(songFirstAlbumFirst,albumFirst,artist);
+        songManager.createSong(songFirstAlbumSecond,albumFirst,artist);
+        songManager.createSong(songSecondAlbumFirst,albumSecond,artist);
+        songManager.createSong(songSecondAlbumSecond,albumSecond,artist);
+
 
         System.out.print("""
                 \n
@@ -99,7 +102,7 @@ public class AuthenticationManager {
                 if (! user.getPassword().equals(passwordSecurityManager.encrypt(password, user.getPasswordSalt()))) {
                     System.out.println("Invalid password provided !");
                 } else {
-                    logger.info("User {} successfully logged in !", user.getUserName());
+                    logger.info("User {} successfully logged in !", user.getUsername());
                     System.out.println("Successfully logged in !");
                     break;
                 }
@@ -166,7 +169,6 @@ public class AuthenticationManager {
 
     private boolean isValidUserName(List<User> users, String userName) {
 
-        //  FIXME !! Consider changing this to logger.error
         if (userName == null || userName.isEmpty()) {
             throw new RuntimeException("Error : Username can't be null or empty !");
         }
@@ -177,7 +179,7 @@ public class AuthenticationManager {
         }
 
         for (var user : users) {
-            if (userName.equals(user.getUserName())) {
+            if (userName.equals(user.getUsername())) {
                 System.out.println("This username is already reserved. Choose another one !");
                 return false;
             }
@@ -187,7 +189,6 @@ public class AuthenticationManager {
 
     private boolean isValidEmail(List<User> users, String email) {
 
-        //  FIXME !! Consider changing this to logger.error
         if (email == null || email.isEmpty()) {
             throw new RuntimeException("Error : Email can't be null or empty !");
         }
@@ -213,7 +214,6 @@ public class AuthenticationManager {
 
     private boolean isValidPassword(String password) {
 
-        //  FIXME !! Consider changing this to logger.error
         if (password == null || password.isEmpty()) {
             throw new RuntimeException("Error : Password can't be null or empty !");
         }

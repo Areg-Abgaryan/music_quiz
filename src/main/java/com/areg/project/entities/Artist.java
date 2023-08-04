@@ -24,10 +24,10 @@ public class Artist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "artistId")
+    @Column(name = "artist_id")
     private Long artistId;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, name = "name")
     private String name;
 
     public Artist(String name) {

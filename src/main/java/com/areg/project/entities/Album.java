@@ -6,11 +6,11 @@ package com.areg.project.entities;
 
 import com.areg.project.QuizDifficulty;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -32,38 +32,37 @@ import java.util.List;
 @ToString
 public class Album {
 
+    //  FIXME !! Consider changing heavy objects to Strings, like albumName, songName
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "albumId")
+    @Column(name = "album_id")
     private Long albumId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "name")
     private String name;
-
-    //  FIXME !! Consider changing heavy objects to Strings, like albumName, songName
 
     @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
-    @JoinColumn(name = "fk_album_artist", referencedColumnName = "artistId", nullable = false)
+    @JoinColumn(name = "fk_album_artist", referencedColumnName = "artist_id", nullable = false)
     private Artist artist;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "release_year")
     private short releaseYear;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "number_of_songs")
     private byte numberOfSongs;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "total_length")
     private String totalLength;
 
-    @Column
-    //  FIXME !!    @Column(nullable = false)
+    @Column(name = "songs")
     @OneToMany(mappedBy = "album") //, orphanRemoval = true, fetch = FetchType.LAZY,
-            //cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
+    //cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
     private List<Song> songs;
 
     @Setter
-    @Column(nullable = false)
+    @Column(nullable = false, name = "difficulty")
     private QuizDifficulty difficulty;
 
     public Album(String name, Artist artist, short releaseYear, byte numberOfSongs, String totalLength,
