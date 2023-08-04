@@ -36,6 +36,9 @@ public class User {
     private String email;
 
     @Column(nullable = false)
+    private String passwordSalt;
+
+    @Column(nullable = false)
     private String password;
 
     @Column(unique = true, nullable = false)
@@ -45,9 +48,10 @@ public class User {
     //  private QuizRecords record;
     //  private String country;
 
-    public User(String userName, String email, String password) {
+    public User(String userName, String email, String passwordSalt, String password) {
         this.userName = userName;
         this.email = email;
+        this.passwordSalt = passwordSalt;
         this.password = password;
     }
 }

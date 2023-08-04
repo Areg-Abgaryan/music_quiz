@@ -4,6 +4,7 @@
 
 package com.areg.project.managers;
 
+import com.areg.project.QuizConstants;
 import com.areg.project.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,14 +54,7 @@ public class AuthenticationManager {
         songManager.createSong(songFirstAlbumSecond,albumFirst,getingChel);
         songManager.createSong(songSecondAlbumFirst,albumSecond,getingChel);
         songManager.createSong(songSecondAlbumSecond,albumSecond,getingChel);
-
          */
-
-        //  O7J7LxIdslOLglJEhvDNxQ==
-        //  works when encrypted / decrypted, doesn't work when decrypted
-        var e = passwordSecurityManager.encrypt("Aregushka15");
-        var d = passwordSecurityManager.decrypt("0KTsZCCn1NCx4+xmPZJexw==");
-
 
         System.out.print("""
                 \n
@@ -102,8 +96,7 @@ public class AuthenticationManager {
 
             final var user = userManager.getUserByEmail(email);
             if (user != null) {
-                //  FIXME !! Decrypt password here, the condition is always false
-                if (! password.equals(passwordSecurityManager.decrypt(user.getPassword()))) {
+                if (! user.getPassword().equals(passwordSecurityManager.encrypt(password, user.getPasswordSalt()))) {
                     System.out.println("Invalid password provided !");
                 } else {
                     logger.info("User {} successfully logged in !", user.getUserName());
@@ -166,7 +159,8 @@ public class AuthenticationManager {
             }
         }
 
-        final var user = new User(userName, email, passwordSecurityManager.encrypt(password));
+        final var salt = passwordSecurityManager.generateSalt(QuizConstants.PasswordSaltSize);
+        final var user = new User(userName, email, salt, passwordSecurityManager.encrypt(password, salt));
         userManager.createUser(user);
     }
 

@@ -5,25 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="997f2f74-84ab-41c1-bbe9-fb41b5c46ffb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/output/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/MusicDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/MusicDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/builders/MusicDatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/builders/MusicDatabaseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AlbumManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AlbumManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/ArtistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/ArtistManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/FileParsingManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/FileParsingManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/SongManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/SongManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/Decrypter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/PasswordSecurityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/PasswordSecurityManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,19 +201,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/ArtistManager.java</url>
           <line>22</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java</url>
-          <line>263</line>
-          <option name="timeStamp" value="55" />
+          <line>163</line>
+          <option name="timeStamp" value="123" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

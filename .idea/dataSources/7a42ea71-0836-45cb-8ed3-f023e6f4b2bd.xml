@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>1536</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2701</IntrospectionStateNumber>
       <ServerVersion>15.3</ServerVersion>
-      <StartupTime>1688417535</StartupTime>
+      <StartupTime>1689841445</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -810,7 +810,7 @@ false Zulu
 13471||10|C|G
 13471||-9223372036854775808|U|G
 13471||10|U|G</Grants>
-      <IntrospectionStateNumber>1536</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2701</IntrospectionStateNumber>
       <ObjectId>16390</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4230,171 +4230,171 @@ false Zulu
     <schema id="264" parent="4" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1536</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2701</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>517</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="265" parent="264" name="albums_albumid_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>18381</ObjectId>
-      <StateNumber>1513</StateNumber>
+      <ObjectId>20200</ObjectId>
+      <StateNumber>2687</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="266" parent="264" name="artists_artistid_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>18391</ObjectId>
-      <StateNumber>1514</StateNumber>
+      <ObjectId>20210</ObjectId>
+      <StateNumber>2688</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="267" parent="264" name="songs_songid_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>18400</ObjectId>
-      <StateNumber>1515</StateNumber>
+      <ObjectId>20217</ObjectId>
+      <StateNumber>2689</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="268" parent="264" name="users_userid_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>18409</ObjectId>
-      <StateNumber>1516</StateNumber>
+      <ObjectId>20226</ObjectId>
+      <StateNumber>2690</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="269" parent="264" name="albums">
-      <ObjectId>18382</ObjectId>
-      <StateNumber>1517</StateNumber>
+      <ObjectId>20201</ObjectId>
+      <StateNumber>2697</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="270" parent="264" name="artists">
-      <ObjectId>18392</ObjectId>
-      <StateNumber>1517</StateNumber>
+      <ObjectId>20211</ObjectId>
+      <StateNumber>2697</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="271" parent="264" name="songs">
-      <ObjectId>18401</ObjectId>
-      <StateNumber>1518</StateNumber>
+      <ObjectId>20218</ObjectId>
+      <StateNumber>2698</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="272" parent="264" name="users">
-      <ObjectId>18410</ObjectId>
-      <StateNumber>1516</StateNumber>
+      <ObjectId>20227</ObjectId>
+      <StateNumber>2690</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <check id="273" parent="269" name="albums_difficulty_check">
       <ColNames>difficulty</ColNames>
-      <ObjectId>18386</ObjectId>
+      <ObjectId>20205</ObjectId>
       <Predicate>(difficulty &gt;= 0) AND (difficulty &lt;= 2)</Predicate>
-      <StateNumber>1513</StateNumber>
+      <StateNumber>2687</StateNumber>
     </check>
-    <column id="274" parent="269" name="difficulty">
-      <DasType>smallint|0s</DasType>
-      <Position>1</Position>
-      <StateNumber>1513</StateNumber>
-      <TypeId>21</TypeId>
-    </column>
-    <column id="275" parent="269" name="numberofsongs">
-      <DasType>smallint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>1513</StateNumber>
-      <TypeId>21</TypeId>
-    </column>
-    <column id="276" parent="269" name="releaseyear">
-      <DasType>smallint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>1513</StateNumber>
-      <TypeId>21</TypeId>
-    </column>
-    <column id="277" parent="269" name="albumid">
+    <column id="274" parent="269" name="albumid">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;albums_albumid_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StateNumber>1513</StateNumber>
-      <SequenceId>18381</SequenceId>
+      <Position>1</Position>
+      <StateNumber>2687</StateNumber>
+      <SequenceId>20200</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="278" parent="269" name="artistforeignkey">
-      <DasType>bigint|0s</DasType>
+    <column id="275" parent="269" name="difficulty">
+      <DasType>smallint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>2687</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="276" parent="269" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>2687</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="277" parent="269" name="numberofsongs">
+      <DasType>smallint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>2687</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="278" parent="269" name="releaseyear">
+      <DasType>smallint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>1513</StateNumber>
-      <TypeId>20</TypeId>
+      <StateNumber>2687</StateNumber>
+      <TypeId>21</TypeId>
     </column>
-    <column id="279" parent="269" name="name">
+    <column id="279" parent="269" name="totallength">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>1513</StateNumber>
+      <StateNumber>2687</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="280" parent="269" name="totallength">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="280" parent="269" name="fk_album_artist">
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
-      <StateNumber>1513</StateNumber>
-      <TypeId>1043</TypeId>
+      <StateNumber>2687</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <foreign-key id="281" parent="269" name="fkawyrqogj87nmp29vqdpkjeqp4">
-      <ColNames>artistforeignkey</ColNames>
-      <ObjectId>18422</ObjectId>
+    <foreign-key id="281" parent="269" name="fko4gb4b941nghax6jjq2o5b7r2">
+      <ColNames>fk_album_artist</ColNames>
+      <ObjectId>20241</ObjectId>
       <RefColNames>artistid</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>1517</StateNumber>
-      <RefTableId>18392</RefTableId>
+      <StateNumber>2697</StateNumber>
+      <RefTableId>20211</RefTableId>
       <RefTableName>artists</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <index id="282" parent="269" name="albums_pkey">
       <ColNames>albumid</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18389</ObjectId>
+      <ObjectId>20208</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1513</StateNumber>
+      <StateNumber>2687</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="283" parent="269" name="albums_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18390</ObjectId>
+      <ObjectId>20209</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1513</StateNumber>
-      <UnderlyingIndexId>18389</UnderlyingIndexId>
+      <StateNumber>2687</StateNumber>
+      <UnderlyingIndexId>20208</UnderlyingIndexId>
     </key>
     <column id="284" parent="270" name="artistid">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;artists_artistid_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1514</StateNumber>
-      <SequenceId>18391</SequenceId>
+      <StateNumber>2688</StateNumber>
+      <SequenceId>20210</SequenceId>
       <TypeId>20</TypeId>
     </column>
     <column id="285" parent="270" name="name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>1514</StateNumber>
+      <StateNumber>2688</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="286" parent="270" name="artists_pkey">
       <ColNames>artistid</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18396</ObjectId>
+      <ObjectId>20215</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1514</StateNumber>
+      <StateNumber>2688</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="287" parent="270" name="artists_name_key">
+    <index id="287" parent="270" name="uk_s2uno1rfqbsn8cs67rhdw6psn">
       <ColNames>name</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18398</ObjectId>
-      <StateNumber>1514</StateNumber>
+      <ObjectId>20235</ObjectId>
+      <StateNumber>2692</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -4403,175 +4403,178 @@ false Zulu
     </index>
     <key id="288" parent="270" name="artists_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18397</ObjectId>
+      <ObjectId>20216</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1514</StateNumber>
-      <UnderlyingIndexId>18396</UnderlyingIndexId>
+      <StateNumber>2688</StateNumber>
+      <UnderlyingIndexId>20215</UnderlyingIndexId>
     </key>
-    <key id="289" parent="270" name="artists_name_key">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18399</ObjectId>
-      <StateNumber>1514</StateNumber>
-      <UnderlyingIndexId>18398</UnderlyingIndexId>
+    <key id="289" parent="270" name="uk_s2uno1rfqbsn8cs67rhdw6psn">
+      <ObjectId>20236</ObjectId>
+      <StateNumber>2692</StateNumber>
+      <UnderlyingIndexId>20235</UnderlyingIndexId>
     </key>
-    <column id="290" parent="271" name="difficulty">
-      <DasType>smallint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>1515</StateNumber>
-      <TypeId>21</TypeId>
-    </column>
-    <column id="291" parent="271" name="albumforeignkey">
-      <DasType>bigint|0s</DasType>
-      <Position>2</Position>
-      <StateNumber>1515</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="292" parent="271" name="artistforeignkey">
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>1515</StateNumber>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="293" parent="271" name="songid">
+    <column id="290" parent="271" name="songid">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;songs_songid_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StateNumber>1515</StateNumber>
-      <SequenceId>18400</SequenceId>
+      <Position>1</Position>
+      <StateNumber>2689</StateNumber>
+      <SequenceId>20217</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="294" parent="271" name="duration">
+    <column id="291" parent="271" name="difficulty">
+      <DasType>smallint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>2689</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="292" parent="271" name="duration">
       <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>2689</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="293" parent="271" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>2689</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="294" parent="271" name="fk_song_album">
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>1515</StateNumber>
-      <TypeId>1043</TypeId>
+      <StateNumber>2689</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <column id="295" parent="271" name="name">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="295" parent="271" name="fk_song_artist">
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>1515</StateNumber>
-      <TypeId>1043</TypeId>
+      <StateNumber>2689</StateNumber>
+      <TypeId>20</TypeId>
     </column>
-    <foreign-key id="296" parent="271" name="fk3isy0bx77y2e067vpan20n31v">
-      <ColNames>albumforeignkey</ColNames>
-      <ObjectId>18427</ObjectId>
+    <foreign-key id="296" parent="271" name="fkhrww124qo8eqciat7vlasiv5v">
+      <ColNames>fk_song_album</ColNames>
+      <ObjectId>20246</ObjectId>
       <RefColNames>albumid</RefColNames>
-      <RefColPositions>4</RefColPositions>
-      <StateNumber>1518</StateNumber>
-      <RefTableId>18382</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>2698</StateNumber>
+      <RefTableId>20201</RefTableId>
       <RefTableName>albums</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="297" parent="271" name="fk47j7p7kycyv06kklq94w2m6kl">
-      <ColNames>artistforeignkey</ColNames>
-      <ObjectId>18432</ObjectId>
+    <foreign-key id="297" parent="271" name="fkrxfisuus0sn9wx2ounj6dt3tn">
+      <ColNames>fk_song_artist</ColNames>
+      <ObjectId>20251</ObjectId>
       <RefColNames>artistid</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>1519</StateNumber>
-      <RefTableId>18392</RefTableId>
+      <StateNumber>2699</StateNumber>
+      <RefTableId>20211</RefTableId>
       <RefTableName>artists</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <index id="298" parent="271" name="songs_pkey">
       <ColNames>songid</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18407</ObjectId>
+      <ObjectId>20224</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1515</StateNumber>
+      <StateNumber>2689</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="299" parent="271" name="songs_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18408</ObjectId>
+      <ObjectId>20225</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1515</StateNumber>
-      <UnderlyingIndexId>18407</UnderlyingIndexId>
+      <StateNumber>2689</StateNumber>
+      <UnderlyingIndexId>20224</UnderlyingIndexId>
     </key>
     <column id="300" parent="272" name="userid">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;users_userid_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1516</StateNumber>
-      <SequenceId>18409</SequenceId>
+      <StateNumber>2690</StateNumber>
+      <SequenceId>20226</SequenceId>
       <TypeId>20</TypeId>
     </column>
     <column id="301" parent="272" name="email">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>1516</StateNumber>
+      <StateNumber>2690</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="302" parent="272" name="password">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>1516</StateNumber>
+      <StateNumber>2690</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="303" parent="272" name="username">
+    <column id="303" parent="272" name="passwordsalt">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>1516</StateNumber>
+      <StateNumber>2690</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="304" parent="272" name="users_pkey">
+    <column id="304" parent="272" name="username">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>2690</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="305" parent="272" name="users_pkey">
       <ColNames>userid</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18416</ObjectId>
+      <ObjectId>20233</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1516</StateNumber>
+      <StateNumber>2690</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="305" parent="272" name="users_email_key">
+    <index id="306" parent="272" name="uk_6dotkott2kjsp8vw4d0m25fb7">
       <ColNames>email</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18418</ObjectId>
-      <StateNumber>1516</StateNumber>
+      <ObjectId>20237</ObjectId>
+      <StateNumber>2694</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="306" parent="272" name="users_username_key">
+    <index id="307" parent="272" name="uk_mmns67o5v4bfippoqitu4v3t6">
       <ColNames>username</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18420</ObjectId>
-      <StateNumber>1516</StateNumber>
+      <ObjectId>20239</ObjectId>
+      <StateNumber>2696</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="307" parent="272" name="users_pkey">
+    <key id="308" parent="272" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18417</ObjectId>
+      <ObjectId>20234</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1516</StateNumber>
-      <UnderlyingIndexId>18416</UnderlyingIndexId>
+      <StateNumber>2690</StateNumber>
+      <UnderlyingIndexId>20233</UnderlyingIndexId>
     </key>
-    <key id="308" parent="272" name="users_email_key">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18419</ObjectId>
-      <StateNumber>1516</StateNumber>
-      <UnderlyingIndexId>18418</UnderlyingIndexId>
+    <key id="309" parent="272" name="uk_6dotkott2kjsp8vw4d0m25fb7">
+      <ObjectId>20238</ObjectId>
+      <StateNumber>2694</StateNumber>
+      <UnderlyingIndexId>20237</UnderlyingIndexId>
     </key>
-    <key id="309" parent="272" name="users_username_key">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>18421</ObjectId>
-      <StateNumber>1516</StateNumber>
-      <UnderlyingIndexId>18420</UnderlyingIndexId>
+    <key id="310" parent="272" name="uk_mmns67o5v4bfippoqitu4v3t6">
+      <ObjectId>20240</ObjectId>
+      <StateNumber>2696</StateNumber>
+      <UnderlyingIndexId>20239</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
