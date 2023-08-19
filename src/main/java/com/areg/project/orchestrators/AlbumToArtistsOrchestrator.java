@@ -64,35 +64,5 @@ public class AlbumToArtistsOrchestrator extends OrchestratorBase {
             score = super.answerCheck(artistToOption, correctAnswer, score);
         }
         System.out.println("\nYour final score is : " + score);
-
-/*
-        System.out.print("""
-                Choose mode :
-                1. Normal
-                2. Survival
-                Enter option :\s""");
-
-        boolean isInputValid = false;
-        final var scanner = new Scanner(System.in);
-        String option = scanner.next();
-        do {
-            switch (option) {
-                case "1" -> {
-                    //  if 1
-                    isInputValid = true;
-                    normalMode(quizContext);
-                }
-                case "2" -> {
-                    isInputValid = true;
-                    quizContext.setMode(QuizMode.Survival_Album_from_Artists);
-                    survivalMode(quizContext);
-                }
-                default -> {
-                    System.out.println("Wrong input ! Please, choose one of the options above.");
-                    option = scanner.next();
-                }
-            }
-        } while (! isInputValid);
-        */
     }
 }

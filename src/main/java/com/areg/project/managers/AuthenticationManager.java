@@ -59,6 +59,8 @@ public class AuthenticationManager {
         songManager.createSong(songSecondAlbumSecond,albumSecond,artist);
 
 
+        System.out.print("Hey ! Welcome to Music Quiz !");
+
         System.out.print("""
                 \n
                 1. Log In

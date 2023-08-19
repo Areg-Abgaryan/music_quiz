@@ -15,30 +15,24 @@ import com.areg.project.orchestrators.SongToAlbumsOrchestrator;
 import com.areg.project.orchestrators.SongToArtistsOrchestrator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
 //  FIXME !! Add survival mode support for each submode
 //  FIXME !! Add exit & goto beginning logic in the end
-//  FIXME !! Replace Hibernate#save with #persist - problems occured
+//  FIXME !! Replace Hibernate#save with #persist
+//  FIXME !! Send user confirmation messages during sign up
+//  FIXME !! Add logic for recovering forgotten password
+//  FIXME !! Make microservice from authentication logic
 //  FIXME !! Remove run-time database creation & get all information from the persistent db
 @Service
 public class QuizWorkflowManager {
 
     private static final Logger logger = LoggerFactory.getLogger(QuizWorkflowManager.class);
     private OrchestratorBase orchestratorBase;
-    private final AuthenticationManager authenticationManager;
-
-    @Autowired
-    public QuizWorkflowManager(AuthenticationManager authenticationManager) {
-        this.authenticationManager = authenticationManager;
-    }
 
     public void initQuiz() {
-
-        System.out.print("Hey ! Welcome to Music Quiz !");
 
         System.out.print("""
                 \nModes that are currently supported :
@@ -62,7 +56,6 @@ public class QuizWorkflowManager {
         logger.info("Music input mode : {}", baseMode);
 
         //  FIXME !! Add timeout wait logic
-        //  FIXME !! Refactor this
         boolean isInputValid = false;
         do {
             switch (baseMode) {

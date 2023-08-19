@@ -17,7 +17,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 //  FIXME !! Add personal records for each mode, country, maybe auth info (keys)
-
 @Table(name = "users", schema = "public")
 @Entity
 @Getter
@@ -25,6 +24,13 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
 public class User {
+
+    /*  FIXME !! Consider adding these fields
+    - lockoutEnabled - true or false values and indicates if the user locked their account by accessing too many times with wrong credentials.
+    - accountAccessFailCount - this field is containing the number of times when the user tried to access their account with wrong credentials.
+            Usually, I'm locking the account after 3 false accesses.
+    - lockoutTime - this field is containing the date and time when the account has been locked out.
+     */
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -21,19 +21,19 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
  */
 @SpringBootApplication
 @EntityScan
+//  FIXME !! Init in Autowired constructors all Spring beans
+//  FIXME !! After authentication, choose play game or see my info or see my records
+//  FIXME !! Consider authenticating in a loop, sign out, sign in maybe
 public class QuizApplication {
-    //  FIXME !! Init in Autowired constructors all Spring beans
     private static final FileParsingManager fileParsingManager = new FileParsingManager();
     private static final String dataFilesPath = fileParsingManager.getDataFilesDirectory();
     private static final UserManager userManager = new UserManager();
     private static final AuthenticationManager authenticationManager = new AuthenticationManager(userManager);
-    private static final QuizWorkflowManager quizWorkflowManager = new QuizWorkflowManager(authenticationManager);
+    private static final QuizWorkflowManager quizWorkflowManager = new QuizWorkflowManager();
 
     public static void main(String[] args) {
         SpringApplication.run(QuizApplication.class, args);
         fileParsingManager.parseDataFiles(dataFilesPath);
-        //  FIXME !! After authentication, choose play game or see my info or see my records
-        //  FIXME !! Consider authenticating in a loop, sign out, sign in maybe
         authenticationManager.authenticate();
         quizWorkflowManager.initQuiz();
     }
