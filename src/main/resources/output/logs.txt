@@ -1,117 +1,78 @@
-2023-08-01T01:16:37.992+04:00 ERROR 81149 --- [main] c.a.p.managers.PasswordSecurityManager   : Error : Password was not decrypted successfully.
-2023-08-01T01:16:38.002+04:00  WARN 81149 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=62175] throws
-
-java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
-	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2023-08-01T01:16:38.016+04:00  WARN 81149 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=62175] throws
-
-java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
-	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2023-08-01T01:16:38.023+04:00  WARN 81149 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=62175] throws
-
-java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
-	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2023-08-01T01:16:38.026+04:00  WARN 81149 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=62175] throws
-
-java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
-	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2023-08-01T01:16:38.030+04:00  WARN 81149 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=62175] throws
-
-java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
-	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2023-08-01T01:16:38.032+04:00  WARN 81149 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=62175] throws
-
-java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
-	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2023-08-01T01:16:38.033+04:00  WARN 81149 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=62175] throws
-
-java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
-	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
-	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2023-08-01T01:34:16.273+04:00  INFO 94210 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.6 with PID 94210 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-08-01T01:34:16.277+04:00  INFO 94210 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-08-01T01:34:17.308+04:00  INFO 94210 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-08-01T01:34:17.316+04:00  INFO 94210 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-01T01:34:17.316+04:00  INFO 94210 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-08-01T01:34:17.381+04:00  INFO 94210 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-01T01:34:17.382+04:00  INFO 94210 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1059 ms
-2023-08-01T01:34:17.837+04:00  INFO 94210 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-08-01T01:34:17.848+04:00  INFO 94210 --- [main] com.areg.project.QuizApplication         : Started QuizApplication in 2.076 seconds (process running for 2.989)
-2023-08-01T01:34:17.884+04:00  INFO 94210 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 32 milliseconds.
-2023-08-01T01:34:17.889+04:00  INFO 94210 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-08-01T01:34:32.362+04:00 ERROR 94210 --- [main] c.a.p.managers.PasswordSecurityManager   : Error : Password was not decrypted successfully.
-2023-08-01T01:34:36.994+04:00  INFO 94217 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.6 with PID 94217 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-08-01T01:34:36.999+04:00  INFO 94217 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-08-01T01:34:38.027+04:00  INFO 94217 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-08-01T01:34:38.034+04:00  INFO 94217 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-01T01:34:38.034+04:00  INFO 94217 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-08-01T01:34:38.093+04:00  INFO 94217 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-01T01:34:38.093+04:00  INFO 94217 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1043 ms
-2023-08-01T01:34:38.527+04:00  INFO 94217 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-08-01T01:34:38.540+04:00  INFO 94217 --- [main] com.areg.project.QuizApplication         : Started QuizApplication in 2.012 seconds (process running for 2.9)
-2023-08-01T01:34:38.575+04:00  INFO 94217 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 32 milliseconds.
-2023-08-01T01:34:38.580+04:00  INFO 94217 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-08-01T01:35:00.560+04:00 ERROR 94217 --- [main] c.a.p.managers.PasswordSecurityManager   : Error : Password was not decrypted successfully.
-2023-08-01T01:35:03.469+04:00  INFO 94223 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.6 with PID 94223 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-08-01T01:35:03.475+04:00  INFO 94223 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-08-01T01:35:04.575+04:00  INFO 94223 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-08-01T01:35:04.582+04:00  INFO 94223 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-01T01:35:04.582+04:00  INFO 94223 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-08-01T01:35:04.644+04:00  INFO 94223 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-01T01:35:04.644+04:00  INFO 94223 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1110 ms
-2023-08-01T01:35:05.099+04:00  INFO 94223 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-08-01T01:35:05.110+04:00  INFO 94223 --- [main] com.areg.project.QuizApplication         : Started QuizApplication in 2.212 seconds (process running for 3.304)
-2023-08-01T01:35:05.144+04:00  INFO 94223 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 31 milliseconds.
-2023-08-01T01:35:05.149+04:00  INFO 94223 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-08-01T01:36:41.429+04:00 ERROR 94223 --- [main] c.a.p.managers.PasswordSecurityManager   : Error : Password was not decrypted successfully.
-2023-08-01T01:38:21.801+04:00  INFO 94575 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.6 with PID 94575 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-08-01T01:38:21.803+04:00  INFO 94575 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-08-01T01:38:22.857+04:00  INFO 94575 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-08-01T01:38:22.865+04:00  INFO 94575 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-01T01:38:22.866+04:00  INFO 94575 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-08-01T01:38:22.928+04:00  INFO 94575 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-01T01:38:22.929+04:00  INFO 94575 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1076 ms
-2023-08-01T01:38:23.383+04:00  INFO 94575 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-08-01T01:38:23.393+04:00  INFO 94575 --- [main] com.areg.project.QuizApplication         : Started QuizApplication in 2.109 seconds (process running for 2.948)
-2023-08-01T01:38:23.430+04:00  INFO 94575 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 33 milliseconds.
-2023-08-01T01:38:23.435+04:00  INFO 94575 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-08-01T01:38:26.733+04:00 ERROR 94575 --- [main] c.a.p.managers.PasswordSecurityManager   : Error : Password was not decrypted successfully.
-2023-08-01T01:38:30.889+04:00  INFO 94579 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.6 with PID 94579 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-08-01T01:38:30.895+04:00  INFO 94579 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-08-01T01:38:31.991+04:00  INFO 94579 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-08-01T01:38:31.998+04:00  INFO 94579 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-08-01T01:38:31.999+04:00  INFO 94579 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-08-01T01:38:32.053+04:00  INFO 94579 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-08-01T01:38:32.053+04:00  INFO 94579 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1101 ms
-2023-08-01T01:38:32.510+04:00  INFO 94579 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-08-01T01:38:32.520+04:00  INFO 94579 --- [main] com.areg.project.QuizApplication         : Started QuizApplication in 2.168 seconds (process running for 3.183)
-2023-08-01T01:38:32.556+04:00  INFO 94579 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 33 milliseconds.
-2023-08-01T01:38:32.561+04:00  INFO 94579 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-08-01T01:39:45.354+04:00 ERROR 94579 --- [main] c.a.p.managers.PasswordSecurityManager   : Error : Password was not decrypted successfully.
+2023-08-20T03:28:06.082+04:00  INFO 33154 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.6 with PID 33154 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
+2023-08-20T03:28:06.086+04:00  INFO 33154 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-08-20T03:28:07.196+04:00  INFO 33154 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-08-20T03:28:07.204+04:00  INFO 33154 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-08-20T03:28:07.204+04:00  INFO 33154 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-08-20T03:28:07.303+04:00  INFO 33154 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-20T03:28:07.304+04:00  INFO 33154 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1143 ms
+2023-08-20T03:28:07.416+04:00  INFO 33154 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 35 milliseconds.
+2023-08-20T03:28:07.420+04:00  INFO 33154 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
+2023-08-20T03:28:07.465+04:00  INFO 33154 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
+2023-08-20T03:28:07.467+04:00  INFO 33154 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-08-20T03:28:07.748+04:00  WARN 33154 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
+2023-08-20T03:28:07.753+04:00  INFO 33154 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2023-08-20T03:28:07.753+04:00  INFO 33154 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
+2023-08-20T03:28:07.753+04:00  INFO 33154 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
+2023-08-20T03:28:07.753+04:00  INFO 33154 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
+2023-08-20T03:28:07.754+04:00  INFO 33154 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
+2023-08-20T03:28:07.874+04:00  INFO 33154 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-08-20T03:28:08.056+04:00  INFO 33154 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-08-20T03:28:08.663+04:00  INFO 33154 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@75c77add] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-08-20T03:28:08.807+04:00  WARN 33154 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2023-08-20T03:28:08.809+04:00 ERROR 33154 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "uk_s2uno1rfqbsn8cs67rhdw6psn"
+  Detail: Key (name)=(Cardie B) already exists.
+2023-08-20T03:28:08.812+04:00 ERROR 33154 --- [main] c.areg.project.managers.ArtistManager    : Error : Could not create artist : could not execute statement [ERROR: duplicate key value violates unique constraint "uk_s2uno1rfqbsn8cs67rhdw6psn"
+  Detail: Key (name)=(Cardie B) already exists.] [insert into public.artists (name) values (?)]
+2023-08-20T03:28:08.822+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Artist#<null>])
+	Dependent entities: ([[com.areg.project.entities.Album#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Album.artist])
+2023-08-20T03:28:08.825+04:00 ERROR 33154 --- [main] com.areg.project.managers.AlbumManager   : Error : Could not create album : Not-null property references a transient value - transient instance must be saved before current operation : com.areg.project.entities.Album.artist -> com.areg.project.entities.Artist
+2023-08-20T03:28:08.826+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Artist#<null>])
+	Dependent entities: ([[com.areg.project.entities.Album#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Album.artist])
+2023-08-20T03:28:08.826+04:00 ERROR 33154 --- [main] com.areg.project.managers.AlbumManager   : Error : Could not create album : Not-null property references a transient value - transient instance must be saved before current operation : com.areg.project.entities.Album.artist -> com.areg.project.entities.Artist
+2023-08-20T03:28:08.828+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Album#<null>])
+	Dependent entities: ([[com.areg.project.entities.Song#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Song.album])
+2023-08-20T03:28:08.828+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Artist#<null>])
+	Dependent entities: ([[com.areg.project.entities.Song#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Song.artist])
+2023-08-20T03:28:08.828+04:00 ERROR 33154 --- [main] com.areg.project.managers.SongManager    : Error : Could not create song : Not-null property references a transient value - transient instance must be saved before current operation : com.areg.project.entities.Song.artist -> com.areg.project.entities.Artist
+2023-08-20T03:28:08.829+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Album#<null>])
+	Dependent entities: ([[com.areg.project.entities.Song#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Song.album])
+2023-08-20T03:28:08.829+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Artist#<null>])
+	Dependent entities: ([[com.areg.project.entities.Song#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Song.artist])
+2023-08-20T03:28:08.829+04:00 ERROR 33154 --- [main] com.areg.project.managers.SongManager    : Error : Could not create song : Not-null property references a transient value - transient instance must be saved before current operation : com.areg.project.entities.Song.artist -> com.areg.project.entities.Artist
+2023-08-20T03:28:08.831+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Album#<null>])
+	Dependent entities: ([[com.areg.project.entities.Song#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Song.album])
+2023-08-20T03:28:08.831+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Artist#<null>])
+	Dependent entities: ([[com.areg.project.entities.Song#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Song.artist])
+2023-08-20T03:28:08.831+04:00 ERROR 33154 --- [main] com.areg.project.managers.SongManager    : Error : Could not create song : Not-null property references a transient value - transient instance must be saved before current operation : com.areg.project.entities.Song.artist -> com.areg.project.entities.Artist
+2023-08-20T03:28:08.831+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Album#<null>])
+	Dependent entities: ([[com.areg.project.entities.Song#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Song.album])
+2023-08-20T03:28:08.832+04:00  WARN 33154 --- [main] o.h.a.i.UnresolvedEntityInsertActions    : HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
+	Unsaved transient entity: ([com.areg.project.entities.Artist#<null>])
+	Dependent entities: ([[com.areg.project.entities.Song#<null>]])
+	Non-nullable association(s): ([com.areg.project.entities.Song.artist])
+2023-08-20T03:28:08.835+04:00 ERROR 33154 --- [main] com.areg.project.managers.SongManager    : Error : Could not create song : Not-null property references a transient value - transient instance must be saved before current operation : com.areg.project.entities.Song.artist -> com.areg.project.entities.Artist
+2023-08-20T03:28:43.661+04:00  INFO 33154 --- [main] com.areg.project.managers.UserManager    : User qwer23 successfully authenticated !
+2023-08-20T03:28:43.663+04:00  INFO 33154 --- [main] c.a.p.managers.QuizWorkflowManager       : Quiz difficulty : EASY
+2023-08-20T03:28:43.664+04:00  INFO 33154 --- [main] c.a.p.managers.QuizWorkflowManager       : Quiz number of rounds : 10
+2023-08-20T03:28:52.166+04:00  INFO 33154 --- [main] c.a.p.managers.QuizWorkflowManager       : Music input mode : 1
+2023-08-20T03:28:52.168+04:00  INFO 33154 --- [main] c.a.p.orchestrators.OrchestratorBase     : Starting quiz mode : Normal_Album_from_Artists.
+2023-08-20T03:28:59.513+04:00  INFO 33154 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-08-20T03:28:59.524+04:00  INFO 33154 --- [main] com.areg.project.QuizApplication         : Started QuizApplication in 53.963 seconds (process running for 54.615)
