@@ -43,7 +43,7 @@ public class QuizApplication {
     }
 
     @PostConstruct
-    public void initQuiz() {
+    public void startApplication() {
         final String dataFilesPath = fileParsingManager.getDataFilesDirectory();
         fileParsingManager.parseDataFiles(dataFilesPath);
         authenticationManager.authenticate();

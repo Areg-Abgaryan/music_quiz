@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -115,29 +116,28 @@ public class AuthenticationManager {
     }
 
     private void signUp() {
-
         final var users = userManager.getAllUsers();
-        String userName, email, password;
+        final String email = getInput("Enter e-mail : ", input -> isValidEmail(users, input));
+        final String userName = getInput("Enter username : ", input -> isValidUserName(users, input));
+        final String password = getPasswordInput();
 
+        final var salt = passwordSecurityManager.generateSalt(QuizConstants.PasswordSaltSize);
+        final var user = new User(userName, email, salt, passwordSecurityManager.encrypt(password, salt));
+        userManager.createUser(user);
+    }
+
+    private String getInput(String prompt, Predicate<String> validationFunction) {
         while (true) {
-            System.out.println("Enter e-mail : ");
+            System.out.println(prompt);
             final var scanner = new Scanner(System.in);
-            final String mail = scanner.next();
-            if (isValidEmail(users, mail)) {
-                email = mail;
-                break;
+            final String input = scanner.next();
+            if (validationFunction.test(input)) {
+                return input;
             }
         }
+    }
 
-        while (true) {
-            System.out.println("Enter username : ");
-            final var scanner = new Scanner(System.in);
-            final String username = scanner.next();
-            if (isValidUserName(users, username)) {
-                userName = username;
-                break;
-            }
-        }
+    private String getPasswordInput() {
 
         System.out.print("""
             Create a secure password following these rules :
@@ -147,6 +147,8 @@ public class AuthenticationManager {
             one special character [ !@#$%&*()-+=^. ], doesn’t contain any white space.
             
             """);
+
+        String password;
 
         while (true) {
             System.out.println("Enter password : ");
@@ -163,10 +165,7 @@ public class AuthenticationManager {
                 break;
             }
         }
-
-        final var salt = passwordSecurityManager.generateSalt(QuizConstants.PasswordSaltSize);
-        final var user = new User(userName, email, salt, passwordSecurityManager.encrypt(password, salt));
-        userManager.createUser(user);
+        return password;
     }
 
     private boolean isValidUserName(List<User> users, String userName) {
