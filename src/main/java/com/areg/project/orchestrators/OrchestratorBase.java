@@ -73,12 +73,9 @@ public abstract class OrchestratorBase {
 
         byte i = 1;
         final Map<String, Byte> subtypeToOption = new HashMap<>(QuizConstants.RoundOptions);
-        for (var artist : fourOptions) {
-            System.out.print(i + ". \"" + artist + "\"");
-            if (i != 4) {
-                System.out.print("  ");
-            }
-            subtypeToOption.put(artist, i);
+        for (String option : fourOptions) {
+            System.out.print(i + ". \"" + option + "\"" + (i != 4 ? "  " : ""));
+            subtypeToOption.put(option, i);
             ++i;
         }
         return subtypeToOption;
@@ -97,11 +94,12 @@ public abstract class OrchestratorBase {
         if (option.equals("")) {
             return score;
         }
+
         if (! isValidOption(option)) {
             logger.info("Wrong input : {}.", option);
             System.out.println("Wrong input : \"" + option + "\"");
         } else {
-            final var correctNumber = subtypeToOption.get(correctAnswer);
+            final byte correctNumber = subtypeToOption.get(correctAnswer);
             if (Byte.parseByte(option) == correctNumber) {
                 ++score;
                 System.out.println("Exactly !");
@@ -115,7 +113,7 @@ public abstract class OrchestratorBase {
     private String getOptionFromUserInput() {
 
         final ExecutorService service = Executors.newFixedThreadPool(1);
-        final Callable<String> callable = () -> new Scanner(System.in).next();
+        final Callable<String> callable = () -> new Scanner(System.in).nextLine();
         final Future<String> inputFuture = service.submit(callable);
 
         try {

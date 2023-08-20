@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -41,20 +42,22 @@ public class FileParsingManager {
         final Set<MusicAlbum> albums = new HashSet<>();
         final long startTime = System.currentTimeMillis();
 
-        for (var file : filesInDirectory) {
-            try (var reader = new FileReader(file)) {
-                if (! isJsonFile(file)) {
-                    continue;
-                }
-                albums.add(gson.fromJson(reader, MusicAlbum.class));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        logger.info("parseDataFiles takes {} milliseconds.", + (System.currentTimeMillis() - startTime));
+        Arrays.stream(filesInDirectory).forEach(file -> parseAlbumFromFile(file, albums));
+
+        logger.info("parseDataFiles takes {} milliseconds.", System.currentTimeMillis() - startTime);
         musicDatabaseBuilder.buildMusicDatabase(albums);
+    }
+
+    private void parseAlbumFromFile(File file, Set<MusicAlbum> albums) {
+        try (final var reader = new FileReader(file)) {
+            if (isJsonFile(file)) {
+                albums.add(gson.fromJson(reader, MusicAlbum.class));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String getDataFilesDirectory() {
@@ -62,14 +65,15 @@ public class FileParsingManager {
                 File.separator + "resources" + File.separator + "data_files" + File.separator;
     }
 
-    private boolean isValid(String dataFilesPath){
+    private boolean isValid(String dataFilesPath) {
         if (dataFilesPath.isEmpty()) {
-            logger.error("Error : Invalid path provided {}.", dataFilesPath);
+            logger.error("Error: Invalid path provided {}.", dataFilesPath);
             return false;
         }
 
-        if (! new File(dataFilesPath).isDirectory()) {
-            logger.error("Error : Data files directory is wrong !");
+        final var directory = new File(dataFilesPath);
+        if (! directory.isDirectory()) {
+            logger.error("Error: Data files directory is wrong !");
             return false;
         }
         return true;

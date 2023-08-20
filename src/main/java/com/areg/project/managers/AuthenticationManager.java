@@ -27,11 +27,12 @@ public class AuthenticationManager {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationManager.class);
     private final UserManager userManager;
-    private final PasswordSecurityManager passwordSecurityManager = PasswordSecurityManager.getInstance();
+    private final PasswordSecurityManager passwordSecurityManager;
 
     @Autowired
-    public AuthenticationManager(UserManager userManager) {
+    public AuthenticationManager(UserManager userManager, PasswordSecurityManager passwordSecurityManager) {
         this.userManager = userManager;
+        this.passwordSecurityManager = passwordSecurityManager;
     }
 
     public void authenticate() {

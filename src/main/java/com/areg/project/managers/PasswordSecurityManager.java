@@ -22,18 +22,6 @@ import java.util.Random;
 public class PasswordSecurityManager {
 
     private static final Logger logger = LoggerFactory.getLogger(PasswordSecurityManager.class);
-    private static PasswordSecurityManager instance;
-
-    public static PasswordSecurityManager getInstance() {
-        if (instance == null) {
-            synchronized (PasswordSecurityManager.class) {
-                if (instance == null) {
-                    instance = new PasswordSecurityManager();
-                }
-            }
-        }
-        return instance;
-    }
 
     public String encrypt(String password, String salt) {
         final byte[] securePassword = hash(password.toCharArray(), salt.getBytes());

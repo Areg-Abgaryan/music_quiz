@@ -16,7 +16,6 @@ import com.areg.project.orchestrators.SongToArtistsOrchestrator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
 import java.util.Scanner;
 
 //  FIXME !! Add survival mode support for each submode
@@ -34,15 +33,7 @@ public class QuizWorkflowManager {
 
     public void initQuiz() {
 
-        System.out.print("""
-                \nModes that are currently supported :
-                1. Album from Artists
-                2. Artist from Albums
-                3. Song from Artists
-                4. Song from Albums
-                
-                Enter quiz mode :\s""");
-
+        printAvailableModes();
 
         //  FIXME !! Consider adding fields from user input, refactor hardcoded everything
         final var quizModeContext = new QuizContext();
@@ -87,5 +78,16 @@ public class QuizWorkflowManager {
         } while (! isInputValid);
 
         orchestratorBase.startQuiz(quizModeContext);
+    }
+
+    private void printAvailableModes() {
+        System.out.print("""
+                \nModes that are currently supported :
+                1. Album from Artists
+                2. Artist from Albums
+                3. Song from Artists
+                4. Song from Albums
+                
+                Enter quiz mode :\s""");
     }
 }
