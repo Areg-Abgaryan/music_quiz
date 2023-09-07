@@ -4,7 +4,7 @@
 
 package com.areg.project.managers;
 
-import lombok.AllArgsConstructor;
+//import lombok.AllArgsConstructor;
 
 /*import java.util.Properties;
 
@@ -15,8 +15,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 */
-@AllArgsConstructor
-public class EmailVerificationManager {
+//@AllArgsConstructor
+//public class EmailVerificationManager {
 
     /*
     private String email;
@@ -54,7 +54,7 @@ public class EmailVerificationManager {
             System.out.println("Error at SendingEmail.java: " + e);
         }
     }*/
-}
+//}
 
 
 /*
@@ -112,3 +112,4 @@ public class EmailVerificationManager
     }
 }
 */
+

@@ -86,8 +86,6 @@ public abstract class OrchestratorBase {
      */
     protected short answerCheck(Map<String, Byte> subtypeToOption, String correctAnswer, short score) {
 
-        //  FIXME !! Add a score tracker, then add to the db with the user's info
-
         System.out.print("\n\nEnter your choice in " + QuizConstants.RoundTimeoutSeconds + " seconds : ");
 
         final String option = getOptionFromUserInput();

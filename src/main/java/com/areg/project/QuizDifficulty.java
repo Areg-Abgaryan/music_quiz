@@ -4,8 +4,6 @@
 
 package com.areg.project;
 
-//  FIXME !! Add Difficulty logic in orchestrators;
-
 /**
  * Easy - everyone knows
  * Medium - you might know

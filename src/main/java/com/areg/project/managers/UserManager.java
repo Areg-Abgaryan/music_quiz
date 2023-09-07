@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.List;
 
-//  FIXME !! Add Roles & Permissions for users then
 @Service
 public class UserManager {
 

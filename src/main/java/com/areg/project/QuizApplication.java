@@ -20,8 +20,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
  * @version 1.0
  * @author Areg Abgaryan
  */
-//  FIXME !! After authentication, choose play game or see my info or see my records
-//  FIXME !! Consider authenticating in a loop, sign out, sign in maybe
+
 @SpringBootApplication
 @EntityScan
 public class QuizApplication {

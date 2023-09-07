@@ -18,12 +18,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import java.util.Scanner;
 
+//  FIXME !! Add Difficulty logic in orchestrators;
+//  FIXME !! Add a score tracker, then add to the db with the user's info
 //  FIXME !! Add survival mode support for each submode
 //  FIXME !! Add exit & goto beginning logic in the end
 //  FIXME !! Replace Hibernate#save with #persist
 //  FIXME !! Send user confirmation messages during sign up
 //  FIXME !! Add logic for recovering forgotten password
 //  FIXME !! Make microservice from authentication logic
+//  FIXME !! After authentication, choose play game or see my info or see my records
+//  FIXME !! Consider authenticating in a loop, sign out, sign in maybe
+//  FIXME !! Add Roles & Permissions for users then
 //  FIXME !! Remove run-time database creation & get all information from the persistent db
 @Service
 public class QuizWorkflowManager {
