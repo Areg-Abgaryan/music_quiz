@@ -13,5 +13,8 @@ public class QuizConstants {
     public static final String RNGAlgorithm = "SHA1PRNG";
     public static final short PBEKeyIterations = 1024;
     public static final short PBEKeyLength = 256;
-    public static String AllCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+?><:|}{~";
+    public static final String AllCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+?><:|}{~";
+    public static final String MailServerAddress = "";
+    public static final short MailOTPLength = 6;
+    public static final byte OTPTimeoutSeconds = 60;
 }

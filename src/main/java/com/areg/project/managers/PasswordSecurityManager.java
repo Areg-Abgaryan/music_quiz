@@ -28,13 +28,23 @@ public class PasswordSecurityManager {
         return Base64.getEncoder().encodeToString(securePassword);
     }
 
+    //  FIXME !! See salt length, maybe it's bigger than short size
     public String generateSalt(int length) {
         final var finalValue = new StringBuilder(length);
-        for (int i = 0; i < length; ++i) {
+        for (short i = 0; i < length; ++i) {
             final Random random = createSecureRandom();
             finalValue.append(QuizConstants.AllCharacters.charAt(random.nextInt(QuizConstants.AllCharacters.length())));
         }
-        return new String(finalValue);
+        return finalValue.toString();
+    }
+
+    public String generateOneTimePassword() {
+        final var s = new StringBuilder();
+        for (short i = 0; i < QuizConstants.MailOTPLength; ++i) {
+            // Generate random digit within 0-9
+            s.append(new Random().nextInt(9));
+        }
+        return s.toString();
     }
 
     private byte[] hash(char[] password, byte[] salt) {

@@ -4,8 +4,6 @@
 
 package com.areg.project.managers;
 
-import com.areg.project.QuizConstants;
-import com.areg.project.QuizDifficulty;
 import com.areg.project.QuizContext;
 import com.areg.project.QuizMode;
 import com.areg.project.orchestrators.AlbumToArtistsOrchestrator;
@@ -23,11 +21,11 @@ import java.util.Scanner;
 //  FIXME !! Add survival mode support for each submode
 //  FIXME !! Add exit & goto beginning logic in the end
 //  FIXME !! Replace Hibernate#save with #persist
-//  FIXME !! Send user confirmation messages during sign up
 //  FIXME !! Add logic for recovering forgotten password
 //  FIXME !! Make microservice from authentication logic
 //  FIXME !! After authentication, choose play game or see my info or see my records
 //  FIXME !! Consider authenticating in a loop, sign out, sign in maybe
+//  FIXME !! When the user can't authenticate successfully, he still can start the quiz
 //  FIXME !! Add Roles & Permissions for users then
 //  FIXME !! Remove run-time database creation & get all information from the persistent db
 @Service
@@ -41,9 +39,7 @@ public class QuizWorkflowManager {
         printAvailableModes();
 
         //  FIXME !! Consider adding fields from user input, refactor hardcoded everything
-        final var quizModeContext = new QuizContext();
-        quizModeContext.setDifficulty(QuizDifficulty.EASY);
-        quizModeContext.setNumberOfRounds(QuizConstants.NumberOfRounds);
+        final var quizModeContext = QuizContext.getDefaultContext();
         logger.info("Quiz difficulty : {}", quizModeContext.getDifficulty());
         logger.info("Quiz number of rounds : {}", quizModeContext.getNumberOfRounds());
 
@@ -52,6 +48,7 @@ public class QuizWorkflowManager {
         logger.info("Music input mode : {}", baseMode);
 
         //  FIXME !! Add timeout wait logic
+        //  FIXME !! Refactor this
         boolean isInputValid = false;
         do {
             switch (baseMode) {

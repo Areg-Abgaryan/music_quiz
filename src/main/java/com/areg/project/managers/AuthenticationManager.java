@@ -5,10 +5,6 @@
 package com.areg.project.managers;
 
 import com.areg.project.QuizConstants;
-import com.areg.project.QuizDifficulty;
-import com.areg.project.entities.Album;
-import com.areg.project.entities.Artist;
-import com.areg.project.entities.Song;
 import com.areg.project.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +13,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,17 +31,20 @@ public class AuthenticationManager {
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationManager.class);
     private final UserManager userManager;
     private final PasswordSecurityManager passwordSecurityManager;
+    private final EmailVerificationManager emailVerificationManager;
 
     @Autowired
-    public AuthenticationManager(UserManager userManager, PasswordSecurityManager passwordSecurityManager) {
+    public AuthenticationManager(UserManager userManager, PasswordSecurityManager passwordSecurityManager,
+                                 EmailVerificationManager emailVerificationManager) {
         this.userManager = userManager;
         this.passwordSecurityManager = passwordSecurityManager;
+        this.emailVerificationManager = emailVerificationManager;
     }
 
     public void authenticate() {
 
         //  FIXME !! Remove this after db fix
-        final var artist = new Artist("Cardie B");
+        /*final var artist = new Artist("Cardie B");
         final var artistManager = new ArtistManager();
         artistManager.createArtist(artist);
 
@@ -59,7 +65,7 @@ public class AuthenticationManager {
         songManager.createSong(songFirstAlbumSecond,albumFirst,artist);
         songManager.createSong(songSecondAlbumFirst,albumSecond,artist);
         songManager.createSong(songSecondAlbumSecond,albumSecond,artist);
-
+    */
 
         System.out.print("Hey ! Welcome to Music Quiz !");
 
@@ -117,14 +123,30 @@ public class AuthenticationManager {
     }
 
     private void signUp() {
+
         final var users = userManager.getAllUsers();
         final String email = getInput("Enter e-mail : ", input -> isValidEmail(users, input));
         final String userName = getInput("Enter username : ", input -> isValidUserName(users, input));
         final String password = getPasswordInput();
 
-        final var salt = passwordSecurityManager.generateSalt(QuizConstants.PasswordSaltSize);
-        final var user = new User(userName, email, salt, passwordSecurityManager.encrypt(password, salt));
-        userManager.createUser(user);
+        final ExecutorService executorService = Executors.newFixedThreadPool(1);
+
+        //  FIXME !! This is not working if the cycle is being stubbed for the second time in else case
+        //  FIXME !! Add else case for if
+        final String otp = passwordSecurityManager.generateOneTimePassword();
+        final String otpMessage = "Your OTP is <b>" + otp + "</b>. It is expiring in 1 minute.";
+        emailVerificationManager.sendEmail(email, "vmware subject", otpMessage);
+        System.out.println("Please, enter the OTP that was sent to your " + email + " e-mail address.\n");
+
+        final String otpFromUserInput = getOTPFromUserInput(executorService);
+        if ((otpFromUserInput.equals(otp))) {
+            System.out.println("Successfully authenticated !");
+            final var salt = passwordSecurityManager.generateSalt(QuizConstants.PasswordSaltSize);
+            final var user = new User(userName, email, salt, passwordSecurityManager.encrypt(password, salt));
+            userManager.createUser(user);
+        }
+
+        executorService.shutdown();
     }
 
     private String getInput(String prompt, Predicate<String> validationFunction) {
@@ -228,5 +250,23 @@ public class AuthenticationManager {
             return false;
         }
         return true;
+    }
+
+    private String getOTPFromUserInput(ExecutorService executorService) {
+
+        final Callable<String> callable = () -> new Scanner(System.in).nextLine();
+        final Future<String> inputFuture = executorService.submit(callable);
+
+        try {
+            return inputFuture.get(QuizConstants.OTPTimeoutSeconds, TimeUnit.SECONDS);
+        } catch (InterruptedException | ExecutionException e) {
+            throw new IllegalStateException("Thread was interrupted", e);
+        } catch (TimeoutException e) {
+            // Tell user they timed out
+            logger.info("Error : User timed out to enter OTP !");
+            System.out.println("\nTime out !");
+        }
+
+        return "";
     }
 }
