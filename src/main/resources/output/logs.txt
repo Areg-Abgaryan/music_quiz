@@ -729,3 +729,12 @@ Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concu
 2023-09-13T17:50:13.610+04:00  INFO 20914 --- [main] com.areg.project.managers.UserManager    : User areg19981 successfully authenticated !
 2023-09-13T17:50:13.612+04:00  INFO 20914 --- [main] c.a.p.managers.QuizWorkflowManager       : Quiz difficulty : EASY
 2023-09-13T17:50:13.612+04:00  INFO 20914 --- [main] c.a.p.managers.QuizWorkflowManager       : Quiz number of rounds : 10
+2023-09-13T18:39:57.482+04:00  INFO 29914 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 29914 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
+2023-09-13T18:39:57.488+04:00  INFO 29914 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-09-13T18:39:58.657+04:00  INFO 29914 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-13T18:39:58.665+04:00  INFO 29914 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-13T18:39:58.665+04:00  INFO 29914 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-09-13T18:39:58.753+04:00  INFO 29914 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-13T18:39:58.754+04:00  INFO 29914 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1192 ms
+2023-09-13T18:39:58.920+04:00  INFO 29914 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 31 milliseconds.
+2023-09-13T18:39:58.925+04:00  INFO 29914 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.

@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="997f2f74-84ab-41c1-bbe9-fb41b5c46ffb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/Decrypter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/PasswordSecurityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/PasswordSecurityManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +41,11 @@
                 <item name="Quiz" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Quiz" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -209,6 +208,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java</url>
           <line>163</line>
           <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/areg/project/managers/PasswordSecurityManager.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="141" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

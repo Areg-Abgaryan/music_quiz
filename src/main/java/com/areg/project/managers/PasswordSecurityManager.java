@@ -28,7 +28,6 @@ public class PasswordSecurityManager {
         return Base64.getEncoder().encodeToString(securePassword);
     }
 
-    //  FIXME !! See salt length, maybe it's bigger than short size
     public String generateSalt(int length) {
         final var finalValue = new StringBuilder(length);
         for (short i = 0; i < length; ++i) {
