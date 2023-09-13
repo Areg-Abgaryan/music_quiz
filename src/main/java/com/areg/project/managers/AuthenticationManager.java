@@ -6,6 +6,7 @@ package com.areg.project.managers;
 
 import com.areg.project.QuizConstants;
 import com.areg.project.entities.User;
+import com.areg.project.utils.UtilMethods;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 //  FIXME !! Consider adding user info to quiz mode context after authentication
+//  FIXME !! Refactor this class, many duplicates
 @Service
 public class AuthenticationManager {
 
@@ -67,13 +69,11 @@ public class AuthenticationManager {
         songManager.createSong(songSecondAlbumSecond,albumSecond,artist);
     */
 
-        System.out.print("Hey ! Welcome to Music Quiz !");
-
         System.out.print("""
-                \n
+                Hey ! Welcome to Music Quiz !
                 1. Log In
                 2. Sign Up
-                Enter option :\s""");
+                Enter option : \s""");
 
         final var scanner = new Scanner(System.in);
         String option = scanner.next();
@@ -100,8 +100,8 @@ public class AuthenticationManager {
     private void logIn() {
 
         while (true) {
-            final var scanner = new Scanner(System.in);
 
+            final var scanner = new Scanner(System.in);
             System.out.println("E-mail : ");
             final String email = scanner.next();
             System.out.println("Password : ");
@@ -109,15 +109,58 @@ public class AuthenticationManager {
 
             final var user = userManager.getUserByEmail(email);
             if (user != null) {
+
                 if (! user.getPassword().equals(passwordSecurityManager.encrypt(password, user.getPasswordSalt()))) {
-                    System.out.println("Invalid password provided !");
+
+                    System.out.println("""
+                        Wrong password provided ! Do you want to recover your password ?
+                        1. Yes  2. No, try to authenticate again
+                        Enter option : \s""");
+
+                    while (true) {
+
+                        final var loopScanner = new Scanner(System.in);
+                        final String choice = loopScanner.nextLine();
+
+                        if (! UtilMethods.isOptionInValidRange(choice, 1, 2)) {
+                            logger.info("Wrong option input");
+                            System.out.println("Wrong input !");
+                            break;
+                        }
+
+                        final int choiceInt = Integer.parseInt(choice);
+                        if (choiceInt == 1) {
+                            final String otp = passwordSecurityManager.generateOneTimePassword();
+                            final String otpMessage = "Your OTP is " + otp + ". It is expiring in 1 minute.";
+                            emailVerificationManager.sendEmail(email, "vmware subject", otpMessage);
+                            System.out.println("Please, enter the code that was sent to your " + email + " e-mail address.\n");
+
+                            final ExecutorService executorService = Executors.newFixedThreadPool(1);
+                            final String otpFromUserInput = getOTPFromUserInput(executorService);
+                            if ((otpFromUserInput.equals(otp))) {
+                                final String newPassword = getPasswordInput();
+                                final var salt = passwordSecurityManager.generateSalt();
+                                final String newEncryptedPassword = passwordSecurityManager.encrypt(newPassword, salt);
+                                userManager.updateUserPassword(user, salt, newEncryptedPassword);
+                            }
+
+                            executorService.shutdown();
+                            break;
+                        } else if (choiceInt == 2) {
+                            logger.info("User {} is trying to authenticate again.", user.getUsername());
+                            System.out.println("Trying to authenticate again !");
+                            break;
+                        }
+                    }
                 } else {
                     logger.info("User {} successfully logged in !", user.getUsername());
                     System.out.println("Successfully logged in !");
                     break;
                 }
             } else {
-                System.out.println("Invalid email provided !");
+                System.out.println("Wrong e-mail provided !");
+                //  FIXME!! Here add some return code so that not authenticated user can't start quiz
+                return;
             }
         }
     }
@@ -134,14 +177,14 @@ public class AuthenticationManager {
         //  FIXME !! This is not working if the cycle is being stubbed for the second time in else case
         //  FIXME !! Add else case for if
         final String otp = passwordSecurityManager.generateOneTimePassword();
-        final String otpMessage = "Your OTP is <b>" + otp + "</b>. It is expiring in 1 minute.";
-        emailVerificationManager.sendEmail(email, "vmware subject", otpMessage);
-        System.out.println("Please, enter the OTP that was sent to your " + email + " e-mail address.\n");
+        final String otpMessage = "Your OTP is " + otp + ". It is expiring in 1 minute.";
+        emailVerificationManager.sendEmail(email, "Music Quiz OTP", otpMessage);
+        System.out.println("Please, enter the code that was sent to your " + email + " e-mail address.\n");
 
         final String otpFromUserInput = getOTPFromUserInput(executorService);
         if ((otpFromUserInput.equals(otp))) {
             System.out.println("Successfully authenticated !");
-            final var salt = passwordSecurityManager.generateSalt(QuizConstants.PasswordSaltSize);
+            final var salt = passwordSecurityManager.generateSalt();
             final var user = new User(userName, email, salt, passwordSecurityManager.encrypt(password, salt));
             userManager.createUser(user);
         }
@@ -262,9 +305,9 @@ public class AuthenticationManager {
         } catch (InterruptedException | ExecutionException e) {
             throw new IllegalStateException("Thread was interrupted", e);
         } catch (TimeoutException e) {
-            // Tell user they timed out
+            // Tell the user he timed out
             logger.info("Error : User timed out to enter OTP !");
-            System.out.println("\nTime out !");
+            System.out.println("\nTimed out to enter code !");
         }
 
         return "";

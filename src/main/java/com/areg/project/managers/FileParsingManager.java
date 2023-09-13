@@ -67,7 +67,7 @@ public class FileParsingManager {
 
     private boolean isValid(String dataFilesPath) {
         if (dataFilesPath.isEmpty()) {
-            logger.error("Error: Invalid path provided {}.", dataFilesPath);
+            logger.error("Error: Wrong path provided {}.", dataFilesPath);
             return false;
         }
 

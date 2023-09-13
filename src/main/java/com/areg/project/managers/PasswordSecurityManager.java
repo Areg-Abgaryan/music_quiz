@@ -28,9 +28,9 @@ public class PasswordSecurityManager {
         return Base64.getEncoder().encodeToString(securePassword);
     }
 
-    public String generateSalt(int length) {
-        final var finalValue = new StringBuilder(length);
-        for (short i = 0; i < length; ++i) {
+    public String generateSalt() {
+        final var finalValue = new StringBuilder(QuizConstants.PasswordSaltSize);
+        for (short i = 0; i < QuizConstants.PasswordSaltSize; ++i) {
             final Random random = createSecureRandom();
             finalValue.append(QuizConstants.AllCharacters.charAt(random.nextInt(QuizConstants.AllCharacters.length())));
         }

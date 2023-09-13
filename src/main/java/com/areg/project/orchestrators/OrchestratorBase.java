@@ -7,6 +7,7 @@ package com.areg.project.orchestrators;
 import com.areg.project.MusicDatabase;
 import com.areg.project.QuizConstants;
 import com.areg.project.QuizContext;
+import com.areg.project.utils.UtilMethods;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.stream.IntStream;
 
 @Service
 public abstract class OrchestratorBase {
@@ -93,12 +93,12 @@ public abstract class OrchestratorBase {
             return score;
         }
 
-        if (! isValidOption(option)) {
+        if (! UtilMethods.isOptionInValidRange(option, 1, QuizConstants.RoundOptions)) {
             logger.info("Wrong input : {}.", option);
             System.out.println("Wrong input : \"" + option + "\"");
         } else {
             final byte correctNumber = subtypeToOption.get(correctAnswer);
-            if (Byte.parseByte(option) == correctNumber) {
+            if (Integer.parseInt(option) == correctNumber) {
                 ++score;
                 System.out.println("Exactly !");
             } else {
@@ -126,18 +126,5 @@ public abstract class OrchestratorBase {
             service.shutdown();
         }
         return "";
-    }
-
-    private boolean isValidOption(String option) {
-        if (option == null) {
-            return false;
-        }
-        try {
-            byte intOption = Byte.parseByte(option);
-            return IntStream.rangeClosed(1, QuizConstants.RoundOptions).anyMatch(i -> i == intOption);
-        } catch (NumberFormatException nfe) {
-            nfe.printStackTrace();
-            return false;
-        }
     }
 }

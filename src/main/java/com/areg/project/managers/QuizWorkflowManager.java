@@ -21,7 +21,6 @@ import java.util.Scanner;
 //  FIXME !! Add survival mode support for each submode
 //  FIXME !! Add exit & goto beginning logic in the end
 //  FIXME !! Replace Hibernate#save with #persist
-//  FIXME !! Add logic for recovering forgotten password
 //  FIXME !! Make microservice from authentication logic
 //  FIXME !! After authentication, choose play game or see my info or see my records
 //  FIXME !! Consider authenticating in a loop, sign out, sign in maybe

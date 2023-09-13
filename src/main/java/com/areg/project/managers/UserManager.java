@@ -36,6 +36,25 @@ public class UserManager {
         }
     }
 
+    public void updateUserPassword(User user, String salt, String newEncryptedPassword) {
+        final Session session = HibernateUtils.getSessionFactory().openSession();
+        try {
+            session.beginTransaction();
+            user.setPassword(newEncryptedPassword);
+            user.setPasswordSalt(salt);
+            session.merge(user);
+            session.getTransaction().commit();
+            logger.info("Successfully updated user {} password !", user.getUsername());
+            System.out.println("Successfully updated password !");
+        } catch (Exception e) {
+            logger.error("Error : Could not update the password of user " + user.getUsername(), e.getMessage());
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            session.close();
+        }
+}
+
     public List<User> getAllUsers() {
         final Session session = HibernateUtils.getSessionFactory().openSession();
         try {
