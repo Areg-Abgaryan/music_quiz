@@ -5,11 +5,12 @@
 package com.areg.project.utils;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * Class that contains two objects of generic elements, which may be of different types.
@@ -21,26 +22,10 @@ import java.util.Objects;
 @Getter
 @Setter
 @AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class Pair<T, E> implements Serializable {
 
     private T first;
     private E second;
-
-    @Override
-    public String toString() {
-        return "<" + this.first + "; " + this.second + ">";
-    }
-
-    @Override
-    public boolean equals(final Object second) {
-        if (! (second instanceof Pair other)) {
-            return false;
-        }
-        return Objects.equals(this.first, other.first) && Objects.equals(this.second, other.second);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.first, this.second);
-    }
 }

@@ -13,14 +13,15 @@ import java.util.stream.IntStream;
 public class UtilMethods {
 
     public static boolean isOptionInValidRange(String option, int lowerBound, int upperBound) {
-        if (option == null) {
+
+        if (option == null || option.isEmpty()) {
             return false;
         }
+
         try {
             int intOption = Integer.parseInt(option);
             return IntStream.rangeClosed(lowerBound, upperBound).anyMatch(i -> i == intOption);
         } catch (NumberFormatException nfe) {
-            nfe.printStackTrace();
             return false;
         }
     }

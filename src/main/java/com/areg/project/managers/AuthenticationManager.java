@@ -69,35 +69,26 @@ public class AuthenticationManager {
         songManager.createSong(songSecondAlbumSecond,albumSecond,artist);
     */
 
-        System.out.print("""
-                Hey ! Welcome to Music Quiz !
-                1. Log In
-                2. Sign Up
-                Enter option : \s""");
-
-        final var scanner = new Scanner(System.in);
-        String option = scanner.next();
+        System.out.print("Hey ! Welcome to Music Quiz !\n");
 
         boolean isInputValid = false;
         do {
+            System.out.print("""
+                1. Log In  2. Sign Up
+                Enter option : \s""");
+
+            final var scanner = new Scanner(System.in);
+            String option = scanner.next();
+
             switch (option) {
-                case "1" -> {
-                    logIn();
-                    isInputValid = true;
-                }
-                case "2" -> {
-                    signUp();
-                    isInputValid = true;
-                }
-                default -> {
-                    System.out.println("Wrong input ! Please, choose one of the options above.");
-                    option = scanner.next();
-                }
+                case "1" -> isInputValid = logIn();
+                case "2" -> isInputValid = signUp();
+                default -> System.out.println("Wrong input ! Please, choose one of the options above.");
             }
         } while (! isInputValid);
     }
 
-    private void logIn() {
+    private boolean logIn() {
 
         while (true) {
 
@@ -132,7 +123,7 @@ public class AuthenticationManager {
                         if (choiceInt == 1) {
                             final String otp = passwordSecurityManager.generateOneTimePassword();
                             final String otpMessage = "Your OTP is " + otp + ". It is expiring in 1 minute.";
-                            emailVerificationManager.sendEmail(email, "vmware subject", otpMessage);
+                            emailVerificationManager.sendEmail(email, "Music Quiz OTP", otpMessage);
                             System.out.println("Please, enter the code that was sent to your " + email + " e-mail address.\n");
 
                             final ExecutorService executorService = Executors.newFixedThreadPool(1);
@@ -158,14 +149,15 @@ public class AuthenticationManager {
                     break;
                 }
             } else {
-                System.out.println("Wrong e-mail provided !");
                 //  FIXME!! Here add some return code so that not authenticated user can't start quiz
-                return;
+                System.out.println("Wrong e-mail provided !");
+                return false;
             }
         }
+        return true;
     }
 
-    private void signUp() {
+    private boolean signUp() {
 
         final var users = userManager.getAllUsers();
         final String email = getInput("Enter e-mail : ", input -> isValidEmail(users, input));
@@ -175,7 +167,6 @@ public class AuthenticationManager {
         final ExecutorService executorService = Executors.newFixedThreadPool(1);
 
         //  FIXME !! This is not working if the cycle is being stubbed for the second time in else case
-        //  FIXME !! Add else case for if
         final String otp = passwordSecurityManager.generateOneTimePassword();
         final String otpMessage = "Your OTP is " + otp + ". It is expiring in 1 minute.";
         emailVerificationManager.sendEmail(email, "Music Quiz OTP", otpMessage);
@@ -185,11 +176,18 @@ public class AuthenticationManager {
         if ((otpFromUserInput.equals(otp))) {
             System.out.println("Successfully authenticated !");
             final var salt = passwordSecurityManager.generateSalt();
-            final var user = new User(userName, email, salt, passwordSecurityManager.encrypt(password, salt));
+            final var encryptedPassword = passwordSecurityManager.encrypt(password, salt);
+            final var user = new User(userName, email, salt, encryptedPassword);
             userManager.createUser(user);
+        } else {
+            //  FIXME!! Here add some return code so that not authenticated user can't start quiz
+            logger.info("OTP is incorrect ! Expected value : {}, user input : {}", otp, otpFromUserInput);
+            System.out.println("Code is incorrect ! Unsuccessful authorization !\n");
+            return false;
         }
 
         executorService.shutdown();
+        return true;
     }
 
     private String getInput(String prompt, Predicate<String> validationFunction) {
@@ -205,15 +203,7 @@ public class AuthenticationManager {
 
     private String getPasswordInput() {
 
-        System.out.print("""
-            Create a secure password following these rules :
-            
-            Password length : 8-20 characters.
-            It contains at least one digit, one upper case letter, one lower case letter,
-            one special character [ !@#$%&*()-+=^. ], doesn’t contain any white space.
-            
-            """);
-
+        printPasswordRules();
         String password;
 
         while (true) {
@@ -232,6 +222,17 @@ public class AuthenticationManager {
             }
         }
         return password;
+    }
+
+    private void printPasswordRules() {
+        System.out.print("""
+            Create a secure password following these rules :
+            
+            Password length : 8-20 characters.
+            It contains at least one digit, one upper case letter, one lower case letter,
+            one special character [ !@#$%&*()-+=^. ], doesn’t contain any white space.
+            
+            """);
     }
 
     private boolean isValidUserName(List<User> users, String userName) {
@@ -305,7 +306,6 @@ public class AuthenticationManager {
         } catch (InterruptedException | ExecutionException e) {
             throw new IllegalStateException("Thread was interrupted", e);
         } catch (TimeoutException e) {
-            // Tell the user he timed out
             logger.info("Error : User timed out to enter OTP !");
             System.out.println("\nTimed out to enter code !");
         }
