@@ -71,21 +71,21 @@ public class AuthenticationManager {
 
         System.out.print("Hey ! Welcome to Music Quiz !\n");
 
-        boolean isInputValid = false;
+        boolean isUserSuccessfullyAuthenticated = false;
         do {
             System.out.print("""
                 1. Log In  2. Sign Up
                 Enter option : \s""");
 
             final var scanner = new Scanner(System.in);
-            String option = scanner.next();
+            final String option = scanner.next();
 
             switch (option) {
-                case "1" -> isInputValid = logIn();
-                case "2" -> isInputValid = signUp();
+                case "1" -> isUserSuccessfullyAuthenticated = logIn();
+                case "2" -> isUserSuccessfullyAuthenticated = signUp();
                 default -> System.out.println("Wrong input ! Please, choose one of the options above.");
             }
-        } while (! isInputValid);
+        } while (! isUserSuccessfullyAuthenticated);
     }
 
     private boolean logIn() {
@@ -149,7 +149,6 @@ public class AuthenticationManager {
                     break;
                 }
             } else {
-                //  FIXME!! Here add some return code so that not authenticated user can't start quiz
                 System.out.println("Wrong e-mail provided !");
                 return false;
             }
@@ -180,7 +179,6 @@ public class AuthenticationManager {
             final var user = new User(userName, email, salt, encryptedPassword);
             userManager.createUser(user);
         } else {
-            //  FIXME!! Here add some return code so that not authenticated user can't start quiz
             logger.info("OTP is incorrect ! Expected value : {}, user input : {}", otp, otpFromUserInput);
             System.out.println("Code is incorrect ! Unsuccessful authorization !\n");
             return false;

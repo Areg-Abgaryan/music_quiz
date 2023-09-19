@@ -24,7 +24,6 @@ import java.util.Scanner;
 //  FIXME !! Make microservice from authentication logic
 //  FIXME !! After authentication, choose play game or see my info or see my records
 //  FIXME !! Consider authenticating in a loop, sign out, sign in maybe
-//  FIXME !! When the user can't authenticate successfully, he still can start the quiz
 //  FIXME !! Add Roles & Permissions for users then
 //  FIXME !! Remove run-time database creation & get all information from the persistent db
 @Service
@@ -34,51 +33,51 @@ public class QuizWorkflowManager {
     private OrchestratorBase orchestratorBase;
 
     public void initQuiz() {
-
         printAvailableModes();
 
-        //  FIXME !! Consider adding fields from user input, refactor hardcoded everything
-        final var quizModeContext = QuizContext.getDefaultContext();
-        logger.info("Quiz difficulty : {}", quizModeContext.getDifficulty());
-        logger.info("Quiz number of rounds : {}", quizModeContext.getNumberOfRounds());
+        // Get quiz mode context from user input
+        final QuizContext quizContext = getQuizModeContextFromUserInput();
+
+        // Start the quiz based on the selected mode
+        orchestratorBase.startQuiz(quizContext);
+    }
+
+    private QuizContext getQuizModeContextFromUserInput() {
 
         final var scanner = new Scanner(System.in);
-        String baseMode = scanner.next();
-        logger.info("Music input mode : {}", baseMode);
 
-        //  FIXME !! Add timeout wait logic
-        //  FIXME !! Refactor this
-        boolean isInputValid = false;
-        do {
-            switch (baseMode) {
+        while (true) {
+            final String input = scanner.next();
+            //  FIXME !! Add timeout wait logic
+            switch (input) {
                 case "1" -> {
-                    isInputValid = true;
-                    quizModeContext.setMode(QuizMode.Normal_Album_from_Artists);
-                    orchestratorBase = new AlbumToArtistsOrchestrator();
+                    return initializeQuizMode(QuizMode.Normal_Album_from_Artists, new AlbumToArtistsOrchestrator());
                 }
                 case "2" -> {
-                    isInputValid = true;
-                    quizModeContext.setMode(QuizMode.Normal_Artist_from_Albums);
-                    orchestratorBase = new ArtistToAlbumsOrchestrator();
+                    return initializeQuizMode(QuizMode.Normal_Artist_from_Albums, new ArtistToAlbumsOrchestrator());
                 }
                 case "3" -> {
-                    isInputValid = true;
-                    quizModeContext.setMode(QuizMode.Normal_Song_from_Artists);
-                    orchestratorBase = new SongToArtistsOrchestrator();
+                    return initializeQuizMode(QuizMode.Normal_Song_from_Artists, new SongToArtistsOrchestrator());
                 }
                 case "4" -> {
-                    isInputValid = true;
-                    quizModeContext.setMode(QuizMode.Normal_Artist_from_Albums);
-                    orchestratorBase = new SongToAlbumsOrchestrator();
+                    return initializeQuizMode(QuizMode.Normal_Artist_from_Albums, new SongToAlbumsOrchestrator());
                 }
-                default -> {
-                    System.out.println("Wrong input ! Please, choose one of the options above.");
-                    baseMode = scanner.next();
-                }
+                default -> System.out.println("Wrong input! Please, choose one of the options above.");
             }
-        } while (! isInputValid);
+        }
+    }
 
-        orchestratorBase.startQuiz(quizModeContext);
+    private QuizContext initializeQuizMode(QuizMode mode, OrchestratorBase orchestrator) {
+        //  FIXME !! Consider adding fields from user input, refactor hardcoded everything
+        final var quizContext = QuizContext.getDefaultContext();
+        quizContext.setMode(mode);
+        orchestratorBase = orchestrator;
+
+        logger.info("Quiz difficulty : {}", quizContext.getDifficulty());
+        logger.info("Quiz number of rounds : {}", quizContext.getNumberOfRounds());
+        logger.info("Music input mode : {}", mode);
+
+        return quizContext;
     }
 
     private void printAvailableModes() {
