@@ -28,7 +28,7 @@ public class UserManager {
             logger.info("User {} successfully authenticated !", user.getUsername());
             System.out.println("Successful authentication !");
         } catch (Exception e) {
-            logger.error("Error : Could not create user : {}", e.getMessage());
+            logger.error("Error: Could not create user : {}", e.getMessage());
             e.printStackTrace();
             session.getTransaction().rollback();
         } finally {
@@ -47,7 +47,7 @@ public class UserManager {
             logger.info("Successfully updated user {} password !", user.getUsername());
             System.out.println("Successfully updated password !");
         } catch (Exception e) {
-            logger.error("Error : Could not update the password of user " + user.getUsername(), e.getMessage());
+            logger.error("Error: Could not update the password of user " + user.getUsername(), e.getMessage());
             e.printStackTrace();
             session.getTransaction().rollback();
         } finally {
@@ -80,7 +80,7 @@ public class UserManager {
             session.getTransaction().commit();
             return user;
         } catch (Exception e) {
-            logger.error("Error : Could not get users : {}", e.getMessage());
+            logger.error("Error : Could not get user : {}", e.getMessage());
             session.getTransaction().rollback();
         } finally {
             session.close();

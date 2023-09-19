@@ -30,7 +30,7 @@ public class SongManager {
             session.getTransaction().commit();
             logger.debug("Successfully created song {}", song.getName());
         } catch (Exception e) {
-            logger.error("Error : Could not create song : {}", e.getMessage());
+            logger.error("Error: Could not create song : {}", e.getMessage());
             e.printStackTrace();
             session.getTransaction().rollback();
         } finally {
@@ -46,7 +46,7 @@ public class SongManager {
             session.getTransaction().commit();
             logger.debug("Successfully created songs");
         } catch (Exception e) {
-            logger.error("Error : Could not create songs : {}", e.getMessage());
+            logger.error("Error: Could not create songs : {}", e.getMessage());
             e.printStackTrace();
             session.getTransaction().rollback();
         } finally {

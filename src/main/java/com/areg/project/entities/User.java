@@ -26,6 +26,7 @@ import lombok.ToString;
 public class User {
 
     /*  FIXME !! Consider adding these fields
+    - registrationDate
     - lockoutEnabled - true or false values and indicates if the user locked their account by accessing too many times with wrong credentials.
     - accountAccessFailCount - this field is containing the number of times when the user tried to access their account with wrong credentials.
             Usually, I'm locking the account after 3 false accesses.

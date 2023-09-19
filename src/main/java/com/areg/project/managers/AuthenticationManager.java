@@ -165,7 +165,6 @@ public class AuthenticationManager {
 
         final ExecutorService executorService = Executors.newFixedThreadPool(1);
 
-        //  FIXME !! This is not working if the cycle is being stubbed for the second time in else case
         final String otp = passwordSecurityManager.generateOneTimePassword();
         final String otpMessage = "Your OTP is " + otp + ". It is expiring in 1 minute.";
         emailVerificationManager.sendEmail(email, "Music Quiz OTP", otpMessage);
@@ -173,14 +172,17 @@ public class AuthenticationManager {
 
         final String otpFromUserInput = getOTPFromUserInput(executorService);
         if ((otpFromUserInput.equals(otp))) {
-            System.out.println("Successfully authenticated !");
             final var salt = passwordSecurityManager.generateSalt();
             final var encryptedPassword = passwordSecurityManager.encrypt(password, salt);
             final var user = new User(userName, email, salt, encryptedPassword);
             userManager.createUser(user);
+            System.out.println("Successfully authenticated !");
         } else {
-            logger.info("OTP is incorrect ! Expected value : {}, user input : {}", otp, otpFromUserInput);
-            System.out.println("Code is incorrect ! Unsuccessful authorization !\n");
+            if (! otpFromUserInput.isEmpty()) {
+                logger.info("OTP is incorrect ! Expected value : {}, user input : {}", otp, otpFromUserInput);
+                System.out.println("Code is incorrect !");
+            }
+            System.out.println("Unsuccessful authorization !\n");
             return false;
         }
 
@@ -256,7 +258,7 @@ public class AuthenticationManager {
     private boolean isValidEmail(List<User> users, String email) {
 
         if (email == null || email.isEmpty()) {
-            throw new RuntimeException("Error : Email can't be null or empty !");
+            throw new RuntimeException("Error : E-mail can't be null or empty !");
         }
 
         final var regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
@@ -271,7 +273,7 @@ public class AuthenticationManager {
 
         for (var user : users) {
             if (email.equals(user.getEmail())) {
-                System.out.println("E-mail is already specified, choose another");
+                System.out.println("This e-mail has already been used for registration, choose another one");
                 return false;
             }
         }
@@ -304,7 +306,7 @@ public class AuthenticationManager {
         } catch (InterruptedException | ExecutionException e) {
             throw new IllegalStateException("Thread was interrupted", e);
         } catch (TimeoutException e) {
-            logger.info("Error : User timed out to enter OTP !");
+            logger.info("User timed out to enter OTP !");
             System.out.println("\nTimed out to enter code !");
         }
 
