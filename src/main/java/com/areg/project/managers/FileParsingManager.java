@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Service
 public class FileParsingManager {
@@ -39,13 +41,16 @@ public class FileParsingManager {
             return;
         }
 
-        final Set<MusicAlbum> albums = new HashSet<>();
         final long startTime = System.currentTimeMillis();
-
-        Arrays.stream(filesInDirectory).forEach(file -> parseAlbumFromFile(file, albums));
+        final Set<MusicAlbum> albums = parallelDataFileParsing(filesInDirectory);
 
         logger.info("parseDataFiles takes {} milliseconds.", System.currentTimeMillis() - startTime);
         musicDatabaseBuilder.buildMusicDatabase(albums);
+    }
+
+    public String getDataFilesDirectory() {
+        return System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" +
+                File.separator + "resources" + File.separator + "data_files" + File.separator;
     }
 
     private void parseAlbumFromFile(File file, Set<MusicAlbum> albums) {
@@ -60,9 +65,17 @@ public class FileParsingManager {
         }
     }
 
-    public String getDataFilesDirectory() {
-        return System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" +
-                File.separator + "resources" + File.separator + "data_files" + File.separator;
+    private Set<MusicAlbum> parallelDataFileParsing(File[] filesInDirectory) {
+
+        final Set<MusicAlbum> albums = new HashSet<>();
+        final int numThreads = Runtime.getRuntime().availableProcessors();
+        final ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
+
+        Arrays.stream(filesInDirectory).<Runnable>map(file -> () -> parseAlbumFromFile(file, albums)).forEach(executorService::execute);
+
+        // Shutdown the executor service when all tasks are done
+        executorService.shutdown();
+        return albums;
     }
 
     private boolean isValid(String dataFilesPath) {
