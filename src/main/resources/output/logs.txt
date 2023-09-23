@@ -1,29 +1,96 @@
-2023-09-19T00:19:20.572+04:00  INFO 49403 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 49403 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T00:19:20.588+04:00  INFO 49403 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T00:19:21.866+04:00  INFO 49403 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T00:19:21.877+04:00  INFO 49403 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T00:19:21.877+04:00  INFO 49403 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T00:19:21.965+04:00  INFO 49403 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T00:19:21.965+04:00  INFO 49403 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1306 ms
-2023-09-19T00:19:22.099+04:00  INFO 49403 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 31 milliseconds.
-2023-09-19T00:19:22.104+04:00  INFO 49403 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T00:19:40.709+04:00  INFO 49403 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T00:19:40.711+04:00  INFO 49403 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T00:19:41.018+04:00  WARN 49403 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T00:19:41.023+04:00  INFO 49403 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T00:19:41.023+04:00  INFO 49403 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T00:19:41.024+04:00  INFO 49403 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T00:19:41.024+04:00  INFO 49403 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T00:19:41.025+04:00  INFO 49403 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T00:19:41.154+04:00  INFO 49403 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T00:19:41.365+04:00  INFO 49403 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T00:19:42.122+04:00  INFO 49403 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@37ade216] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T00:19:46.580+04:00  WARN 49403 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-2023-09-19T00:19:46.584+04:00  INFO 49403 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-09-19T00:19:46.613+04:00  INFO 49403 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2023-09-23T11:19:50.593+04:00  INFO 25091 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 25091 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
+2023-09-23T11:19:50.605+04:00  INFO 25091 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-09-23T11:19:51.828+04:00  INFO 25091 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-23T11:19:51.838+04:00  INFO 25091 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-23T11:19:51.838+04:00  INFO 25091 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-09-23T11:19:51.931+04:00  INFO 25091 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-23T11:19:51.932+04:00  INFO 25091 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1257 ms
+2023-09-23T11:19:52.060+04:00  INFO 25091 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 27 milliseconds.
+2023-09-23T11:19:52.066+04:00  INFO 25091 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 5 milliseconds.
+2023-09-23T11:20:45.427+04:00  INFO 25091 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
+2023-09-23T11:20:45.431+04:00  INFO 25091 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-23T11:20:45.693+04:00  WARN 25091 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
+2023-09-23T11:20:45.697+04:00  INFO 25091 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2023-09-23T11:20:45.698+04:00  INFO 25091 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
+2023-09-23T11:20:45.698+04:00  INFO 25091 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
+2023-09-23T11:20:45.698+04:00  INFO 25091 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
+2023-09-23T11:20:45.699+04:00  INFO 25091 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
+2023-09-23T11:20:45.818+04:00  INFO 25091 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-23T11:20:46.020+04:00  INFO 25091 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-23T11:20:46.677+04:00  INFO 25091 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5cc075da] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-09-23T11:20:46.728+04:00  WARN 25091 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table if exists public.users add column registration_date timestamp(6) not null" via JDBC [ERROR: column "registration_date" of relation "users" contains null values]
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table if exists public.users add column registration_date timestamp(6) not null" via JDBC [ERROR: column "registration_date" of relation "users" contains null values]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:92) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:291) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:894) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at com.areg.project.utils.HibernateUtils.getSessionFactory(HibernateUtils.java:41) ~[main/:na]
+	at com.areg.project.managers.UserManager.getAllUsers(UserManager.java:59) ~[main/:na]
+	at com.areg.project.managers.AuthenticationManager.signUp(AuthenticationManager.java:161) ~[main/:na]
+	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:85) ~[main/:na]
+	at com.areg.project.QuizApplication.startApplication(QuizApplication.java:48) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
+	at com.areg.project.QuizApplication.main(QuizApplication.java:41) ~[main/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: column "registration_date" of relation "users" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:78) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	... 45 common frames omitted
+
+2023-09-23T11:20:46.870+04:00  WARN 25091 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 42703
+2023-09-23T11:20:46.870+04:00 ERROR 25091 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: column u1_0.registration_date does not exist
+  Position: 65
+2023-09-23T11:20:46.872+04:00 ERROR 25091 --- [main] com.areg.project.managers.UserManager    : Error : Could not get users : JDBC exception executing SQL [select u1_0.user_id,u1_0.email,u1_0.password,u1_0.password_salt,u1_0.registration_date,u1_0.username from public.users u1_0] [ERROR: column u1_0.registration_date does not exist
+  Position: 65] [n/a]
+2023-09-23T11:21:11.725+04:00  WARN 25091 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
+2023-09-23T11:21:11.729+04:00  INFO 25091 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-23T11:21:11.753+04:00  INFO 25091 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-19T00:19:46.637+04:00 ERROR 49403 --- [main] o.s.boot.SpringApplication               : Application run failed
+2023-09-23T11:21:11.773+04:00 ERROR 25091 --- [main] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.0.11.jar:6.0.11]
@@ -50,8 +117,8 @@ Caused by: org.springframework.mail.MailParseException: Could not parse mail
 	at org.springframework.mail.SimpleMailMessage.copyTo(SimpleMailMessage.java:198) ~[spring-context-support-6.0.11.jar:6.0.11]
 	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:320) ~[spring-context-support-6.0.11.jar:6.0.11]
 	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at com.areg.project.managers.EmailVerificationManager.sendEmail(EmailVerificationManager.java:31) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.logIn(AuthenticationManager.java:135) ~[main/:na]
+	at com.areg.project.managers.EmailVerificationManager.sendEmail(EmailVerificationManager.java:27) ~[main/:na]
+	at com.areg.project.managers.AuthenticationManager.signUp(AuthenticationManager.java:170) ~[main/:na]
 	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:85) ~[main/:na]
 	at com.areg.project.QuizApplication.startApplication(QuizApplication.java:48) ~[main/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
@@ -68,35 +135,57 @@ Caused by: jakarta.mail.internet.AddressException: Illegal address
 	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:79) ~[spring-context-support-6.0.11.jar:6.0.11]
 	... 32 common frames omitted
 
-2023-09-19T00:20:03.709+04:00  INFO 49440 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 49440 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T00:20:03.715+04:00  INFO 49440 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T00:20:04.800+04:00  INFO 49440 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T00:20:04.809+04:00  INFO 49440 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T00:20:04.810+04:00  INFO 49440 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T00:20:04.900+04:00  INFO 49440 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T00:20:04.901+04:00  INFO 49440 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1128 ms
-2023-09-19T00:20:05.035+04:00  INFO 49440 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 29 milliseconds.
-2023-09-19T00:20:05.039+04:00  INFO 49440 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T00:20:17.801+04:00  INFO 49440 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T00:20:17.803+04:00  INFO 49440 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T00:20:18.091+04:00  WARN 49440 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T00:20:18.102+04:00  INFO 49440 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T00:20:18.102+04:00  INFO 49440 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T00:20:18.102+04:00  INFO 49440 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T00:20:18.102+04:00  INFO 49440 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T00:20:18.103+04:00  INFO 49440 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T00:20:18.251+04:00  INFO 49440 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T00:20:18.450+04:00  INFO 49440 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T00:20:19.064+04:00  INFO 49440 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@776d8097] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T00:20:20.905+04:00  WARN 49440 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-2023-09-19T00:20:20.908+04:00  INFO 49440 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-09-19T00:20:20.931+04:00  INFO 49440 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2023-09-23T11:22:30.244+04:00  INFO 26892 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 26892 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
+2023-09-23T11:22:30.250+04:00  INFO 26892 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-09-23T11:22:31.451+04:00  INFO 26892 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-23T11:22:31.460+04:00  INFO 26892 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-23T11:22:31.460+04:00  INFO 26892 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-09-23T11:22:31.557+04:00  INFO 26892 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-23T11:22:31.558+04:00  INFO 26892 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1233 ms
+2023-09-23T11:22:31.703+04:00  INFO 26892 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 34 milliseconds.
+2023-09-23T11:22:31.709+04:00  INFO 26892 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
+2023-09-23T11:22:40.951+04:00  INFO 26892 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
+2023-09-23T11:22:40.953+04:00  INFO 26892 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-23T11:22:41.210+04:00  WARN 26892 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
+2023-09-23T11:22:41.213+04:00  INFO 26892 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2023-09-23T11:22:41.214+04:00  INFO 26892 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
+2023-09-23T11:22:41.214+04:00  INFO 26892 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
+2023-09-23T11:22:41.214+04:00  INFO 26892 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
+2023-09-23T11:22:41.215+04:00  INFO 26892 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
+2023-09-23T11:22:41.326+04:00  INFO 26892 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-23T11:22:41.506+04:00  INFO 26892 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-23T11:22:42.082+04:00  INFO 26892 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6bfbab1c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-09-23T11:22:42.123+04:00  WARN 26892 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table if exists public.users add column registration_date timestamp(6) not null" via JDBC [ERROR: column "registration_date" of relation "users" contains null values]
 
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-19T00:20:20.954+04:00 ERROR 49440 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.0.11.jar:6.0.11]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table if exists public.users add column registration_date timestamp(6) not null" via JDBC [ERROR: column "registration_date" of relation "users" contains null values]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:92) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:291) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:894) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at com.areg.project.utils.HibernateUtils.getSessionFactory(HibernateUtils.java:41) ~[main/:na]
+	at com.areg.project.managers.UserManager.getAllUsers(UserManager.java:59) ~[main/:na]
+	at com.areg.project.managers.AuthenticationManager.signUp(AuthenticationManager.java:161) ~[main/:na]
+	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:85) ~[main/:na]
+	at com.areg.project.QuizApplication.startApplication(QuizApplication.java:48) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
@@ -115,14 +204,78 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
 	at com.areg.project.QuizApplication.main(QuizApplication.java:41) ~[main/:na]
-Caused by: org.springframework.mail.MailParseException: Could not parse mail
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:82) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.SimpleMailMessage.copyTo(SimpleMailMessage.java:198) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:320) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at com.areg.project.managers.EmailVerificationManager.sendEmail(EmailVerificationManager.java:31) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.logIn(AuthenticationManager.java:135) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:85) ~[main/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: column "registration_date" of relation "users" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:78) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	... 45 common frames omitted
+
+2023-09-23T11:22:42.282+04:00  WARN 26892 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 42703
+2023-09-23T11:22:42.282+04:00 ERROR 26892 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: column u1_0.registration_date does not exist
+  Position: 65
+2023-09-23T11:22:42.286+04:00 ERROR 26892 --- [main] com.areg.project.managers.UserManager    : Error : Could not get users : JDBC exception executing SQL [select u1_0.user_id,u1_0.email,u1_0.password,u1_0.password_salt,u1_0.registration_date,u1_0.username from public.users u1_0] [ERROR: column u1_0.registration_date does not exist
+  Position: 65] [n/a]
+2023-09-23T11:22:55.873+04:00  INFO 26892 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the aaabgaryan@vmware.com address
+2023-09-23T11:23:03.767+04:00  INFO 26892 --- [main] c.a.p.managers.AuthenticationManager     : OTP is incorrect ! Expected value : 433840, user input : asdfasdf
+2023-09-23T11:37:36.465+04:00  INFO 29177 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 29177 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
+2023-09-23T11:37:36.473+04:00  INFO 29177 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-09-23T11:37:37.850+04:00  INFO 29177 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-23T11:37:37.861+04:00  INFO 29177 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-23T11:37:37.861+04:00  INFO 29177 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-09-23T11:37:37.971+04:00  INFO 29177 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-23T11:37:37.972+04:00  INFO 29177 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1435 ms
+2023-09-23T11:37:38.292+04:00  INFO 29177 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 33 milliseconds.
+2023-09-23T11:37:38.298+04:00  INFO 29177 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
+2023-09-23T11:37:52.669+04:00  INFO 29186 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 29186 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
+2023-09-23T11:37:52.676+04:00  INFO 29186 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-09-23T11:37:53.857+04:00  INFO 29186 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-23T11:37:53.864+04:00  INFO 29186 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-23T11:37:53.864+04:00  INFO 29186 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-09-23T11:37:53.962+04:00  INFO 29186 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-23T11:37:53.962+04:00  INFO 29186 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1229 ms
+2023-09-23T11:37:54.112+04:00  INFO 29186 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 31 milliseconds.
+2023-09-23T11:37:54.117+04:00  INFO 29186 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
+2023-09-23T11:37:57.767+04:00  INFO 29186 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
+2023-09-23T11:37:57.770+04:00  INFO 29186 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-23T11:37:58.078+04:00  WARN 29186 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
+2023-09-23T11:37:58.081+04:00  INFO 29186 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2023-09-23T11:37:58.082+04:00  INFO 29186 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
+2023-09-23T11:37:58.082+04:00  INFO 29186 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
+2023-09-23T11:37:58.083+04:00  INFO 29186 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
+2023-09-23T11:37:58.084+04:00  INFO 29186 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
+2023-09-23T11:37:58.206+04:00  INFO 29186 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-23T11:37:58.407+04:00  INFO 29186 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-23T11:37:59.044+04:00  INFO 29186 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@48f4264e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-09-23T11:37:59.095+04:00  WARN 29186 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table if exists public.users add column registration_date timestamp(6) not null" via JDBC [ERROR: column "registration_date" of relation "users" contains null values]
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table if exists public.users add column registration_date timestamp(6) not null" via JDBC [ERROR: column "registration_date" of relation "users" contains null values]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:92) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:291) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:894) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at com.areg.project.utils.HibernateUtils.getSessionFactory(HibernateUtils.java:41) ~[main/:na]
+	at com.areg.project.managers.UserManager.getAllUsers(UserManager.java:59) ~[main/:na]
+	at com.areg.project.managers.AuthenticationManager.signUp(AuthenticationManager.java:162) ~[main/:na]
+	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:86) ~[main/:na]
 	at com.areg.project.QuizApplication.startApplication(QuizApplication.java:48) ~[main/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
@@ -131,42 +284,6 @@ Caused by: org.springframework.mail.MailParseException: Could not parse mail
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 18 common frames omitted
-Caused by: jakarta.mail.internet.AddressException: Illegal address
-	at org.springframework.mail.javamail.MimeMessageHelper.parseAddress(MimeMessageHelper.java:737) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMessageHelper.setFrom(MimeMessageHelper.java:572) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:79) ~[spring-context-support-6.0.11.jar:6.0.11]
-	... 32 common frames omitted
-
-2023-09-19T00:23:07.798+04:00  INFO 51618 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 51618 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T00:23:07.804+04:00  INFO 51618 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T00:23:08.908+04:00  INFO 51618 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T00:23:08.915+04:00  INFO 51618 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T00:23:08.915+04:00  INFO 51618 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T00:23:08.997+04:00  INFO 51618 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T00:23:08.998+04:00  INFO 51618 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1137 ms
-2023-09-19T00:23:09.124+04:00  INFO 51618 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 25 milliseconds.
-2023-09-19T00:23:09.129+04:00  INFO 51618 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T00:23:54.737+04:00  INFO 51618 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T00:23:54.739+04:00  INFO 51618 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T00:23:55.000+04:00  WARN 51618 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T00:23:55.004+04:00  INFO 51618 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T00:23:55.005+04:00  INFO 51618 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T00:23:55.005+04:00  INFO 51618 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T00:23:55.005+04:00  INFO 51618 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T00:23:55.007+04:00  INFO 51618 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T00:23:55.133+04:00  INFO 51618 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T00:23:55.329+04:00  INFO 51618 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T00:23:55.898+04:00  INFO 51618 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5614ae05] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T00:23:57.974+04:00  WARN 51618 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-2023-09-19T00:23:57.977+04:00  INFO 51618 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-09-19T00:23:57.995+04:00  INFO 51618 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-19T00:23:58.018+04:00 ERROR 51618 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
@@ -185,14 +302,145 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
 	at com.areg.project.QuizApplication.main(QuizApplication.java:41) ~[main/:na]
-Caused by: org.springframework.mail.MailParseException: Could not parse mail
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:82) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.SimpleMailMessage.copyTo(SimpleMailMessage.java:198) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:320) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at com.areg.project.managers.EmailVerificationManager.sendEmail(EmailVerificationManager.java:31) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.logIn(AuthenticationManager.java:135) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:85) ~[main/:na]
+Caused by: org.postgresql.util.PSQLException: ERROR: column "registration_date" of relation "users" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:78) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	... 45 common frames omitted
+
+2023-09-23T11:37:59.256+04:00  WARN 29186 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 42703
+2023-09-23T11:37:59.257+04:00 ERROR 29186 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: column u1_0.registration_date does not exist
+  Position: 65
+2023-09-23T11:37:59.261+04:00 ERROR 29186 --- [main] com.areg.project.managers.UserManager    : Error : Could not get users : JDBC exception executing SQL [select u1_0.user_id,u1_0.email,u1_0.password,u1_0.password_salt,u1_0.registration_date,u1_0.username from public.users u1_0] [ERROR: column u1_0.registration_date does not exist
+  Position: 65] [n/a]
+2023-09-23T11:38:21.620+04:00  INFO 29186 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the aabgaryan@vmware.com address
+2023-09-23T12:10:20.535+04:00  WARN 29186 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=52976] throws
+
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-09-23T12:10:20.540+04:00  WARN 29186 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=52976] throws
+
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-09-23T12:10:20.541+04:00  WARN 29186 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=52976] throws
+
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-09-23T12:10:20.541+04:00  WARN 29186 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=52976] throws
+
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-09-23T12:10:20.544+04:00  WARN 29186 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=52976] throws
+
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-09-23T12:10:20.545+04:00  WARN 29186 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=52976] throws
+
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-09-23T12:10:20.546+04:00  WARN 29186 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=52976] throws
+
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-09-23T12:10:20.547+04:00  WARN 29186 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=52976] throws
+
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-09-23T12:10:20.548+04:00  WARN 29186 --- [RMI TCP Accept-0] sun.rmi.transport.tcp                    : RMI TCP Accept-0: accept loop for ServerSocket[addr=0.0.0.0/0.0.0.0,localport=52976] throws
+
+java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.
+	at jdk.management.agent/sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:413) ~[na:na]
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-09-23T12:10:20.576+04:00  WARN 29186 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 42703
+2023-09-23T12:10:20.577+04:00 ERROR 29186 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: column "registration_date" of relation "users" does not exist
+  Position: 56
+2023-09-23T12:10:20.578+04:00 ERROR 29186 --- [main] com.areg.project.managers.UserManager    : Error: Could not create user : could not execute statement [ERROR: column "registration_date" of relation "users" does not exist
+  Position: 56] [insert into public.users (email,password,password_salt,registration_date,username) values (?,?,?,?,?)]
+2023-09-23T12:18:21.532+04:00  INFO 38121 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 38121 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
+2023-09-23T12:18:21.539+04:00  INFO 38121 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-09-23T12:18:22.836+04:00  INFO 38121 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-23T12:18:22.844+04:00  INFO 38121 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-23T12:18:22.844+04:00  INFO 38121 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-09-23T12:18:22.931+04:00  INFO 38121 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-23T12:18:22.931+04:00  INFO 38121 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1306 ms
+2023-09-23T12:18:23.057+04:00  INFO 38121 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 26 milliseconds.
+2023-09-23T12:18:23.063+04:00  INFO 38121 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
+2023-09-23T12:18:28.995+04:00  INFO 38121 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
+2023-09-23T12:18:28.997+04:00  INFO 38121 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-23T12:18:29.269+04:00  WARN 38121 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
+2023-09-23T12:18:29.273+04:00  INFO 38121 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2023-09-23T12:18:29.273+04:00  INFO 38121 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
+2023-09-23T12:18:29.273+04:00  INFO 38121 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
+2023-09-23T12:18:29.273+04:00  INFO 38121 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
+2023-09-23T12:18:29.274+04:00  INFO 38121 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
+2023-09-23T12:18:29.403+04:00  INFO 38121 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-23T12:18:29.598+04:00  INFO 38121 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-23T12:18:30.231+04:00  INFO 38121 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5cc075da] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-09-23T12:18:30.273+04:00  WARN 38121 --- [main] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table if exists public.users add column registration_date bigint not null" via JDBC [ERROR: column "registration_date" of relation "users" contains null values]
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table if exists public.users add column registration_date bigint not null" via JDBC [ERROR: column "registration_date" of relation "users" contains null values]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:92) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:291) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:431) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:894) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	at com.areg.project.utils.HibernateUtils.getSessionFactory(HibernateUtils.java:41) ~[main/:na]
+	at com.areg.project.managers.UserManager.getAllUsers(UserManager.java:59) ~[main/:na]
+	at com.areg.project.managers.AuthenticationManager.signUp(AuthenticationManager.java:166) ~[main/:na]
+	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:90) ~[main/:na]
 	at com.areg.project.QuizApplication.startApplication(QuizApplication.java:48) ~[main/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
@@ -201,42 +449,6 @@ Caused by: org.springframework.mail.MailParseException: Could not parse mail
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 18 common frames omitted
-Caused by: jakarta.mail.internet.AddressException: Illegal address
-	at org.springframework.mail.javamail.MimeMessageHelper.parseAddress(MimeMessageHelper.java:737) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMessageHelper.setFrom(MimeMessageHelper.java:572) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:79) ~[spring-context-support-6.0.11.jar:6.0.11]
-	... 32 common frames omitted
-
-2023-09-19T00:24:09.833+04:00  INFO 51647 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 51647 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T00:24:09.840+04:00  INFO 51647 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T00:24:11.195+04:00  INFO 51647 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T00:24:11.203+04:00  INFO 51647 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T00:24:11.203+04:00  INFO 51647 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T00:24:11.296+04:00  INFO 51647 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T00:24:11.297+04:00  INFO 51647 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1387 ms
-2023-09-19T00:24:11.556+04:00  INFO 51647 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 32 milliseconds.
-2023-09-19T00:24:11.561+04:00  INFO 51647 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T00:24:26.382+04:00  INFO 51647 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T00:24:26.385+04:00  INFO 51647 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T00:24:26.665+04:00  WARN 51647 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T00:24:26.668+04:00  INFO 51647 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T00:24:26.669+04:00  INFO 51647 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T00:24:26.669+04:00  INFO 51647 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T00:24:26.669+04:00  INFO 51647 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T00:24:26.672+04:00  INFO 51647 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T00:24:26.811+04:00  INFO 51647 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T00:24:27.019+04:00  INFO 51647 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T00:24:27.628+04:00  INFO 51647 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@ba86c53] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T00:24:28.786+04:00  WARN 51647 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-2023-09-19T00:24:28.789+04:00  INFO 51647 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-09-19T00:24:28.805+04:00  INFO 51647 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-19T00:24:28.828+04:00 ERROR 51647 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762) ~[spring-beans-6.0.11.jar:6.0.11]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
@@ -255,582 +467,61 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
 	at com.areg.project.QuizApplication.main(QuizApplication.java:41) ~[main/:na]
-Caused by: org.springframework.mail.MailParseException: Could not parse mail
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:82) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.SimpleMailMessage.copyTo(SimpleMailMessage.java:198) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:320) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at com.areg.project.managers.EmailVerificationManager.sendEmail(EmailVerificationManager.java:31) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.logIn(AuthenticationManager.java:135) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:85) ~[main/:na]
-	at com.areg.project.QuizApplication.startApplication(QuizApplication.java:48) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 18 common frames omitted
-Caused by: jakarta.mail.internet.AddressException: Illegal address
-	at org.springframework.mail.javamail.MimeMessageHelper.parseAddress(MimeMessageHelper.java:737) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMessageHelper.setFrom(MimeMessageHelper.java:572) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:79) ~[spring-context-support-6.0.11.jar:6.0.11]
-	... 32 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: column "registration_date" of relation "users" contains null values
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292) ~[postgresql-42.6.0.jar:42.6.0]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:78) ~[hibernate-core-6.2.0.Final.jar:6.2.0.Final]
+	... 45 common frames omitted
 
-2023-09-19T00:25:08.902+04:00  INFO 51666 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 51666 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T00:25:08.909+04:00  INFO 51666 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T00:25:10.067+04:00  INFO 51666 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T00:25:10.074+04:00  INFO 51666 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T00:25:10.075+04:00  INFO 51666 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T00:25:10.165+04:00  INFO 51666 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T00:25:10.166+04:00  INFO 51666 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1192 ms
-2023-09-19T00:25:10.315+04:00  INFO 51666 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 28 milliseconds.
-2023-09-19T00:25:10.320+04:00  INFO 51666 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T00:25:31.531+04:00  INFO 51666 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T00:25:31.533+04:00  INFO 51666 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T00:25:31.795+04:00  WARN 51666 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T00:25:31.798+04:00  INFO 51666 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T00:25:31.798+04:00  INFO 51666 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T00:25:31.798+04:00  INFO 51666 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T00:25:31.798+04:00  INFO 51666 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T00:25:31.800+04:00  INFO 51666 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T00:25:31.919+04:00  INFO 51666 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T00:25:32.113+04:00  INFO 51666 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T00:25:32.734+04:00  INFO 51666 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@48f4264e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T00:27:01.625+04:00  WARN 51666 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-2023-09-19T00:36:37.845+04:00  INFO 54044 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 54044 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T00:36:37.851+04:00  INFO 54044 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T00:36:38.904+04:00  INFO 54044 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T00:36:38.912+04:00  INFO 54044 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T00:36:38.912+04:00  INFO 54044 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T00:36:38.995+04:00  INFO 54044 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T00:36:38.996+04:00  INFO 54044 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1087 ms
-2023-09-19T00:36:39.122+04:00  INFO 54044 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 24 milliseconds.
-2023-09-19T00:36:39.126+04:00  INFO 54044 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T00:37:09.817+04:00  INFO 54044 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T00:37:09.820+04:00  INFO 54044 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T00:37:10.086+04:00  WARN 54044 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T00:37:10.089+04:00  INFO 54044 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T00:37:10.090+04:00  INFO 54044 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T00:37:10.090+04:00  INFO 54044 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T00:37:10.090+04:00  INFO 54044 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T00:37:10.091+04:00  INFO 54044 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T00:37:10.213+04:00  INFO 54044 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T00:37:10.412+04:00  INFO 54044 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T00:37:11.003+04:00  INFO 54044 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1aa31454] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T00:37:15.812+04:00  INFO 54044 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the areg19981@gmail.com address
-2023-09-19T00:43:42.510+04:00  INFO 54298 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 54298 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T00:43:42.516+04:00  INFO 54298 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T00:43:43.567+04:00  INFO 54298 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T00:43:43.575+04:00  INFO 54298 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T00:43:43.575+04:00  INFO 54298 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T00:43:43.652+04:00  INFO 54298 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T00:43:43.653+04:00  INFO 54298 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1086 ms
-2023-09-19T00:43:43.779+04:00  INFO 54298 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 25 milliseconds.
-2023-09-19T00:43:43.783+04:00  INFO 54298 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T00:44:59.884+04:00  INFO 54298 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T00:44:59.885+04:00  INFO 54298 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T00:45:00.119+04:00  WARN 54298 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T00:45:00.123+04:00  INFO 54298 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T00:45:00.123+04:00  INFO 54298 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T00:45:00.123+04:00  INFO 54298 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T00:45:00.123+04:00  INFO 54298 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T00:45:00.125+04:00  INFO 54298 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T00:45:00.246+04:00  INFO 54298 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T00:45:00.425+04:00  INFO 54298 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T00:45:00.985+04:00  INFO 54298 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@77f529a6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T00:45:04.545+04:00  INFO 54298 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the areg19981@gmail.com address
-2023-09-19T00:47:39.960+04:00  INFO 56094 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 56094 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T00:47:39.967+04:00  INFO 56094 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T00:47:41.041+04:00  INFO 56094 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T00:47:41.049+04:00  INFO 56094 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T00:47:41.049+04:00  INFO 56094 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T00:47:41.138+04:00  INFO 56094 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T00:47:41.139+04:00  INFO 56094 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1118 ms
-2023-09-19T00:47:41.265+04:00  INFO 56094 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 27 milliseconds.
-2023-09-19T00:47:41.269+04:00  INFO 56094 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T00:48:13.157+04:00  INFO 56094 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T00:48:13.159+04:00  INFO 56094 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T00:48:13.413+04:00  WARN 56094 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T00:48:13.417+04:00  INFO 56094 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T00:48:13.417+04:00  INFO 56094 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T00:48:13.417+04:00  INFO 56094 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T00:48:13.417+04:00  INFO 56094 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T00:48:13.418+04:00  INFO 56094 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T00:48:13.533+04:00  INFO 56094 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T00:48:13.721+04:00  INFO 56094 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T00:48:14.300+04:00  INFO 56094 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5614ae05] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T00:48:17.265+04:00  INFO 56094 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the areg19981@gmail.com address
-2023-09-19T00:49:31.497+04:00  INFO 56145 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 56145 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T00:49:31.513+04:00  INFO 56145 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T00:49:33.055+04:00  INFO 56145 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T00:49:33.062+04:00  INFO 56145 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T00:49:33.062+04:00  INFO 56145 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T00:49:33.146+04:00  INFO 56145 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T00:49:33.147+04:00  INFO 56145 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1548 ms
-2023-09-19T00:49:33.265+04:00  INFO 56145 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 26 milliseconds.
-2023-09-19T00:49:33.269+04:00  INFO 56145 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T00:49:51.891+04:00  INFO 56145 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T00:49:51.892+04:00  INFO 56145 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T00:49:52.161+04:00  WARN 56145 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T00:49:52.164+04:00  INFO 56145 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T00:49:52.164+04:00  INFO 56145 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T00:49:52.164+04:00  INFO 56145 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T00:49:52.164+04:00  INFO 56145 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T00:49:52.166+04:00  INFO 56145 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T00:49:52.283+04:00  INFO 56145 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T00:49:52.461+04:00  INFO 56145 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T00:49:53.039+04:00  INFO 56145 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5614ae05] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T00:49:56.414+04:00  INFO 56145 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the areg19981@gmail.com address
-2023-09-19T02:14:53.105+04:00  INFO 63695 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 63695 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:14:53.111+04:00  INFO 63695 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:14:54.179+04:00  INFO 63695 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T02:14:54.186+04:00  INFO 63695 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T02:14:54.186+04:00  INFO 63695 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T02:14:54.271+04:00  INFO 63695 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T02:14:54.271+04:00  INFO 63695 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1101 ms
-2023-09-19T02:14:54.399+04:00  INFO 63695 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 28 milliseconds.
-2023-09-19T02:14:54.404+04:00  INFO 63695 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T02:14:57.241+04:00  INFO 63695 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T02:14:57.243+04:00  INFO 63695 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T02:14:57.517+04:00  WARN 63695 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T02:14:57.521+04:00  INFO 63695 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T02:14:57.521+04:00  INFO 63695 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T02:14:57.521+04:00  INFO 63695 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T02:14:57.521+04:00  INFO 63695 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T02:14:57.523+04:00  INFO 63695 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T02:14:57.647+04:00  INFO 63695 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T02:14:57.830+04:00  INFO 63695 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T02:14:58.410+04:00  INFO 63695 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@78a165db] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T02:15:19.271+04:00  INFO 63695 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the aabgaryan@vmware.com address
-2023-09-19T02:15:31.998+04:00  INFO 63695 --- [main] c.a.p.managers.QuizWorkflowManager       : Quiz difficulty : EASY
-2023-09-19T02:15:32.001+04:00  INFO 63695 --- [main] c.a.p.managers.QuizWorkflowManager       : Quiz number of rounds : 10
-2023-09-19T02:19:24.729+04:00  INFO 65655 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 65655 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:19:24.735+04:00  INFO 65655 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:19:31.072+04:00  INFO 65662 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 65662 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:19:31.078+04:00  INFO 65662 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:19:32.112+04:00  INFO 65662 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T02:19:32.120+04:00  INFO 65662 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T02:19:32.120+04:00  INFO 65662 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T02:19:32.204+04:00  INFO 65662 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T02:19:32.204+04:00  INFO 65662 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1073 ms
-2023-09-19T02:19:32.328+04:00  INFO 65662 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 27 milliseconds.
-2023-09-19T02:19:32.332+04:00  INFO 65662 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T02:19:35.695+04:00  INFO 65662 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T02:19:35.697+04:00  INFO 65662 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T02:19:35.958+04:00  WARN 65662 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T02:19:35.961+04:00  INFO 65662 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T02:19:35.961+04:00  INFO 65662 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T02:19:35.962+04:00  INFO 65662 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T02:19:35.962+04:00  INFO 65662 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T02:19:35.963+04:00  INFO 65662 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T02:19:36.077+04:00  INFO 65662 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T02:19:36.261+04:00  INFO 65662 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T02:19:36.822+04:00  INFO 65662 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6bfbab1c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T02:19:56.264+04:00  INFO 65662 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the aabgaryan@vmware.com address
-2023-09-19T02:24:14.022+04:00  INFO 65733 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 65733 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:24:14.028+04:00  INFO 65733 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:24:15.120+04:00  INFO 65733 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T02:24:15.127+04:00  INFO 65733 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T02:24:15.128+04:00  INFO 65733 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T02:24:15.211+04:00  INFO 65733 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T02:24:15.212+04:00  INFO 65733 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1131 ms
-2023-09-19T02:24:15.334+04:00  INFO 65733 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 26 milliseconds.
-2023-09-19T02:24:15.339+04:00  INFO 65733 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T02:24:38.975+04:00  INFO 65755 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 65755 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:24:38.980+04:00  INFO 65755 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:24:40.081+04:00  INFO 65755 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T02:24:40.088+04:00  INFO 65755 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T02:24:40.088+04:00  INFO 65755 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T02:24:40.176+04:00  INFO 65755 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T02:24:40.176+04:00  INFO 65755 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1138 ms
-2023-09-19T02:24:40.301+04:00  INFO 65755 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 31 milliseconds.
-2023-09-19T02:24:40.306+04:00  INFO 65755 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T02:25:34.512+04:00  INFO 65910 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 65910 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:25:34.519+04:00  INFO 65910 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:25:35.859+04:00  INFO 65910 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T02:25:35.868+04:00  INFO 65910 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T02:25:35.869+04:00  INFO 65910 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T02:25:35.960+04:00  INFO 65910 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T02:25:35.960+04:00  INFO 65910 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1390 ms
-2023-09-19T02:25:36.120+04:00  INFO 65910 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 52 milliseconds.
-2023-09-19T02:25:36.126+04:00  INFO 65910 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T02:25:43.312+04:00  INFO 65910 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T02:25:43.314+04:00  INFO 65910 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T02:25:43.580+04:00  WARN 65910 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T02:25:43.584+04:00  INFO 65910 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T02:25:43.584+04:00  INFO 65910 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T02:25:43.584+04:00  INFO 65910 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T02:25:43.585+04:00  INFO 65910 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T02:25:43.586+04:00  INFO 65910 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T02:25:43.699+04:00  INFO 65910 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T02:25:43.891+04:00  INFO 65910 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T02:25:44.478+04:00  INFO 65910 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5614ae05] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T02:26:00.418+04:00  INFO 65910 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the aabgaryan@vmware.com address
-2023-09-19T02:26:04.802+04:00  INFO 65910 --- [main] c.a.p.managers.AuthenticationManager     : OTP is incorrect ! Expected value : 068818, user input : 345673
-2023-09-19T02:26:44.485+04:00  INFO 65910 --- [main] c.a.p.managers.AuthenticationManager     : Wrong option input
-2023-09-19T02:33:10.345+04:00  INFO 67902 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 67902 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:33:10.350+04:00  INFO 67902 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:33:11.429+04:00  INFO 67902 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T02:33:11.438+04:00  INFO 67902 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T02:33:11.438+04:00  INFO 67902 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T02:33:11.531+04:00  INFO 67902 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T02:33:11.532+04:00  INFO 67902 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1115 ms
-2023-09-19T02:33:11.687+04:00  INFO 67902 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 29 milliseconds.
-2023-09-19T02:33:11.693+04:00  INFO 67902 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T02:33:21.966+04:00  INFO 67907 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 67907 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:33:21.971+04:00  INFO 67907 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:33:23.094+04:00  INFO 67907 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T02:33:23.101+04:00  INFO 67907 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T02:33:23.102+04:00  INFO 67907 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T02:33:23.191+04:00  INFO 67907 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T02:33:23.192+04:00  INFO 67907 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1140 ms
-2023-09-19T02:33:23.337+04:00  INFO 67907 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 32 milliseconds.
-2023-09-19T02:33:23.342+04:00  INFO 67907 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T02:33:36.127+04:00  INFO 67907 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T02:33:36.129+04:00  INFO 67907 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T02:33:36.415+04:00  WARN 67907 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T02:33:36.418+04:00  INFO 67907 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T02:33:36.419+04:00  INFO 67907 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T02:33:36.419+04:00  INFO 67907 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T02:33:36.419+04:00  INFO 67907 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T02:33:36.421+04:00  INFO 67907 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T02:33:36.551+04:00  INFO 67907 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T02:33:36.753+04:00  INFO 67907 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T02:33:37.364+04:00  INFO 67907 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2a21cbe7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T02:34:54.931+04:00  INFO 67907 --- [main] c.a.p.managers.AuthenticationManager     : Wrong option input
-2023-09-19T02:35:02.266+04:00  INFO 68104 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 68104 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:35:02.270+04:00  INFO 68104 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:35:03.398+04:00  INFO 68104 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T02:35:03.406+04:00  INFO 68104 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T02:35:03.407+04:00  INFO 68104 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T02:35:03.499+04:00  INFO 68104 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T02:35:03.500+04:00  INFO 68104 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1165 ms
-2023-09-19T02:35:03.653+04:00  INFO 68104 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 35 milliseconds.
-2023-09-19T02:35:03.657+04:00  INFO 68104 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T02:35:17.784+04:00  INFO 68104 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T02:35:17.786+04:00  INFO 68104 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T02:35:18.072+04:00  WARN 68104 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T02:35:18.075+04:00  INFO 68104 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T02:35:18.075+04:00  INFO 68104 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T02:35:18.075+04:00  INFO 68104 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T02:35:18.075+04:00  INFO 68104 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T02:35:18.077+04:00  INFO 68104 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T02:35:18.204+04:00  INFO 68104 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T02:35:18.396+04:00  INFO 68104 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T02:35:19.024+04:00  INFO 68104 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@18be3205] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T02:35:32.216+04:00  INFO 68104 --- [main] c.a.p.managers.AuthenticationManager     : Wrong option input
-2023-09-19T02:36:47.151+04:00  INFO 68152 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 68152 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T02:36:47.157+04:00  INFO 68152 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T02:36:48.311+04:00  INFO 68152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T02:36:48.318+04:00  INFO 68152 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T02:36:48.319+04:00  INFO 68152 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T02:36:48.404+04:00  INFO 68152 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T02:36:48.405+04:00  INFO 68152 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1184 ms
-2023-09-19T02:36:48.527+04:00  INFO 68152 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 25 milliseconds.
-2023-09-19T02:36:48.531+04:00  INFO 68152 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T02:37:04.100+04:00  INFO 68152 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T02:37:04.102+04:00  INFO 68152 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T02:37:04.386+04:00  WARN 68152 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T02:37:04.390+04:00  INFO 68152 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T02:37:04.390+04:00  INFO 68152 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T02:37:04.391+04:00  INFO 68152 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T02:37:04.391+04:00  INFO 68152 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T02:37:04.392+04:00  INFO 68152 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T02:37:04.510+04:00  INFO 68152 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T02:37:04.700+04:00  INFO 68152 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T02:37:05.287+04:00  INFO 68152 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7d47b021] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T02:37:25.969+04:00  INFO 68152 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the aabgaryan@vmware.com address
-2023-09-19T02:37:30.149+04:00  INFO 68152 --- [main] c.a.p.managers.AuthenticationManager     : OTP is incorrect ! Expected value : 804225, user input : 123456
-2023-09-19T19:36:36.767+04:00  INFO 73025 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 73025 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T19:36:36.774+04:00  INFO 73025 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T19:36:38.107+04:00  INFO 73025 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T19:36:38.118+04:00  INFO 73025 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T19:36:38.118+04:00  INFO 73025 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T19:36:38.236+04:00  INFO 73025 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T19:36:38.236+04:00  INFO 73025 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1404 ms
-2023-09-19T19:36:38.398+04:00  INFO 73025 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 38 milliseconds.
-2023-09-19T19:36:38.404+04:00  INFO 73025 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T23:11:06.126+04:00  INFO 16851 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 16851 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T23:11:06.132+04:00  INFO 16851 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T23:11:07.215+04:00  INFO 16851 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T23:11:07.222+04:00  INFO 16851 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T23:11:07.222+04:00  INFO 16851 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T23:11:07.306+04:00  INFO 16851 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T23:11:07.306+04:00  INFO 16851 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1117 ms
-2023-09-19T23:11:07.427+04:00  INFO 16851 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 27 milliseconds.
-2023-09-19T23:11:07.432+04:00  INFO 16851 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T23:11:25.687+04:00  INFO 16851 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T23:11:25.689+04:00  INFO 16851 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T23:11:25.969+04:00  WARN 16851 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T23:11:25.973+04:00  INFO 16851 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T23:11:25.973+04:00  INFO 16851 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T23:11:25.974+04:00  INFO 16851 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T23:11:25.974+04:00  INFO 16851 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T23:11:25.975+04:00  INFO 16851 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T23:11:26.092+04:00  INFO 16851 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T23:11:26.280+04:00  INFO 16851 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T23:11:26.883+04:00  INFO 16851 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@77f529a6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T23:11:26.943+04:00  WARN 16851 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-09-19T23:11:26.943+04:00  WARN 16851 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
-2023-09-19T23:11:26.947+04:00  WARN 16851 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-09-19T23:11:26.948+04:00  WARN 16851 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
-2023-09-19T23:11:27.095+04:00 ERROR 16851 --- [main] com.areg.project.managers.UserManager    : Error : Could not get users : No result found for query [<criteria>]
-2023-09-19T23:11:46.630+04:00  WARN 16851 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-2023-09-19T23:11:46.633+04:00  INFO 16851 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-09-19T23:11:46.662+04:00  INFO 16851 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-19T23:11:46.680+04:00 ERROR 16851 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
-	at com.areg.project.QuizApplication.main(QuizApplication.java:41) ~[main/:na]
-Caused by: org.springframework.mail.MailParseException: Could not parse mail
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:82) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.SimpleMailMessage.copyTo(SimpleMailMessage.java:198) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:320) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at com.areg.project.managers.EmailVerificationManager.sendEmail(EmailVerificationManager.java:31) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.signUp(AuthenticationManager.java:171) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:85) ~[main/:na]
-	at com.areg.project.QuizApplication.startApplication(QuizApplication.java:48) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 18 common frames omitted
-Caused by: jakarta.mail.internet.AddressException: Illegal address
-	at org.springframework.mail.javamail.MimeMessageHelper.parseAddress(MimeMessageHelper.java:737) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMessageHelper.setFrom(MimeMessageHelper.java:572) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:79) ~[spring-context-support-6.0.11.jar:6.0.11]
-	... 32 common frames omitted
-
-2023-09-19T23:12:13.497+04:00  INFO 17031 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 17031 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T23:12:13.501+04:00  INFO 17031 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T23:12:14.603+04:00  INFO 17031 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T23:12:14.610+04:00  INFO 17031 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T23:12:14.611+04:00  INFO 17031 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T23:12:14.699+04:00  INFO 17031 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T23:12:14.699+04:00  INFO 17031 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1140 ms
-2023-09-19T23:12:14.830+04:00  INFO 17031 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 33 milliseconds.
-2023-09-19T23:12:14.835+04:00  INFO 17031 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T23:12:25.930+04:00  INFO 17031 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T23:12:25.932+04:00  INFO 17031 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T23:12:26.199+04:00  WARN 17031 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T23:12:26.204+04:00  INFO 17031 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T23:12:26.204+04:00  INFO 17031 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T23:12:26.205+04:00  INFO 17031 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T23:12:26.205+04:00  INFO 17031 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T23:12:26.206+04:00  INFO 17031 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T23:12:26.344+04:00  INFO 17031 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T23:12:26.517+04:00  INFO 17031 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T23:12:27.084+04:00  INFO 17031 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@54970127] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T23:12:45.164+04:00  WARN 17031 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-2023-09-19T23:12:45.168+04:00  INFO 17031 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-09-19T23:12:45.184+04:00  INFO 17031 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-19T23:12:45.202+04:00 ERROR 17031 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
-	at com.areg.project.QuizApplication.main(QuizApplication.java:41) ~[main/:na]
-Caused by: org.springframework.mail.MailParseException: Could not parse mail
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:82) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.SimpleMailMessage.copyTo(SimpleMailMessage.java:198) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:320) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at com.areg.project.managers.EmailVerificationManager.sendEmail(EmailVerificationManager.java:31) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.signUp(AuthenticationManager.java:171) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:85) ~[main/:na]
-	at com.areg.project.QuizApplication.startApplication(QuizApplication.java:48) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 18 common frames omitted
-Caused by: jakarta.mail.internet.AddressException: Illegal address
-	at org.springframework.mail.javamail.MimeMessageHelper.parseAddress(MimeMessageHelper.java:737) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMessageHelper.setFrom(MimeMessageHelper.java:572) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:79) ~[spring-context-support-6.0.11.jar:6.0.11]
-	... 32 common frames omitted
-
-2023-09-19T23:14:06.668+04:00  INFO 17125 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 17125 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T23:14:06.673+04:00  INFO 17125 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T23:14:07.732+04:00  INFO 17125 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T23:14:07.738+04:00  INFO 17125 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T23:14:07.739+04:00  INFO 17125 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T23:14:07.823+04:00  INFO 17125 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T23:14:07.824+04:00  INFO 17125 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1093 ms
-2023-09-19T23:14:07.965+04:00  INFO 17125 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 33 milliseconds.
-2023-09-19T23:14:07.969+04:00  INFO 17125 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T23:14:22.061+04:00  INFO 17125 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T23:14:22.062+04:00  INFO 17125 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T23:14:22.303+04:00  WARN 17125 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T23:14:22.307+04:00  INFO 17125 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T23:14:22.307+04:00  INFO 17125 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T23:14:22.307+04:00  INFO 17125 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T23:14:22.307+04:00  INFO 17125 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T23:14:22.309+04:00  INFO 17125 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T23:14:22.429+04:00  INFO 17125 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T23:14:22.618+04:00  INFO 17125 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T23:14:23.204+04:00  INFO 17125 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@77f529a6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T23:14:40.012+04:00  INFO 17125 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the aabgaryan@vmware.com address
-2023-09-19T23:14:59.930+04:00  INFO 17125 --- [main] com.areg.project.managers.UserManager    : User aabgaryan successfully authenticated !
-2023-09-19T23:27:27.084+04:00  INFO 22207 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 22207 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T23:27:27.090+04:00  INFO 22207 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T23:27:28.225+04:00  INFO 22207 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T23:27:28.233+04:00  INFO 22207 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T23:27:28.233+04:00  INFO 22207 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T23:27:28.324+04:00  INFO 22207 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T23:27:28.325+04:00  INFO 22207 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1180 ms
-2023-09-19T23:27:28.448+04:00  INFO 22207 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 28 milliseconds.
-2023-09-19T23:27:28.452+04:00  INFO 22207 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
-2023-09-19T23:29:32.582+04:00  INFO 22207 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T23:29:32.585+04:00  INFO 22207 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T23:29:32.831+04:00  WARN 22207 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T23:29:32.837+04:00  INFO 22207 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T23:29:32.838+04:00  INFO 22207 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T23:29:32.838+04:00  INFO 22207 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T23:29:32.838+04:00  INFO 22207 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T23:29:32.839+04:00  INFO 22207 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T23:29:32.960+04:00  INFO 22207 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T23:29:33.144+04:00  INFO 22207 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T23:29:33.709+04:00  INFO 22207 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7d47b021] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T23:32:32.807+04:00  WARN 22207 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-2023-09-19T23:32:32.811+04:00  INFO 22207 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-09-19T23:32:32.832+04:00  INFO 22207 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-09-19T23:32:32.855+04:00 ERROR 22207 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'quizApplication': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
-	at com.areg.project.QuizApplication.main(QuizApplication.java:41) ~[main/:na]
-Caused by: org.springframework.mail.MailParseException: Could not parse mail
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:82) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.SimpleMailMessage.copyTo(SimpleMailMessage.java:198) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:320) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:312) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at com.areg.project.managers.EmailVerificationManager.sendEmail(EmailVerificationManager.java:32) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.signUp(AuthenticationManager.java:171) ~[main/:na]
-	at com.areg.project.managers.AuthenticationManager.authenticate(AuthenticationManager.java:85) ~[main/:na]
-	at com.areg.project.QuizApplication.startApplication(QuizApplication.java:48) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.0.11.jar:6.0.11]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.0.11.jar:6.0.11]
-	... 18 common frames omitted
-Caused by: jakarta.mail.internet.AddressException: Illegal address
-	at org.springframework.mail.javamail.MimeMessageHelper.parseAddress(MimeMessageHelper.java:737) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMessageHelper.setFrom(MimeMessageHelper.java:572) ~[spring-context-support-6.0.11.jar:6.0.11]
-	at org.springframework.mail.javamail.MimeMailMessage.setFrom(MimeMailMessage.java:79) ~[spring-context-support-6.0.11.jar:6.0.11]
-	... 32 common frames omitted
-
-2023-09-19T23:33:37.188+04:00  INFO 22525 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 22525 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T23:33:37.194+04:00  INFO 22525 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T23:33:38.230+04:00  INFO 22525 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T23:33:38.237+04:00  INFO 22525 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T23:33:38.237+04:00  INFO 22525 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T23:33:38.318+04:00  INFO 22525 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T23:33:38.319+04:00  INFO 22525 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1068 ms
-2023-09-19T23:33:38.448+04:00  INFO 22525 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 27 milliseconds.
-2023-09-19T23:33:38.454+04:00  INFO 22525 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T23:33:53.911+04:00  INFO 22525 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T23:33:53.913+04:00  INFO 22525 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T23:33:54.182+04:00  WARN 22525 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T23:33:54.185+04:00  INFO 22525 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T23:33:54.185+04:00  INFO 22525 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T23:33:54.186+04:00  INFO 22525 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T23:33:54.186+04:00  INFO 22525 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T23:33:54.187+04:00  INFO 22525 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T23:33:54.302+04:00  INFO 22525 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T23:33:54.491+04:00  INFO 22525 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T23:33:55.054+04:00  INFO 22525 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b787274] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T23:34:10.429+04:00  INFO 22525 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the areg19981@gmail.com address
-2023-09-19T23:35:10.444+04:00  INFO 22525 --- [main] c.a.p.managers.AuthenticationManager     : Error : User timed out to enter OTP !
-2023-09-19T23:35:10.445+04:00  INFO 22525 --- [main] c.a.p.managers.AuthenticationManager     : OTP is incorrect ! Expected value : 832127, user input : 
-2023-09-19T23:41:01.199+04:00  INFO 24734 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 24734 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
-2023-09-19T23:41:01.203+04:00  INFO 24734 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-09-19T23:41:02.294+04:00  INFO 24734 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-09-19T23:41:02.301+04:00  INFO 24734 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-09-19T23:41:02.302+04:00  INFO 24734 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
-2023-09-19T23:41:02.400+04:00  INFO 24734 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-09-19T23:41:02.401+04:00  INFO 24734 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1137 ms
-2023-09-19T23:41:02.530+04:00  INFO 24734 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 34 milliseconds.
-2023-09-19T23:41:02.535+04:00  INFO 24734 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 4 milliseconds.
-2023-09-19T23:41:14.980+04:00  INFO 24734 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
-2023-09-19T23:41:14.982+04:00  INFO 24734 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-19T23:41:15.285+04:00  WARN 24734 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
-2023-09-19T23:41:15.288+04:00  INFO 24734 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
-2023-09-19T23:41:15.289+04:00  INFO 24734 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
-2023-09-19T23:41:15.289+04:00  INFO 24734 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
-2023-09-19T23:41:15.289+04:00  INFO 24734 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
-2023-09-19T23:41:15.291+04:00  INFO 24734 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
-2023-09-19T23:41:15.450+04:00  INFO 24734 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2023-09-19T23:41:15.674+04:00  INFO 24734 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-19T23:41:16.387+04:00  INFO 24734 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@33e4068] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-2023-09-19T23:41:34.914+04:00  INFO 24734 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the areg19981@gmail.com address
-2023-09-19T23:42:34.929+04:00  INFO 24734 --- [main] c.a.p.managers.AuthenticationManager     : Error : User timed out to enter OTP !
+2023-09-23T12:18:30.429+04:00  WARN 38121 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 42703
+2023-09-23T12:18:30.430+04:00 ERROR 38121 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: column u1_0.registration_date does not exist
+  Position: 65
+2023-09-23T12:18:30.434+04:00 ERROR 38121 --- [main] com.areg.project.managers.UserManager    : Error : Could not get users : JDBC exception executing SQL [select u1_0.user_id,u1_0.email,u1_0.password,u1_0.password_salt,u1_0.registration_date,u1_0.username from public.users u1_0] [ERROR: column u1_0.registration_date does not exist
+  Position: 65] [n/a]
+2023-09-23T12:18:47.125+04:00  INFO 38121 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the areg19981@gmail.com address
+2023-09-23T12:19:10.889+04:00  WARN 38121 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 42703
+2023-09-23T12:19:10.890+04:00 ERROR 38121 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: column "registration_date" of relation "users" does not exist
+  Position: 56
+2023-09-23T12:19:10.891+04:00 ERROR 38121 --- [main] com.areg.project.managers.UserManager    : Error: Could not create user : could not execute statement [ERROR: column "registration_date" of relation "users" does not exist
+  Position: 56] [insert into public.users (email,password,password_salt,registration_date,username) values (?,?,?,?,?)]
+2023-09-23T12:20:01.203+04:00  INFO 38167 --- [main] com.areg.project.QuizApplication         : Starting QuizApplication using Java 17.0.8 with PID 38167 (/Users/aabgaryan/Projects/MyProjects/Quiz/build/classes/java/main started by aabgaryan in /Users/aabgaryan/Projects/MyProjects/Quiz)
+2023-09-23T12:20:01.210+04:00  INFO 38167 --- [main] com.areg.project.QuizApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-09-23T12:20:02.511+04:00  INFO 38167 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-23T12:20:02.518+04:00  INFO 38167 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-23T12:20:02.518+04:00  INFO 38167 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2023-09-23T12:20:02.629+04:00  INFO 38167 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-23T12:20:02.629+04:00  INFO 38167 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1346 ms
+2023-09-23T12:20:02.776+04:00  INFO 38167 --- [main] c.a.project.managers.FileParsingManager  : parseDataFiles takes 29 milliseconds.
+2023-09-23T12:20:02.780+04:00  INFO 38167 --- [main] c.a.p.builders.MusicDatabaseBuilder      : buildMusicDatabase takes 3 milliseconds.
+2023-09-23T12:20:30.491+04:00  INFO 38167 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.0.Final
+2023-09-23T12:20:30.494+04:00  INFO 38167 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-23T12:20:30.761+04:00  WARN 38167 --- [main] org.hibernate.orm.connections.pooling    : HHH10001002: Using built-in connection pool (not intended for production use)
+2023-09-23T12:20:30.765+04:00  INFO 38167 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2023-09-23T12:20:30.765+04:00  INFO 38167 --- [main] org.hibernate.orm.connections.pooling    : HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/quiz_db]
+2023-09-23T12:20:30.766+04:00  INFO 38167 --- [main] org.hibernate.orm.connections.pooling    : HHH10001001: Connection properties: {password=****, user=postgres}
+2023-09-23T12:20:30.766+04:00  INFO 38167 --- [main] org.hibernate.orm.connections.pooling    : HHH10001003: Autocommit mode: false
+2023-09-23T12:20:30.767+04:00  INFO 38167 --- [main] org.hibernate.orm.connections.pooling    : HHH10001115: Connection pool size: 20 (min=1)
+2023-09-23T12:20:30.912+04:00  INFO 38167 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-09-23T12:20:31.110+04:00  INFO 38167 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-23T12:20:31.757+04:00  INFO 38167 --- [main] org.hibernate.orm.connections.access     : HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6032622] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-09-23T12:20:31.830+04:00  WARN 38167 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-23T12:20:31.831+04:00  WARN 38167 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_s2uno1rfqbsn8cs67rhdw6psn" of relation "artists" does not exist, skipping
+2023-09-23T12:20:31.834+04:00  WARN 38167 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-23T12:20:31.834+04:00  WARN 38167 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2023-09-23T12:20:31.837+04:00  WARN 38167 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-09-23T12:20:31.839+04:00  WARN 38167 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk_r43af9ap4edm43mmtq01oddj6" of relation "users" does not exist, skipping
+2023-09-23T12:20:47.540+04:00  INFO 38167 --- [main] c.a.p.managers.EmailVerificationManager  : E-mail was sent to the areg19981@gmail.com address
+2023-09-23T12:21:11.572+04:00  INFO 38167 --- [main] com.areg.project.managers.UserManager    : User areg19981 successfully authenticated !
+2023-09-23T12:22:12.541+04:00  INFO 38167 --- [main] c.a.p.managers.QuizWorkflowManager       : Quiz difficulty : EASY
+2023-09-23T12:22:12.542+04:00  INFO 38167 --- [main] c.a.p.managers.QuizWorkflowManager       : Quiz number of rounds : 10
+2023-09-23T12:22:12.542+04:00  INFO 38167 --- [main] c.a.p.managers.QuizWorkflowManager       : Music input mode : Normal_Artist_from_Albums
+2023-09-23T12:22:12.542+04:00  INFO 38167 --- [main] c.a.p.orchestrators.OrchestratorBase     : Starting quiz mode : Normal_Artist_from_Albums.
+2023-09-23T12:22:16.494+04:00  INFO 38167 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-23T12:22:16.504+04:00  INFO 38167 --- [main] com.areg.project.QuizApplication         : Started QuizApplication in 135.867 seconds (process running for 136.536)

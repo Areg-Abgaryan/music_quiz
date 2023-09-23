@@ -4,6 +4,8 @@
 
 package com.areg.project;
 
+import java.time.ZoneId;
+
 public class QuizConstants {
     public static final short NumberOfRounds = 10;
     public static final byte RoundOptions = 4;
@@ -17,4 +19,5 @@ public class QuizConstants {
     public static final String MailServerAddress = "";
     public static final short MailOTPLength = 6;
     public static final byte OTPTimeoutSeconds = 60;
+    public static ZoneId TimeZoneId = ZoneId.of("Asia/Yerevan");
 }

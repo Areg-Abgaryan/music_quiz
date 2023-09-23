@@ -26,7 +26,7 @@ public class UserManager {
             session.persist(user);
             session.getTransaction().commit();
             logger.info("User {} successfully authenticated !", user.getUsername());
-            System.out.println("Successful authentication !");
+            System.out.println("Successfully authenticated !");
         } catch (Exception e) {
             logger.error("Error: Could not create user : {}", e.getMessage());
             e.printStackTrace();

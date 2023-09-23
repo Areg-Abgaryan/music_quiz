@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
@@ -174,9 +176,9 @@ public class AuthenticationManager {
         if ((otpFromUserInput.equals(otp))) {
             final var salt = passwordSecurityManager.generateSalt();
             final var encryptedPassword = passwordSecurityManager.encrypt(password, salt);
-            final var user = new User(userName, email, salt, encryptedPassword);
+            final long epochSeconds = getEpochSeconds();
+            final var user = new User(userName, email, epochSeconds, salt, encryptedPassword);
             userManager.createUser(user);
-            System.out.println("Successfully authenticated !");
         } else {
             if (! otpFromUserInput.isEmpty()) {
                 logger.info("OTP is incorrect ! Expected value : {}, user input : {}", otp, otpFromUserInput);
@@ -311,5 +313,9 @@ public class AuthenticationManager {
         }
 
         return "";
+    }
+
+    private long getEpochSeconds() {
+        return LocalDateTime.now().toInstant(QuizConstants.TimeZoneId.getRules().getOffset(Instant.now())).toEpochMilli();
     }
 }

@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 public class EmailVerificationManager {
 
     private static final Logger logger = LoggerFactory.getLogger(EmailVerificationManager.class);
-
     private final JavaMailSender mailSender;
 
     public EmailVerificationManager(JavaMailSender javaMailSender) {
@@ -24,12 +23,17 @@ public class EmailVerificationManager {
 
     public void sendEmail(String emailAddress, String subject, String text) {
         //  FIXME !! Handle the case when email address is empty or MailServerAddress is empty
+        final SimpleMailMessage message = createMailMessage(emailAddress, subject, text);
+        mailSender.send(message);
+        logger.info("E-mail was sent to the {} address", emailAddress);
+    }
+
+    private SimpleMailMessage createMailMessage(String emailAddress, String subject, String text) {
         final var message = new SimpleMailMessage();
         message.setFrom(QuizConstants.MailServerAddress);
         message.setTo(emailAddress);
         message.setSubject(subject);
         message.setText(text);
-        mailSender.send(message);
-        logger.info("E-mail was sent to the {} address", emailAddress);
+        return message;
     }
 }

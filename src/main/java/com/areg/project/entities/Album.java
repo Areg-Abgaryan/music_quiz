@@ -33,7 +33,6 @@ import java.util.List;
 public class Album {
 
     //  FIXME !! Consider changing heavy objects to Strings, like albumName, songName
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "album_id")
