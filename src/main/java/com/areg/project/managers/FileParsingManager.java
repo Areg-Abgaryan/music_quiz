@@ -71,7 +71,10 @@ public class FileParsingManager {
         final int numThreads = Runtime.getRuntime().availableProcessors();
         final ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
 
-        Arrays.stream(filesInDirectory).<Runnable>map(file -> () -> parseAlbumFromFile(file, albums)).forEach(executorService::execute);
+        for (File file : filesInDirectory) {
+            final Runnable runnable = () -> parseAlbumFromFile(file, albums);
+            executorService.execute(runnable);
+        }
 
         // Shutdown the executor service when all tasks are done
         executorService.shutdown();

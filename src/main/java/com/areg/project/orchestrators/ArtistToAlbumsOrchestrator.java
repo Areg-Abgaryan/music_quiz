@@ -7,7 +7,7 @@ package com.areg.project.orchestrators;
 import com.areg.project.QuizContext;
 import com.areg.project.models.MusicAlbum;
 import com.areg.project.models.MusicArtist;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
  *  Giving quizModeContext.numberOfRounds artists,
  *  The user needs to choose the right album that he released at each step.
  */
-@Service
+@Component
 public class ArtistToAlbumsOrchestrator extends OrchestratorBase {
 
     @Override

@@ -5,6 +5,7 @@
 package com.areg.project.managers;
 
 import com.areg.project.QuizConstants;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.SimpleMailMessage;
@@ -22,13 +23,24 @@ public class EmailVerificationManager {
     }
 
     public void sendEmail(String emailAddress, String subject, String text) {
-        //  FIXME !! Handle the case when email address is empty or MailServerAddress is empty
+
+        if (StringUtils.isBlank(emailAddress)) {
+            logger.info("E-mail address is null or empty.");
+            return;
+        }
+
+        if (StringUtils.isBlank(text)) {
+            logger.info("E-mail text is null or empty.");
+            return;
+        }
+
         final SimpleMailMessage message = createMailMessage(emailAddress, subject, text);
         mailSender.send(message);
         logger.info("E-mail was sent to the {} address", emailAddress);
     }
 
     private SimpleMailMessage createMailMessage(String emailAddress, String subject, String text) {
+
         final var message = new SimpleMailMessage();
         message.setFrom(QuizConstants.MailServerAddress);
         message.setTo(emailAddress);

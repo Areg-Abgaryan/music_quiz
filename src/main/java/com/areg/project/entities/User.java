@@ -29,8 +29,8 @@ public class User {
     /*  FIXME !! Consider adding these fields
     - quizRecords - records for each user on each game mode
     - country - country of a user
-    - lockoutEnabled - true or false values and indicates if the user locked their account by accessing too many times with wrong credentials.
-    - accountAccessFailCount - this field is containing the number of times when the user tried to access their account with wrong credentials.
+    - lockoutEnabled - true/false values, indicates if the user locked their account by accessing too many times with wrong credentials.
+    - accountAccessFailCount - containing the number of times when the user tried to access their account with wrong credentials.
             Usually, I'm locking the account after 3 false accesses.
     - lockoutTime - this field is containing the date and time when the account has been locked out.
      */

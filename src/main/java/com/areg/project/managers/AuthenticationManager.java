@@ -96,6 +96,7 @@ public class AuthenticationManager {
 
             final var scanner = new Scanner(System.in);
             System.out.println("E-mail : ");
+            //  FIXME !! Check here to call getEmailMessage() method
             final String email = scanner.next();
             System.out.println("Password : ");
             final String password = scanner.next();
@@ -103,6 +104,7 @@ public class AuthenticationManager {
             final var user = userManager.getUserByEmail(email);
             if (user != null) {
 
+                //  FIXME !! Check here to call getPasswordInput() method
                 if (! user.getPassword().equals(passwordSecurityManager.encrypt(password, user.getPasswordSalt()))) {
 
                     System.out.println("""

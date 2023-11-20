@@ -5,9 +5,10 @@
 package com.areg.project.managers;
 
 import com.areg.project.QuizConstants;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -18,12 +19,22 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Random;
 
-@Service
+@Component
 public class PasswordSecurityManager {
 
     private static final Logger logger = LoggerFactory.getLogger(PasswordSecurityManager.class);
 
     public String encrypt(String password, String salt) {
+
+        if (StringUtils.isBlank(password)) {
+            logger.info("Password is null or empty");
+            return "";
+        }
+        if (StringUtils.isBlank(salt)) {
+            logger.info("Salt is null or empty");
+            return "";
+        }
+
         final byte[] securePassword = hash(password.toCharArray(), salt.getBytes());
         return Base64.getEncoder().encodeToString(securePassword);
     }

@@ -5,19 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="997f2f74-84ab-41c1-bbe9-fb41b5c46ffb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/utils/UtilMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7a42ea71-0836-45cb-8ed3-f023e6f4b2bd/storage_v2/_src_/database/quiz_db.qLJHJw/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/logging/LogLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/logging/LogMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/InactivityMonitoringManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/EmailVerificationManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/PasswordSecurityManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/QuizApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/AuthenticationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/EmailVerificationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/EmailVerificationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/FileParsingManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/FileParsingManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/PasswordSecurityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/PasswordSecurityManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/QuizWorkflowManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/managers/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/AlbumToArtistsOrchestrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/ArtistToAlbumsOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/OrchestratorBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToAlbumsOrchestrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/areg/project/orchestrators/SongToArtistsOrchestrator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/output/logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/output/logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/output/logs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FileParsingManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FileParsingManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +60,6 @@
                 <item name="Quiz" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Quiz" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -162,6 +165,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.Quiz [build]" />
+      <item itemvalue="Gradle.Quiz [buildDependents]" />
+      <item itemvalue="Spring Boot.QuizApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.QuizApplication" />
@@ -229,9 +237,11 @@
     </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Quiz$QuizApplication.ic" NAME="QuizApplication Coverage Results" MODIFIED="1687118328880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Quiz$QuizApplication.ic" NAME="QuizApplication Coverage Results" MODIFIED="1697747359871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.areg.project.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Quiz$Quiz__build_.ic" NAME="Quiz [build] Coverage Results" MODIFIED="1687118124027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Quiz$FileParsingManagerTest_testGetDataFilesDirectory.ic" NAME="FileParsingManagerTest.testGetDataFilesDirectory Coverage Results" MODIFIED="1697880760109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Quiz$TestNG_Test.ic" NAME="TestNG Test Coverage Results" MODIFIED="1697883951176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

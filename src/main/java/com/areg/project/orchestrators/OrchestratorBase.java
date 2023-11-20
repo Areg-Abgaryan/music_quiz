@@ -10,7 +10,6 @@ import com.areg.project.QuizContext;
 import com.areg.project.utils.UtilMethods;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +25,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-@Service
 public abstract class OrchestratorBase {
 
     protected static final Logger logger = LoggerFactory.getLogger(OrchestratorBase.class);
