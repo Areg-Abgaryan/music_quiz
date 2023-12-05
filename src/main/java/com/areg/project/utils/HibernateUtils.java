@@ -8,6 +8,7 @@ import com.areg.project.entities.Album;
 import com.areg.project.entities.Artist;
 import com.areg.project.entities.Song;
 import com.areg.project.entities.User;
+import com.areg.project.logging.LogMachine;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
@@ -19,15 +20,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class HibernateUtils {
 
-    private static final Logger logger = LoggerFactory.getLogger(HibernateUtils.class);
+    private static final LogMachine logMachine = new LogMachine(HibernateUtils.class);
     private static SessionFactory sessionFactory;
 
     public static SessionFactory getSessionFactory() {
@@ -40,7 +39,7 @@ public class HibernateUtils {
                 final var builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (HibernateException e) {
-                logger.error("Error : Could not instantiate Session Factory !");
+                logMachine.error("Error : Could not instantiate Session Factory !");
                 e.printStackTrace();
             }
         }

@@ -4,11 +4,14 @@
 
 package com.areg.project.logging;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
 public enum LogLevel {
-    TRACE, DEBUG, INFO, WARN, ERROR
+
+    TRACE(0), DEBUG(1), INFO(2), WARN(3), ERROR(4), FATAL(5);
+
+    private final int level;
+
+    LogLevel(int level) { this.level = level; }
 }

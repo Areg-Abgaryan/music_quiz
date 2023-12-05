@@ -1,0 +1,3 @@
+2023-12-06 00:35:42 [Test worker] ERROR com.areg.project.managers.FileParsingManager - Error: Wrong path provided .
+2023-12-06 00:35:42 [Test worker] INFO  com.areg.project.managers.PasswordSecurityManager - Password is null or empty
+2023-12-06 00:35:42 [Test worker] INFO  com.areg.project.managers.PasswordSecurityManager - Salt is null or empty
