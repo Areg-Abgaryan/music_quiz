@@ -4,10 +4,9 @@
 
 package com.areg.project;
 
-import com.areg.project.managers.AuthenticationManager;
-import com.areg.project.managers.FileParsingManager;
-import com.areg.project.managers.InactivityMonitoringManager;
-import com.areg.project.managers.QuizWorkflowManager;
+import com.areg.project.manager.AuthenticationManager;
+import com.areg.project.manager.FileParsingManager;
+import com.areg.project.manager.QuizWorkflowManager;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -29,15 +28,13 @@ public class QuizApplication {
     private final FileParsingManager fileParsingManager;
     private final AuthenticationManager authenticationManager;
     private final QuizWorkflowManager quizWorkflowManager;
-    private final InactivityMonitoringManager inactivityMonitoringManager;
 
     @Autowired
     public QuizApplication(FileParsingManager fileParsingManager, AuthenticationManager authenticationManager,
-                           QuizWorkflowManager quizWorkflowManager, InactivityMonitoringManager inactivityMonitoringManager) {
+                           QuizWorkflowManager quizWorkflowManager) {
         this.fileParsingManager = fileParsingManager;
         this.authenticationManager = authenticationManager;
         this.quizWorkflowManager = quizWorkflowManager;
-        this.inactivityMonitoringManager = inactivityMonitoringManager;
     }
 
     public static void main(String[] args) {

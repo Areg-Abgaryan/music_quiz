@@ -4,9 +4,9 @@
 
 package com.areg.project;
 
-import com.areg.project.models.MusicAlbum;
-import com.areg.project.models.MusicArtist;
-import com.areg.project.models.MusicSong;
+import com.areg.project.model.MusicAlbum;
+import com.areg.project.model.MusicArtist;
+import com.areg.project.model.MusicSong;
 import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
