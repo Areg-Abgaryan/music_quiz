@@ -7,16 +7,20 @@ package com.areg.project.service.jpa;
 import com.areg.project.model.entity.UserEntity;
 import com.areg.project.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
+
+    @Autowired
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
 
     public UserEntity findUserById(UUID id) {
@@ -31,5 +35,10 @@ public class UserService {
                 .orElseThrow(
                         () -> new EntityNotFoundException("User with username '" + username + "' not found")
                 );
+    }
+
+    public UserEntity createUser(UserEntity userEntity) {
+        userEntity.setExternalId(UUID.randomUUID());
+        return userRepository.save(userEntity);
     }
 }

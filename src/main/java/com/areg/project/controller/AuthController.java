@@ -5,12 +5,15 @@
 package com.areg.project.controller;
 
 import com.areg.project.EndpointConstants;
+import com.areg.project.manager.AuthManager;
+import com.areg.project.manager.UserManager;
 import com.areg.project.model.dto.RefreshTokenRequestDTO;
 import com.areg.project.model.dto.RefreshTokenResponseDTO;
 import com.areg.project.model.dto.TokenDTO;
 import com.areg.project.model.dto.UserDTO;
 import com.areg.project.model.dto.UserLoginRequestDTO;
 import com.areg.project.model.dto.UserLoginResponseDTO;
+import com.areg.project.model.entity.RefreshTokenEntity;
 import com.areg.project.model.entity.UserEntity;
 import com.areg.project.repository.RefreshTokenRepository;
 import com.areg.project.security.jwt.JwtProvider;
@@ -18,7 +21,6 @@ import com.areg.project.service.jpa.UserService;
 import org.apache.commons.lang3.StringUtils;
 import io.jsonwebtoken.JwtException;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import com.areg.project.logging.QuizLogLevel;
@@ -37,6 +39,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.io.InvalidObjectException;
 import java.util.Optional;
 
+//  FIXME !! Test all this functionality , REST, db creation, all the flow
 @RestController
 @RequestMapping(EndpointConstants.API)
 public class AuthController {
@@ -58,8 +61,17 @@ public class AuthController {
         this.refreshTokenRepository = refreshTokenRepository;
     }
 
+    @PostMapping(EndpointConstants.SIGNUP)
+    public ResponseEntity<?> signUp(@RequestBody UserDTO userDTO) {
+        final Subject currentUser = SecurityUtils.getSubject();
+        logMachine.log(QuizLogLevel.INFO, "Successfully signed up during the session : "
+                + ShiroConfig.getSessionId(currentUser));
+        return ResponseEntity.ok(userManager.signUp(userDTO));
+    }
+
     @PostMapping(EndpointConstants.LOGIN)
     @ResponseBody
+    //  FIXME !! Refactor this
     public ResponseEntity<?> login(@RequestBody UserLoginRequestDTO loginDto) {
         try {
             final String username = loginDto.getUsername();
@@ -88,7 +100,7 @@ public class AuthController {
                     + ShiroConfig.getSessionId(currentUser));
             return ResponseEntity.ok(loginOutputDTO);
 
-        } catch (AuthenticationException ae) {
+        } catch (org.springframework.security.core.AuthenticationException ae) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Invalid username provided");
         } catch (org.apache.shiro.authc.AuthenticationException ae) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Invalid password provided");
@@ -116,9 +128,10 @@ public class AuthController {
     //  When JWT is expired, we call this.
     //  Will refresh the JWT token via refresh token (if it's valid)
     @PostMapping(EndpointConstants.REFRESH_TOKEN)
+    //  FIXME !! Refactor this
     public ResponseEntity<?> refreshToken(@RequestBody RefreshTokenRequestDTO refreshTokenRequestDTO) {
         final UserEntity userEntity = userService.findUserById(refreshTokenRequestDTO.getUserExternalId());
-        final Optional<RefreshTokenResponseDTO> token = refreshTokenRepository.
+        final Optional<RefreshTokenEntity> token = refreshTokenRepository.
                 findByUserEntityAndRefreshToken(userEntity, refreshTokenRequestDTO.getRefreshToken());
 
         //  Has neither JWT token, nor refresh token (expired)

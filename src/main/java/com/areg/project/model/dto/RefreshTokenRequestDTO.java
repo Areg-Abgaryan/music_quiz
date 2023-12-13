@@ -15,7 +15,7 @@ import java.util.UUID;
 @Setter
 public class RefreshTokenRequestDTO {
 
-    @JsonProperty("resreshToken")
+    @JsonProperty("refreshToken")
     @NotBlank private UUID refreshToken;
 
     @JsonProperty("userId")

@@ -14,9 +14,9 @@ import com.areg.project.orchestrator.SongToArtistsOrchestrator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import java.util.Scanner;
 
+//  FIXME !! Re-write the db creation with JPA
 //  FIXME !! Add Difficulty logic in orchestrators;
 //  FIXME !! Add a score tracker, then add to the db with the user's info
 //  FIXME !! Add survival mode support for each submode

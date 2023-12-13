@@ -12,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -55,22 +54,16 @@ public class AuthenticationManager {
         artistManager.createArtist(artist);
 
         var albumFirst = new AlbumEntity("album1", artist, (short) 2012, (byte) 13, "43:57", null, QuizDifficulty.EASY);
-        var albumSecond = new AlbumEntity("album2", artist, (short) 2015, (byte) 10, "41:29", null, QuizDifficulty.EASY);
 
         var albumManager = new AlbumManagerHibernate();
         albumManager.createAlbum(albumFirst, artist);
-        albumManager.createAlbum(albumSecond, artist);
 
         final var songManager = new SongServiceHibernate();
         final var songFirstAlbumFirst = new SongEntity("Song1", artist, albumFirst, "3:05", (byte) 1);
-        final var songFirstAlbumSecond = new SongEntity("Song2", artist, albumFirst, "3:16", (byte) 1);
         final var songSecondAlbumFirst = new SongEntity("Song3", artist, albumSecond, "3:27", (byte) 1);
-        final var songSecondAlbumSecond = new SongEntity("Song4", artist, albumSecond, "3:38", (byte) 1);
 
         songManager.createSong(songFirstAlbumFirst,albumFirst,artist);
-        songManager.createSong(songFirstAlbumSecond,albumFirst,artist);
         songManager.createSong(songSecondAlbumFirst,albumSecond,artist);
-        songManager.createSong(songSecondAlbumSecond,albumSecond,artist);
     */
 
         System.out.print("Hey ! Welcome to Music Quiz !\n");
@@ -107,7 +100,7 @@ public class AuthenticationManager {
             if (user != null) {
 
                 //  FIXME !! Check here to call getPasswordInput() method
-                if (! user.getPassword().equals(encryptionManager.encrypt(password, user.getPasswordSalt()))) {
+                if (! user.getPassword().equals(encryptionManager.encrypt(password, user.getSalt()))) {
 
                     System.out.println("""
                         Wrong password provided ! Do you want to recover your password ?
