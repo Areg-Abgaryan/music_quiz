@@ -15,9 +15,9 @@ import com.areg.project.model.dto.UserLoginRequestDTO;
 import com.areg.project.model.dto.UserLoginResponseDTO;
 import com.areg.project.model.entity.RefreshTokenEntity;
 import com.areg.project.model.entity.UserEntity;
-import com.areg.project.repository.RefreshTokenRepository;
 import com.areg.project.security.jwt.JwtProvider;
-import com.areg.project.service.jpa.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import io.jsonwebtoken.JwtException;
 import org.apache.shiro.SecurityUtils;
@@ -40,28 +40,27 @@ import java.io.InvalidObjectException;
 import java.util.Optional;
 
 //  FIXME !! Test all this functionality , REST, db creation, all the flow
-@RestController
+//  FIXME !! Add better specific request handling for each request and test-case
+//  FIXME !! Test Swagger UI
+@RestController("auth-controller")
+@Api(tags = "Auth Controller")
 @RequestMapping(EndpointConstants.API)
 public class AuthController {
 
     private final QuizLogMachine logMachine = new QuizLogMachine(AuthController.class);
     private final JwtProvider jwtProvider;
     private final UserManager userManager;
-    private final UserService userService;
     private final AuthManager authManager;
-    private final RefreshTokenRepository refreshTokenRepository;
 
     @Autowired
-    public AuthController(JwtProvider jwtProvider, UserManager userManager, UserService userService,
-                          AuthManager authManager, RefreshTokenRepository refreshTokenRepository) {
+    public AuthController(JwtProvider jwtProvider, UserManager userManager, AuthManager authManager) {
         this.jwtProvider = jwtProvider;
         this.userManager = userManager;
-        this.userService = userService;
         this.authManager = authManager;
-        this.refreshTokenRepository = refreshTokenRepository;
     }
 
     @PostMapping(EndpointConstants.SIGNUP)
+    @ApiOperation(value = "User sign up", notes = "Registers a new user in the system")
     public ResponseEntity<?> signUp(@RequestBody UserDTO userDTO) {
         final Subject currentUser = SecurityUtils.getSubject();
         logMachine.log(QuizLogLevel.INFO, "Successfully signed up during the session : "
@@ -70,9 +69,11 @@ public class AuthController {
     }
 
     @PostMapping(EndpointConstants.LOGIN)
+    @ApiOperation(value = "User login", notes = "Logins the user in the system")
     @ResponseBody
     //  FIXME !! Refactor this
     public ResponseEntity<?> login(@RequestBody UserLoginRequestDTO loginDto) {
+
         try {
             final String username = loginDto.getUsername();
             final String password = loginDto.getPassword();
@@ -110,8 +111,10 @@ public class AuthController {
     }
 
     @PostMapping(EndpointConstants.LOGOUT)
+    @ApiOperation(value = "User logout", notes = "Logouts the user from the system")
     @ResponseBody
     public ResponseEntity<?> logout(@RequestHeader(name = "Authorization") String jwtToken) {
+
         try {
             if (jwtProvider.isTokenValid(jwtToken)) {
                 final Subject currentUser = SecurityUtils.getSubject();
@@ -128,18 +131,18 @@ public class AuthController {
     //  When JWT is expired, we call this.
     //  Will refresh the JWT token via refresh token (if it's valid)
     @PostMapping(EndpointConstants.REFRESH_TOKEN)
+    @ApiOperation(value = "Refresh Token", notes = "Refresh token for JWT token")
     //  FIXME !! Refactor this
     public ResponseEntity<?> refreshToken(@RequestBody RefreshTokenRequestDTO refreshTokenRequestDTO) {
-        final UserEntity userEntity = userService.findUserById(refreshTokenRequestDTO.getUserExternalId());
-        final Optional<RefreshTokenEntity> token = refreshTokenRepository.
-                findByUserEntityAndRefreshToken(userEntity, refreshTokenRequestDTO.getRefreshToken());
+
+        final Optional<RefreshTokenEntity> refreshTokenEntity = authManager.refreshToken(refreshTokenRequestDTO);
 
         //  Has neither JWT token, nor refresh token (expired)
-        if (token.isEmpty() || authManager.verifyRefreshTokenExpiration(token.get())) {
+        if (refreshTokenEntity.isEmpty() || authManager.verifyRefreshTokenExpiration(refreshTokenEntity.get())) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Please log in !");
         }
 
-        final UserEntity user = token.get().getUserEntity();
+        final UserEntity user = refreshTokenEntity.get().getUserEntity();
 
         //  Generate new JWT Token
         final var jwtToken = new TokenDTO(jwtProvider.createToken(user.getUsername()));

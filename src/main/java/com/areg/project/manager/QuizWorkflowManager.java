@@ -17,13 +17,18 @@ import org.springframework.stereotype.Component;
 import java.util.Scanner;
 
 //  FIXME !! Re-write the db creation with JPA
+//  FIXME !! Write a READ.ME file
+//  FIXME !! Add more logs everywhere
+//  FIXME !! Write script for db migration
+//  FIXME !! Try to run into Docker container
+//  FIXME !! Add a pipeline for the project
+//  FIXME !! Add caching mechanism
+//  FIXME !! Add functional, integration, end-to-end tests
 //  FIXME !! Add Difficulty logic in orchestrators;
 //  FIXME !! Add a score tracker, then add to the db with the user's info
 //  FIXME !! Add survival mode support for each submode
-//  FIXME !! Add authentication from the REST API
-//  FIXME !! Add REST API in the controller layer
 //  FIXME !! Add exit & goto beginning logic in the end
-//  FIXME !! Replace Hibernate#save with #persist
+//  FIXME !! Add unit tests coverage throughout the project
 //  FIXME !! Make microservice from authentication logic
 //  FIXME !! After authentication, choose play game or see my info or see my records
 //  FIXME !! Consider authenticating in a loop, sign out, sign in maybe

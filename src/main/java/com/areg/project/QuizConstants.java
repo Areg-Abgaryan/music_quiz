@@ -17,7 +17,7 @@ public class QuizConstants {
     public static final short PBEKeyIterations = 1024;
     public static final short PBEKeyLength = 256;
     public static final String AllCharacters;
-    public static final String MailServerAddress = "abgaryan.areg@gmail.com";
+    public static final String MailServerAddress = "";
     public static final short MailOTPLength = 6;
     public static final byte OTPTimeoutSeconds = 60;
     public static ZoneId TimeZoneId = ZoneId.of("Asia/Yerevan");
@@ -27,12 +27,11 @@ public class QuizConstants {
     }
 
     private static String generateAllCharacters() {
-
         final var allCharacters = new StringBuilder();
+        appendRange(allCharacters, '!', '-');
+        appendRange(allCharacters, '0', '9');
         appendRange(allCharacters, 'A', 'Z');
         appendRange(allCharacters, 'a', 'z');
-        appendRange(allCharacters, '0', '9');
-        appendRange(allCharacters, '!', '-');
         return allCharacters.toString();
     }
 

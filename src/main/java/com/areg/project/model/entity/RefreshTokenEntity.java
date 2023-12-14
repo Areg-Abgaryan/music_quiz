@@ -21,7 +21,7 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-@Table(name = "t_refresh_token")
+@Table(name = "t_refresh_token", schema = "public")
 public class RefreshTokenEntity {
 
     @Id
