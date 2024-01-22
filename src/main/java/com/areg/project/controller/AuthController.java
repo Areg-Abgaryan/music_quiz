@@ -63,8 +63,7 @@ public class AuthController {
     @ApiOperation(value = "User sign up", notes = "Registers a new user in the system")
     public ResponseEntity<?> signUp(@RequestBody UserDTO userDTO) {
         final Subject currentUser = SecurityUtils.getSubject();
-        logMachine.log(QuizLogLevel.INFO, "Successfully signed up during the session : "
-                + ShiroConfig.getSessionId(currentUser));
+        logMachine.info("Successfully signed up during session : " + ShiroConfig.getSessionId(currentUser));
         return ResponseEntity.ok(userManager.signUp(userDTO));
     }
 
@@ -92,13 +91,12 @@ public class AuthController {
             final var jwtToken = new TokenDTO(jwtProvider.createToken(username));
 
             //  Generate refresh token
-            final RefreshTokenResponseDTO refreshToken = authManager.createRefreshToken(userDTO);
+            final RefreshTokenResponseDTO refreshToken = authManager.createRefreshToken();
 
             final var loginOutputDTO = new UserLoginResponseDTO(
                     userDTO.getFirstName(), userDTO.getLastName(), jwtToken, refreshToken);
 
-            logMachine.log(QuizLogLevel.INFO, "Successfully logged in during the session : "
-                    + ShiroConfig.getSessionId(currentUser));
+            logMachine.info("Successfully logged in during session : " + ShiroConfig.getSessionId(currentUser));
             return ResponseEntity.ok(loginOutputDTO);
 
         } catch (org.springframework.security.core.AuthenticationException ae) {
@@ -119,8 +117,7 @@ public class AuthController {
             if (jwtProvider.isTokenValid(jwtToken)) {
                 final Subject currentUser = SecurityUtils.getSubject();
                 currentUser.logout();
-                logMachine.log(QuizLogLevel.INFO, "Successfully logged out during the session : "
-                        + ShiroConfig.getSessionId(currentUser));
+                logMachine.info("Successfully logged out during session : " + ShiroConfig.getSessionId(currentUser));
             }
         } catch (JwtException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");

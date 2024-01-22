@@ -7,7 +7,6 @@ package com.areg.project.manager;
 import com.areg.project.converter.RefreshTokenResultConverter;
 import com.areg.project.model.dto.RefreshTokenRequestDTO;
 import com.areg.project.model.dto.RefreshTokenResponseDTO;
-import com.areg.project.model.dto.UserDTO;
 import com.areg.project.model.entity.RefreshTokenEntity;
 import com.areg.project.model.entity.UserEntity;
 import com.areg.project.repository.RefreshTokenRepository;
@@ -15,13 +14,13 @@ import com.areg.project.service.jpa.RefreshTokenService;
 import com.areg.project.service.jpa.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.Optional;
 import java.util.UUID;
 
-@Component
+@Service
 public class AuthManager {
 
     private final long RefreshTokenDurationMs;
@@ -44,7 +43,7 @@ public class AuthManager {
     }
 
     //  Creates refresh token
-    public RefreshTokenResponseDTO createRefreshToken(UserDTO userDTO) {
+    public RefreshTokenResponseDTO createRefreshToken() {
         final var refreshToken = new RefreshTokenResponseDTO();
         refreshToken.setExpirationDate(Instant.now().plusMillis(RefreshTokenDurationMs));
         refreshToken.setRefreshToken(UUID.randomUUID());

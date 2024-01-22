@@ -4,9 +4,9 @@
 
 package com.areg.project.manager;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 //  TODO with invocation handler
 public class InactivityMonitoringManager {
 

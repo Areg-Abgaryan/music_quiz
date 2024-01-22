@@ -11,7 +11,7 @@ import com.areg.project.util.UtilMethods;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -30,7 +30,7 @@ import java.util.regex.Pattern;
 
 //  FIXME !! Consider adding user info to quiz mode context after authentication
 //  FIXME !! Refactor this class, many duplicates
-@Component
+@Service
 public class AuthenticationManager {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationManager.class);
@@ -47,24 +47,6 @@ public class AuthenticationManager {
     }
 
     public void authenticate() {
-
-        //  FIXME !! Remove this after db fix
-        /*final var artist = new ArtistEntity("Cardie B");
-        final var artistManager = new ArtistServiceHibernate();
-        artistManager.createArtist(artist);
-
-        var albumFirst = new AlbumEntity("album1", artist, (short) 2012, (byte) 13, "43:57", null, QuizDifficulty.EASY);
-
-        var albumManager = new AlbumManagerHibernate();
-        albumManager.createAlbum(albumFirst, artist);
-
-        final var songManager = new SongServiceHibernate();
-        final var songFirstAlbumFirst = new SongEntity("Song1", artist, albumFirst, "3:05", (byte) 1);
-        final var songSecondAlbumFirst = new SongEntity("Song3", artist, albumSecond, "3:27", (byte) 1);
-
-        songManager.createSong(songFirstAlbumFirst,albumFirst,artist);
-        songManager.createSong(songSecondAlbumFirst,albumSecond,artist);
-    */
 
         System.out.print("Hey ! Welcome to Music Quiz !\n");
 

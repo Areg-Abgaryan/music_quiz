@@ -21,7 +21,6 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.List;
 
@@ -29,22 +28,21 @@ import java.util.List;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@ToString
 public class AlbumEntity {
 
     //  FIXME !! Consider changing heavy objects to Strings, like albumName, songName
-    //  FIXME !! Change id column types
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "album_id")
-    private Long albumId;
+    @Column(name = "id")
+    private long id;
 
     @Column(nullable = false, name = "name")
     private String name;
 
-    @Setter
+    //  FIXME !! Fix this entity and its relationships
+    /*@Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
-    @JoinColumn(name = "fk_album_artist", referencedColumnName = "artist_id", nullable = false)
+    @JoinColumn(name = "fk_album_artist", referencedColumnName = "id", nullable = false)
     private ArtistEntity artistEntity;
 
     @Column(nullable = false, name = "release_year")
@@ -74,5 +72,5 @@ public class AlbumEntity {
         this.totalLength = totalLength;
         this.songEntities = songEntities;
         this.difficulty = difficulty;
-    }
+    }*/
 }

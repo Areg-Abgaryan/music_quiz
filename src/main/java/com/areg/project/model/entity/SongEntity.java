@@ -18,30 +18,29 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Table(name = "t_song", schema = "public")
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@ToString
 public class SongEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "song_id")
-    private Long id;
+    @Column(name = "id")
+    private long id;
 
     @Column(nullable = false, name = "name")
     private String name;
 
-    @Setter
+    //   FIXME !!   Fix all entities here
+   /* @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
-    @JoinColumn(name = "fk_song_artist", referencedColumnName = "artist_id", nullable = false)
+    @JoinColumn(name = "fk_song_artist", referencedColumnName = "id", nullable = false)
     private ArtistEntity artistEntity;
 
     @Setter
-    @JoinColumn(name = "fk_song_album", referencedColumnName = "album_id")
+    @JoinColumn(name = "fk_song_album", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, optional = false)
     private AlbumEntity albumEntity;
 
@@ -57,5 +56,5 @@ public class SongEntity {
         this.albumEntity = albumEntity;
         this.duration = duration;
         this.difficulty = difficulty;
-    }
+    }*/
 }

@@ -13,7 +13,8 @@ import com.areg.project.orchestrator.SongToAlbumsOrchestrator;
 import com.areg.project.orchestrator.SongToArtistsOrchestrator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.util.Scanner;
 
 //  FIXME !! Re-write the db creation with JPA
@@ -34,7 +35,8 @@ import java.util.Scanner;
 //  FIXME !! Consider authenticating in a loop, sign out, sign in maybe
 //  FIXME !! Add Roles & Permissions for users then
 //  FIXME !! Remove run-time database creation & get all information from the persistent db
-@Component
+
+@Service
 public class QuizWorkflowManager {
 
     private static final Logger logger = LoggerFactory.getLogger(QuizWorkflowManager.class);

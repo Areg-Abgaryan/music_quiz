@@ -9,11 +9,11 @@ import com.areg.project.model.dto.UserDTO;
 import com.areg.project.model.entity.UserEntity;
 import com.areg.project.service.jpa.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-@Component
+@Service
 public class UserManager {
 
     private final UserService userService;

@@ -11,12 +11,12 @@ import com.areg.project.MusicDatabase;
 import com.areg.project.model.MusicSong;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.Set;
 import java.util.stream.IntStream;
 
-@Service
+@Component
 public class MusicDatabaseBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(MusicDatabaseBuilder.class);

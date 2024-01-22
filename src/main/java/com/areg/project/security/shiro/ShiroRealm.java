@@ -32,9 +32,7 @@ public class ShiroRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        final var authorizationInfo = new SimpleAuthorizationInfo();
-        final var user = (UserEntity) principals.getPrimaryPrincipal();
-        return authorizationInfo;
+        return new SimpleAuthorizationInfo();
     }
 
     @Override
