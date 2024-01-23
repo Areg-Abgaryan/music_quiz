@@ -73,15 +73,4 @@ public class QuizLogMachine {
             logger.error(formattedMessage);
         }
     }
-
-    public void log(QuizLogLevel level, String message) {
-        switch (level) {
-            case TRACE -> logger.trace(message);
-            case DEBUG -> logger.debug(message);
-            case INFO -> logger.info(message);
-            case WARN -> logger.warn(message);
-            case ERROR -> logger.error(message);
-            default -> throw new IllegalArgumentException("Unsupported log level: " + level);
-        }
-    }
 }

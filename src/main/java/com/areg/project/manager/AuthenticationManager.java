@@ -6,7 +6,6 @@ package com.areg.project.manager;
 
 import com.areg.project.QuizConstants;
 import com.areg.project.model.dto.UserDTO;
-import com.areg.project.model.entity.UserEntity;
 import com.areg.project.service.hibernate.UserServiceHibernate;
 import com.areg.project.util.UtilMethods;
 import org.slf4j.Logger;
@@ -14,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
@@ -79,7 +79,8 @@ public class AuthenticationManager {
             System.out.println("Password : ");
             final String password = scanner.next();
 
-            final var user = userServiceHibernate.getUserByEmail(email);
+            //  Check whether a user with the provided email already exists in the database or not
+            final var user = userManager.getUserByEmail(email);
             if (user != null) {
 
                 //  FIXME !! Check here to call getPasswordInput() method
@@ -114,6 +115,8 @@ public class AuthenticationManager {
                                 final String newPassword = getPasswordInput();
                                 final var salt = encryptionManager.generateSalt();
                                 final String newEncryptedPassword = encryptionManager.encrypt(newPassword, salt);
+
+                                //  FIXME !!
                                 userServiceHibernate.updateUserPassword(user, salt, newEncryptedPassword);
                             }
 
@@ -140,9 +143,9 @@ public class AuthenticationManager {
 
     private boolean signUp() {
 
-        final var users = userServiceHibernate.getAllUsers();
+        final List<UserDTO> users = userManager.getAllUsers();
         final String email = getInput("Enter e-mail : ", input -> isValidEmail(users, input));
-        final String username = getInput("Enter username : ", input -> isValidUserName(users, input));
+        final String username = getInput("Enter username : ", input -> isValidUsername(users, input));
         final String password = getPasswordInput();
 
         final ExecutorService executorService = Executors.newFixedThreadPool(1);
@@ -153,12 +156,15 @@ public class AuthenticationManager {
         emailVerificationManager.sendEmail(email, "Music Quiz OTP", otpMessage);
         System.out.println("Please, enter the code that was sent to your " + email + " e-mail address.\n");
 
-        //  Check whether system generated OTP & the one that user has written match
+        //  Check whether system generated OTP & the one that user has written, match
         final String otpFromUserInput = getOTPFromUserInput(executorService);
         if ((otpFromUserInput.equals(otp))) {
+
+            //  Generate salt & encrypt user-provided password
             final var salt = encryptionManager.generateSalt();
             final var encryptedPassword = encryptionManager.encrypt(password, salt);
 
+            //  Sign up
             final var userDto = new UserDTO(email, username, encryptedPassword);
             userManager.signUp(userDto);
         } else {
@@ -219,19 +225,19 @@ public class AuthenticationManager {
             """);
     }
 
-    private boolean isValidUserName(List<UserEntity> userEntities, String userName) {
+    private boolean isValidUsername(Collection<UserDTO> users, String username) {
 
-        if (userName == null || userName.isEmpty()) {
+        if (username == null || username.isEmpty()) {
             throw new RuntimeException("Error : Username can't be null or empty !");
         }
 
-        if (userName.length() < 4 || userName.length() > 20) {
+        if (username.length() < 4 || username.length() > 20) {
             System.out.println("The username length must be 4-20 characters. Choose another one !");
             return false;
         }
 
-        for (var user : userEntities) {
-            if (userName.equals(user.getUsername())) {
+        for (var user : users) {
+            if (username.equals(user.getUsername())) {
                 System.out.println("This username is already reserved. Choose another one !");
                 return false;
             }
@@ -239,7 +245,7 @@ public class AuthenticationManager {
         return true;
     }
 
-    private boolean isValidEmail(List<UserEntity> userEntities, String email) {
+    private boolean isValidEmail(Collection<UserDTO> users, String email) {
 
         if (email == null || email.isEmpty()) {
             throw new RuntimeException("Error : E-mail can't be null or empty !");
@@ -255,7 +261,7 @@ public class AuthenticationManager {
             return false;
         }
 
-        for (var user : userEntities) {
+        for (var user : users) {
             if (email.equals(user.getEmail())) {
                 System.out.println("This e-mail has already been used for registration, choose another one");
                 return false;

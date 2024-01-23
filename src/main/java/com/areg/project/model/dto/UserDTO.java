@@ -27,6 +27,8 @@ public class UserDTO {
 
     @Email private String email;
 
+    private String salt;
+
     public UserDTO(String email, String username, String password) {
         this.email = email;
         this.username = username;

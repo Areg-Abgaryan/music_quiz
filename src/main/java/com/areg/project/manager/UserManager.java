@@ -13,6 +13,8 @@ import com.areg.project.util.UtilMethods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -31,16 +33,6 @@ public class UserManager {
         this.encryptionManager = encryptionManager;
     }
 
-    public UserDTO findUserByUsername(String username) {
-        final UserEntity userEntity = userService.findUserByUsername(username);
-        return userResultConverter.fromEntityToDTO(userEntity);
-    }
-
-    public UserDTO findUserById(UUID id) {
-        final UserEntity userEntity = userService.findUserById(id);
-        return userResultConverter.fromEntityToDTO(userEntity);
-    }
-
     public UserDTO signUp(UserDTO userDTO) {
         final UserEntity userEntity = userResultConverter.fromDTOToEntity(userDTO);
         final String salt = encryptionManager.generateSalt();
@@ -55,5 +47,18 @@ public class UserManager {
         final UserEntity savedUserEntity = userService.signUp(userEntity);
         logMachine.info("User " + savedUserEntity.getUsername() + " successfully registered in the system");
         return userResultConverter.fromEntityToDTO(savedUserEntity);
+    }
+
+    public List<UserDTO> getAllUsers() {
+        return userResultConverter.fromEntityToDTO(userService.getAllUsers());
+    }
+
+    public UserDTO getUserByEmail(String email) {
+        final Optional<UserEntity> result = userService.getUserByEmail(email);
+        if (result.isEmpty()) {
+            logMachine.info("Could not find user with this email : " + email);
+            return null;
+        }
+        return userResultConverter.fromEntityToDTO(result.get());
     }
 }

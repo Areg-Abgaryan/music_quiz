@@ -10,9 +10,6 @@ import com.areg.project.util.HibernateUtils;
 import org.hibernate.Session;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.List;
-
 @Service
 public class UserServiceHibernate {
 
@@ -35,38 +32,5 @@ public class UserServiceHibernate {
         } finally {
             session.close();
         }
-}
-
-    public List<UserEntity> getAllUsers() {
-        final Session session = HibernateUtils.getSessionFactory().openSession();
-        try {
-            session.beginTransaction();
-            final List<UserEntity> userEntities = HibernateUtils.getAllItemsInTheTable(session, UserEntity.class);
-            session.getTransaction().commit();
-            return userEntities;
-        } catch (Exception e) {
-            logMachine.error("Error : Could not get users : {}", e.getMessage());
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        return Collections.emptyList();
-    }
-
-    public UserEntity getUserByEmail(String email)  {
-
-        final Session session = HibernateUtils.getSessionFactory().openSession();
-        try {
-            session.beginTransaction();
-            final UserEntity userEntity = HibernateUtils.getRowByUniqueColumn(session, UserEntity.class, "email", email);
-            session.getTransaction().commit();
-            return userEntity;
-        } catch (Exception e) {
-            logMachine.error("Error : Could not get user : {}", e.getMessage());
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-        return null;
     }
 }

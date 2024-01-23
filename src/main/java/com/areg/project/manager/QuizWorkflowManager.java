@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 import java.util.Scanner;
 
 //  FIXME !! Re-write the db creation with JPA
-//  FIXME !! Write a READ.ME file
 //  FIXME !! Add more logs everywhere
 //  FIXME !! Write script for db migration
 //  FIXME !! Try to run into Docker container

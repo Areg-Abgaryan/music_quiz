@@ -6,11 +6,11 @@ package com.areg.project.service.jpa;
 
 import com.areg.project.model.entity.UserEntity;
 import com.areg.project.repository.UserRepository;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -23,21 +23,15 @@ public class UserService {
     }
 
 
-    public UserEntity findUserById(UUID id) {
-        return userRepository.findByExternalId(id)
-                .orElseThrow(
-                        () -> new EntityNotFoundException("User with id '" + id.toString() + "' not found")
-                );
-    }
-
-    public UserEntity findUserByUsername(String username) throws EntityNotFoundException {
-        return userRepository.findByUsername(username)
-                .orElseThrow(
-                        () -> new EntityNotFoundException("User with username '" + username + "' not found")
-                );
-    }
-
     public UserEntity signUp(UserEntity userEntity) {
         return userRepository.save(userEntity);
+    }
+
+    public List<UserEntity> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public Optional<UserEntity> getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }
