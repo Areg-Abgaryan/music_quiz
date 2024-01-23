@@ -23,14 +23,15 @@ import io.jsonwebtoken.JwtException;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import com.areg.project.logging.QuizLogLevel;
 import com.areg.project.logging.QuizLogMachine;
 import com.areg.project.security.shiro.ShiroConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -59,11 +60,16 @@ public class AuthController {
         this.authManager = authManager;
     }
 
+    //  Run with :  http://localhost:8080/hello?name=Areg
+    @GetMapping("/hello")
+    public String sayHello(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return String.format("Hello %s!", name);
+    }
+
     @PostMapping(EndpointConstants.SIGNUP)
     @ApiOperation(value = "User sign up", notes = "Registers a new user in the system")
     public ResponseEntity<?> signUp(@RequestBody UserDTO userDTO) {
-        final Subject currentUser = SecurityUtils.getSubject();
-        logMachine.info("Successfully signed up during session : " + ShiroConfig.getSessionId(currentUser));
+        logMachine.info("Successfully signed up during session : " + ShiroConfig.getSessionId());
         return ResponseEntity.ok(userManager.signUp(userDTO));
     }
 
@@ -81,11 +87,11 @@ public class AuthController {
                 throw new InvalidObjectException("Invalid request arguments");
             }
 
-            final var token = new UsernamePasswordToken(username, password);
-            final Subject currentUser = SecurityUtils.getSubject();
-
             final UserDTO userDTO = userManager.findUserByUsername(username);
-            currentUser.login(token);
+            final var token = new UsernamePasswordToken(username, password);
+
+            //  Login current user
+            SecurityUtils.getSubject().login(token);
 
             // Generate JWT token
             final var jwtToken = new TokenDTO(jwtProvider.createToken(username));
@@ -96,7 +102,7 @@ public class AuthController {
             final var loginOutputDTO = new UserLoginResponseDTO(
                     userDTO.getFirstName(), userDTO.getLastName(), jwtToken, refreshToken);
 
-            logMachine.info("Successfully logged in during session : " + ShiroConfig.getSessionId(currentUser));
+            logMachine.info("Successfully logged in during session : " + ShiroConfig.getSessionId());
             return ResponseEntity.ok(loginOutputDTO);
 
         } catch (org.springframework.security.core.AuthenticationException ae) {
@@ -115,9 +121,9 @@ public class AuthController {
 
         try {
             if (jwtProvider.isTokenValid(jwtToken)) {
-                final Subject currentUser = SecurityUtils.getSubject();
-                currentUser.logout();
-                logMachine.info("Successfully logged out during session : " + ShiroConfig.getSessionId(currentUser));
+                //  Logout current user
+                SecurityUtils.getSubject().logout();
+                logMachine.info("Successfully logged out during session : " + ShiroConfig.getSessionId());
             }
         } catch (JwtException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
@@ -125,7 +131,7 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    //  When JWT is expired, we call this.
+    //  When JWT is expired, we call this api.
     //  Will refresh the JWT token via refresh token (if it's valid)
     @PostMapping(EndpointConstants.REFRESH_TOKEN)
     @ApiOperation(value = "Refresh Token", notes = "Refresh token for JWT token")

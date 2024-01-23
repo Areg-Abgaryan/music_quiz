@@ -24,7 +24,7 @@ public class UserService {
 
 
     public UserEntity findUserById(UUID id) {
-        return userRepository.findUserEntityByExternalId(id)
+        return userRepository.findByExternalId(id)
                 .orElseThrow(
                         () -> new EntityNotFoundException("User with id '" + id.toString() + "' not found")
                 );

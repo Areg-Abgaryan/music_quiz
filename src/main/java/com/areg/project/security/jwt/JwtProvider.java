@@ -4,6 +4,8 @@
 
 package com.areg.project.security.jwt;
 
+import com.areg.project.logging.QuizLogMachine;
+import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import io.jsonwebtoken.Claims;
@@ -19,12 +21,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
+import java.nio.charset.StandardCharsets;
+import java.security.Key;
 import java.util.Base64;
 import java.util.Date;
 
 @Component
 public class JwtProvider {
 
+    private final QuizLogMachine logMachine = new QuizLogMachine(JwtProvider.class);
     private final String secret;
     private final long validTimeMillis;
     private final UserDetailsService userDetailsService;
@@ -42,13 +47,12 @@ public class JwtProvider {
                 .setClaims(claims)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + validTimeMillis))
-                //  FIXME !! Do smth with this deprecated api
-                .signWith(SignatureAlgorithm.HS256, secret)
+                .signWith(getSigningKey(secret), SignatureAlgorithm.HS256)
                 .compact();
     }
 
     public Authentication getAuthentication(String token) {
-        final UserDetails userDetails = this.userDetailsService.loadUserByUsername(getUsernameFromToken(token));
+        final UserDetails userDetails = userDetailsService.loadUserByUsername(getUsernameFromToken(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
@@ -69,8 +73,13 @@ public class JwtProvider {
             final Jws<Claims> claims = Jwts.parserBuilder().setSigningKey(secret).build().parseClaimsJws(token);
             return claims.getBody().getExpiration().after(new Date());
         } catch (JwtException | IllegalArgumentException e) {
-            //log.error("JWT token is expired or invalid");
+            logMachine.error("JWT token is expired or invalid");
             return false;
         }
+    }
+
+    private Key getSigningKey(String secret) {
+        final byte[] keyBytes = secret.getBytes(StandardCharsets.UTF_8);
+        return Keys.hmacShaKeyFor(keyBytes);
     }
 }

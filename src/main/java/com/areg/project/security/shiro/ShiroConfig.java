@@ -6,6 +6,7 @@ package com.areg.project.security.shiro;
 
 import com.areg.project.EndpointConstants;
 import com.areg.project.security.jwt.JwtFilter;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -62,7 +63,8 @@ public class ShiroConfig {
         return shiroFilterFactoryBean;
     }
 
-    public static String getSessionId(Subject currentUser) {
+    public static String getSessionId() {
+        final Subject currentUser = SecurityUtils.getSubject();
         final Session session = currentUser.getSession();
         return session.getId() != null ? session.getId().toString() : null;
     }
