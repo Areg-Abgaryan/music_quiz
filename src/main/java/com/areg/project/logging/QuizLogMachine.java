@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class QuizLogMachine {
 
-    //  FIXME !! Move slf4j logger logs to my custom QuizLogMachine logging everywher in the code
+    //  FIXME !! Move slf4j logger logs to my custom QuizLogMachine logging everywhere in the code
     //  FIXME !! See whether i need Logging level, and log() method
     //  FIXME !! See whether i can specify this logger output in log4j2.xml file
     //  FIXME !! Add logging possibility with these brackets mode {}, something ...

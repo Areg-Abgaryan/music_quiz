@@ -18,10 +18,10 @@ import lombok.Setter;
 import java.time.Instant;
 import java.util.UUID;
 
+@Table(name = "t_refresh_token", schema = "public")
 @Entity
 @Getter
 @Setter
-@Table(name = "t_refresh_token", schema = "public")
 public class RefreshTokenEntity {
 
     @Id

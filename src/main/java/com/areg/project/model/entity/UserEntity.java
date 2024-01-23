@@ -42,12 +42,6 @@ public class UserEntity {
     @Column(name = "external_id")
     private UUID externalId;
 
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
-
     @Column(unique = true, nullable = false, name = "username")
     private String username;
 
@@ -64,11 +58,10 @@ public class UserEntity {
     private long registrationDate;
 
 
-    public UserEntity(String username, String email, long registrationDate, String salt, String password) {
+    public UserEntity(String username, String email, String salt, String encryptedPassword) {
         this.username = username;
         this.email = email;
-        this.registrationDate = registrationDate;
         this.salt = salt;
-        this.password = password;
+        this.password = encryptedPassword;
     }
 }

@@ -4,9 +4,12 @@
 
 package com.areg.project.util;
 
+import com.areg.project.QuizConstants;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.stream.IntStream;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -24,5 +27,9 @@ public class UtilMethods {
         } catch (NumberFormatException nfe) {
             return false;
         }
+    }
+
+    public static long getEpochSeconds() {
+        return LocalDateTime.now().toInstant(QuizConstants.TimeZoneId.getRules().getOffset(Instant.now())).toEpochMilli();
     }
 }

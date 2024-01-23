@@ -15,19 +15,21 @@ public class RefreshTokenResultConverter {
         if (refreshTokenEntity == null) {
             return null;
         }
-        final var refreshTokenDTO = new RefreshTokenResponseDTO();
-        refreshTokenDTO.setRefreshToken(refreshTokenEntity.getRefreshToken());
-        refreshTokenDTO.setExpirationDate(refreshTokenEntity.getExpirationDate());
-        return refreshTokenDTO;
+
+        final var refreshTokenDto = new RefreshTokenResponseDTO();
+        refreshTokenDto.setRefreshToken(refreshTokenEntity.getRefreshToken());
+        refreshTokenDto.setExpirationDate(refreshTokenEntity.getExpirationDate());
+        return refreshTokenDto;
     }
 
-    public RefreshTokenEntity fromDTOToEntity(RefreshTokenResponseDTO refreshTokenDTO) {
-        if (refreshTokenDTO == null) {
+    public RefreshTokenEntity fromDTOToEntity(RefreshTokenResponseDTO refreshTokenDto) {
+        if (refreshTokenDto == null) {
             return null;
         }
+
         final var refreshTokenEntity = new RefreshTokenEntity();
-        refreshTokenEntity.setRefreshToken(refreshTokenDTO.getRefreshToken());
-        refreshTokenEntity.setExpirationDate(refreshTokenDTO.getExpirationDate());
+        refreshTokenEntity.setRefreshToken(refreshTokenDto.getRefreshToken());
+        refreshTokenEntity.setExpirationDate(refreshTokenDto.getExpirationDate());
         return refreshTokenEntity;
     }
 }

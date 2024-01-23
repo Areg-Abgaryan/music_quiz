@@ -5,6 +5,7 @@
 package com.areg.project.manager;
 
 import com.areg.project.QuizConstants;
+import com.areg.project.model.dto.UserDTO;
 import com.areg.project.model.entity.UserEntity;
 import com.areg.project.service.hibernate.UserServiceHibernate;
 import com.areg.project.util.UtilMethods;
@@ -13,8 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
@@ -35,13 +34,15 @@ public class AuthenticationManager {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationManager.class);
     private final UserServiceHibernate userServiceHibernate;
+    private final UserManager userManager;
     private final EncryptionManager encryptionManager;
     private final EmailVerificationManager emailVerificationManager;
 
     @Autowired
-    public AuthenticationManager(UserServiceHibernate userServiceHibernate, EncryptionManager encryptionManager,
-                                 EmailVerificationManager emailVerificationManager) {
+    public AuthenticationManager(UserServiceHibernate userServiceHibernate, UserManager userManager,
+                                 EncryptionManager encryptionManager, EmailVerificationManager emailVerificationManager) {
         this.userServiceHibernate = userServiceHibernate;
+        this.userManager = userManager;
         this.encryptionManager = encryptionManager;
         this.emailVerificationManager = emailVerificationManager;
     }
@@ -141,7 +142,7 @@ public class AuthenticationManager {
 
         final var users = userServiceHibernate.getAllUsers();
         final String email = getInput("Enter e-mail : ", input -> isValidEmail(users, input));
-        final String userName = getInput("Enter username : ", input -> isValidUserName(users, input));
+        final String username = getInput("Enter username : ", input -> isValidUserName(users, input));
         final String password = getPasswordInput();
 
         final ExecutorService executorService = Executors.newFixedThreadPool(1);
@@ -155,9 +156,9 @@ public class AuthenticationManager {
         if ((otpFromUserInput.equals(otp))) {
             final var salt = encryptionManager.generateSalt();
             final var encryptedPassword = encryptionManager.encrypt(password, salt);
-            final long epochSeconds = getEpochSeconds();
-            final var user = new UserEntity(userName, email, epochSeconds, salt, encryptedPassword);
-            userServiceHibernate.createUser(user);
+
+            final var userDto = new UserDTO(email, username, encryptedPassword);
+            userManager.signUp(userDto);
         } else {
             if (! otpFromUserInput.isEmpty()) {
                 logger.info("OTP is incorrect ! Expected value : {}, user input : {}", otp, otpFromUserInput);
@@ -292,9 +293,5 @@ public class AuthenticationManager {
         }
 
         return "";
-    }
-
-    private long getEpochSeconds() {
-        return LocalDateTime.now().toInstant(QuizConstants.TimeZoneId.getRules().getOffset(Instant.now())).toEpochMilli();
     }
 }

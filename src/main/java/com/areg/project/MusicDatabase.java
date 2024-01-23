@@ -83,12 +83,12 @@ public class MusicDatabase {
         }
 
         if (! artistToAlbumsMap.containsKey(artist)) {
-            Set<MusicAlbum> set = artistToAlbumsMap.computeIfAbsent(artist, k -> new HashSet<>());
+            final Set<MusicAlbum> set = artistToAlbumsMap.computeIfAbsent(artist, k -> new HashSet<>());
             set.add(album);
             return;
         }
 
-        Set<MusicAlbum> albums = artistToAlbumsMap.get(artist);
+        final Set<MusicAlbum> albums = artistToAlbumsMap.get(artist);
         albums.add(album);
         artistToAlbumsMap.put(artist, albums);
     }

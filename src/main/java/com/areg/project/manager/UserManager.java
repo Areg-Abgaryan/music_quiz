@@ -5,9 +5,11 @@
 package com.areg.project.manager;
 
 import com.areg.project.converter.UserResultConverter;
+import com.areg.project.logging.QuizLogMachine;
 import com.areg.project.model.dto.UserDTO;
 import com.areg.project.model.entity.UserEntity;
 import com.areg.project.service.jpa.UserService;
+import com.areg.project.util.UtilMethods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,7 @@ import java.util.UUID;
 @Service
 public class UserManager {
 
+    private final QuizLogMachine logMachine = new QuizLogMachine(UserManager.class);
     private final UserService userService;
     private final UserResultConverter userResultConverter;
     private final EncryptionManager encryptionManager;
@@ -46,7 +49,11 @@ public class UserManager {
         final String encryptedPassword = encryptionManager.encrypt(userDTO.getPassword(), salt);
         userEntity.setPassword(encryptedPassword);
 
-        final UserEntity savedUserEntity = userService.createUser(userEntity);
+        userEntity.setExternalId(UUID.randomUUID());
+        userEntity.setRegistrationDate(UtilMethods.getEpochSeconds());
+
+        final UserEntity savedUserEntity = userService.signUp(userEntity);
+        logMachine.info("User " + savedUserEntity.getUsername() + " successfully registered in the system");
         return userResultConverter.fromEntityToDTO(savedUserEntity);
     }
 }

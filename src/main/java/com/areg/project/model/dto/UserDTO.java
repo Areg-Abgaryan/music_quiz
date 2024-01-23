@@ -25,9 +25,11 @@ public class UserDTO {
 
     @NotBlank private String password;
 
-    @NotBlank private String firstName;
-
-    @NotBlank private String lastName;
-
     @Email private String email;
+
+    public UserDTO(String email, String username, String password) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
 }

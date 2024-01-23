@@ -5,7 +5,6 @@
 package com.areg.project.model.dto;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
@@ -14,7 +13,6 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@NoArgsConstructor
 public class RefreshTokenResponseDTO {
 
     @NotBlank private Long id;

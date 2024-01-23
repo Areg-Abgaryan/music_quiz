@@ -37,8 +37,7 @@ public class UserService {
                 );
     }
 
-    public UserEntity createUser(UserEntity userEntity) {
-        userEntity.setExternalId(UUID.randomUUID());
+    public UserEntity signUp(UserEntity userEntity) {
         return userRepository.save(userEntity);
     }
 }

@@ -18,23 +18,6 @@ public class UserServiceHibernate {
 
     private static final QuizLogMachine logMachine = new QuizLogMachine(UserServiceHibernate.class);
 
-    public void createUser(UserEntity userEntity) {
-        final Session session = HibernateUtils.getSessionFactory().openSession();
-        try {
-            session.beginTransaction();
-            session.persist(userEntity);
-            session.getTransaction().commit();
-            logMachine.info("UserEntity {} successfully authenticated !", userEntity.getUsername());
-            System.out.println("Successfully authenticated !");
-        } catch (Exception e) {
-            logMachine.error("Error: Could not create userEntity : {}", e.getMessage());
-            e.printStackTrace();
-            session.getTransaction().rollback();
-        } finally {
-            session.close();
-        }
-    }
-
     public void updateUserPassword(UserEntity userEntity, String salt, String newEncryptedPassword) {
         final Session session = HibernateUtils.getSessionFactory().openSession();
         try {

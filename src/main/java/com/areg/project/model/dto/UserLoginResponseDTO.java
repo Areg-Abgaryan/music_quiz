@@ -13,10 +13,6 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 public class UserLoginResponseDTO {
 
-    @NotBlank private String firstName;
-
-    @NotBlank private String lastName;
-
     @NotBlank private TokenDTO token;
 
     @NotBlank private RefreshTokenResponseDTO refreshToken;

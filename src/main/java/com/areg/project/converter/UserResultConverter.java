@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 public class UserResultConverter {
 
     public Set<UserDTO> fromEntityToDTO(Set<UserEntity> userEntitySet) {
-
         if (userEntitySet == null || userEntitySet.isEmpty()) {
             return Collections.emptySet();
         }
@@ -26,32 +25,27 @@ public class UserResultConverter {
     }
 
     public UserDTO fromEntityToDTO(UserEntity userEntity) {
-
         if (userEntity == null) {
             return null;
         }
 
-        final var userDTO = new UserDTO();
-        userDTO.setId(userEntity.getExternalId());
-        userDTO.setUsername(userEntity.getUsername());
-        userDTO.setFirstName(userEntity.getFirstName());
-        userDTO.setLastName(userEntity.getLastName());
-        userDTO.setPassword(userEntity.getPassword());
-        userDTO.setEmail(userEntity.getEmail());
-        return userDTO;
+        final var userDto = new UserDTO();
+        userDto.setId(userEntity.getExternalId());
+        userDto.setUsername(userEntity.getUsername());
+        userDto.setPassword(userEntity.getPassword());
+        userDto.setEmail(userEntity.getEmail());
+        return userDto;
     }
 
-    public UserEntity fromDTOToEntity(UserDTO userDTO) {
-
-        if (userDTO == null) {
+    public UserEntity fromDTOToEntity(UserDTO userDto) {
+        if (userDto == null) {
             return null;
         }
 
         final var userEntity = new UserEntity();
-        userEntity.setUsername(userDTO.getUsername());
-        userEntity.setFirstName(userDTO.getFirstName());
-        userEntity.setLastName(userDTO.getLastName());
-        userEntity.setEmail(userDTO.getEmail());
+        userEntity.setEmail(userDto.getEmail());
+        userEntity.setUsername(userDto.getUsername());
+        userEntity.setPassword(userDto.getPassword());
         return userEntity;
     }
 }

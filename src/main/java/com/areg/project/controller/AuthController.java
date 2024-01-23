@@ -68,9 +68,9 @@ public class AuthController {
 
     @PostMapping(EndpointConstants.SIGNUP)
     @ApiOperation(value = "User sign up", notes = "Registers a new user in the system")
-    public ResponseEntity<?> signUp(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<?> signUp(@RequestBody UserDTO userDto) {
         logMachine.info("Successfully signed up during session : " + ShiroConfig.getSessionId());
-        return ResponseEntity.ok(userManager.signUp(userDTO));
+        return ResponseEntity.ok(userManager.signUp(userDto));
     }
 
     @PostMapping(EndpointConstants.LOGIN)
@@ -87,23 +87,19 @@ public class AuthController {
                 throw new InvalidObjectException("Invalid request arguments");
             }
 
-            final UserDTO userDTO = userManager.findUserByUsername(username);
             final var token = new UsernamePasswordToken(username, password);
 
             //  Login current user
             SecurityUtils.getSubject().login(token);
 
-            // Generate JWT token
+            // Generate jwt & refresh token
             final var jwtToken = new TokenDTO(jwtProvider.createToken(username));
-
-            //  Generate refresh token
             final RefreshTokenResponseDTO refreshToken = authManager.createRefreshToken();
 
-            final var loginOutputDTO = new UserLoginResponseDTO(
-                    userDTO.getFirstName(), userDTO.getLastName(), jwtToken, refreshToken);
+            final var loginOutputDto = new UserLoginResponseDTO(jwtToken, refreshToken);
 
             logMachine.info("Successfully logged in during session : " + ShiroConfig.getSessionId());
-            return ResponseEntity.ok(loginOutputDTO);
+            return ResponseEntity.ok(loginOutputDto);
 
         } catch (org.springframework.security.core.AuthenticationException ae) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Invalid username provided");
