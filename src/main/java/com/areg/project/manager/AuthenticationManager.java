@@ -147,11 +147,13 @@ public class AuthenticationManager {
 
         final ExecutorService executorService = Executors.newFixedThreadPool(1);
 
+        //  Create one time password & send to user's email
         final String otp = encryptionManager.generateOneTimePassword();
         final String otpMessage = "Your OTP is " + otp + ". It is expiring in 1 minute.";
         emailVerificationManager.sendEmail(email, "Music Quiz OTP", otpMessage);
         System.out.println("Please, enter the code that was sent to your " + email + " e-mail address.\n");
 
+        //  Check whether system generated OTP & the one that user has written match
         final String otpFromUserInput = getOTPFromUserInput(executorService);
         if ((otpFromUserInput.equals(otp))) {
             final var salt = encryptionManager.generateSalt();
