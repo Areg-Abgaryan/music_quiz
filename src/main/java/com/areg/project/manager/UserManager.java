@@ -8,7 +8,7 @@ import com.areg.project.converter.UserResultConverter;
 import com.areg.project.logging.QuizLogMachine;
 import com.areg.project.model.dto.UserDTO;
 import com.areg.project.model.entity.UserEntity;
-import com.areg.project.service.jpa.UserService;
+import com.areg.project.service.UserService;
 import com.areg.project.util.UtilMethods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,5 +60,10 @@ public class UserManager {
             return null;
         }
         return userResultConverter.fromEntityToDTO(result.get());
+    }
+
+    public void updatePassword(UserDTO user, String salt, String newEncryptedPassword) {
+        final UserEntity userEntity = userResultConverter.fromDTOToEntity(user);
+        userService.updatePassword(userEntity, salt, newEncryptedPassword);
     }
 }

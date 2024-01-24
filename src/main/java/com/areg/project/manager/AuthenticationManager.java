@@ -6,7 +6,6 @@ package com.areg.project.manager;
 
 import com.areg.project.QuizConstants;
 import com.areg.project.model.dto.UserDTO;
-import com.areg.project.service.hibernate.UserServiceHibernate;
 import com.areg.project.util.UtilMethods;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,15 +32,13 @@ import java.util.regex.Pattern;
 public class AuthenticationManager {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthenticationManager.class);
-    private final UserServiceHibernate userServiceHibernate;
     private final UserManager userManager;
     private final EncryptionManager encryptionManager;
     private final EmailVerificationManager emailVerificationManager;
 
     @Autowired
-    public AuthenticationManager(UserServiceHibernate userServiceHibernate, UserManager userManager,
-                                 EncryptionManager encryptionManager, EmailVerificationManager emailVerificationManager) {
-        this.userServiceHibernate = userServiceHibernate;
+    public AuthenticationManager(UserManager userManager, EncryptionManager encryptionManager,
+                                 EmailVerificationManager emailVerificationManager) {
         this.userManager = userManager;
         this.encryptionManager = encryptionManager;
         this.emailVerificationManager = emailVerificationManager;
@@ -116,20 +113,19 @@ public class AuthenticationManager {
                                 final var salt = encryptionManager.generateSalt();
                                 final String newEncryptedPassword = encryptionManager.encrypt(newPassword, salt);
 
-                                //  FIXME !!
-                                userServiceHibernate.updateUserPassword(user, salt, newEncryptedPassword);
+                                userManager.updatePassword(user, salt, newEncryptedPassword);
                             }
 
                             executorService.shutdown();
                             break;
                         } else if (choiceInt == 2) {
-                            logger.info("UserEntity {} is trying to authenticate again.", user.getUsername());
+                            logger.info("User {} is trying to authenticate again.", user.getUsername());
                             System.out.println("Trying to authenticate again !");
                             break;
                         }
                     }
                 } else {
-                    logger.info("UserEntity {} successfully logged in !", user.getUsername());
+                    logger.info("User {} successfully logged in !", user.getUsername());
                     System.out.println("Successfully logged in !");
                     break;
                 }
@@ -220,7 +216,7 @@ public class AuthenticationManager {
             
             Password length : 8-20 characters.
             It contains at least one digit, one upper case letter, one lower case letter,
-            one special character [ !@#$%&*()-+=^. ], doesn’t contain any white space.
+            one special character [ !@#$%&*()-+=^. ], does not contain any white space.
             
             """);
     }
@@ -251,9 +247,7 @@ public class AuthenticationManager {
             throw new RuntimeException("Error : E-mail can't be null or empty !");
         }
 
-        final var regexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
-                + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
-        final Pattern pattern = Pattern.compile(regexPattern);
+        final Pattern pattern = Pattern.compile(QuizConstants.EmailRegexPattern);
         final Matcher matcher = pattern.matcher(email);
 
         if (! matcher.matches()) {
@@ -276,8 +270,7 @@ public class AuthenticationManager {
             throw new RuntimeException("Error : Password can't be null or empty !");
         }
 
-        final String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()-+=^.])(?=\\S+$).{8,20}$";
-        final Pattern pattern = Pattern.compile(regex);
+        final Pattern pattern = Pattern.compile(QuizConstants.PasswordRegexPattern);
         final Matcher matcher = pattern.matcher(password);
         if (! matcher.matches()) {
             System.out.println("Invalid password, choose another");
@@ -296,7 +289,7 @@ public class AuthenticationManager {
         } catch (InterruptedException | ExecutionException e) {
             throw new IllegalStateException("Thread was interrupted", e);
         } catch (TimeoutException e) {
-            logger.info("UserEntity timed out to enter OTP !");
+            logger.info("User timed out to enter OTP !");
             System.out.println("\nTimed out to enter code !");
         }
 

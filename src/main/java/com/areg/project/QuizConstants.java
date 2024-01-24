@@ -21,6 +21,8 @@ public class QuizConstants {
     public static final short MailOTPLength = 6;
     public static final byte OTPTimeoutSeconds = 60;
     public static ZoneId TimeZoneId = ZoneId.of("Asia/Yerevan");
+    public static String EmailRegexPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+    public static String PasswordRegexPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()-+=^.])(?=\\S+$).{8,20}$";
 
     static {
         AllCharacters = generateAllCharacters();
